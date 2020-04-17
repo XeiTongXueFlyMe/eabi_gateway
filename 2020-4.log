@@ -1,13 +1,3 @@
-2020/04/17 15:51:51 my_log.go:38: [info]eabi_gateway start runing
-2020/04/17 16:05:03 my_log.go:52: [info]eabi_gateway start runing
-2020/04/17 16:05:15 my_log.go:52: [info]eabi_gateway start runing
-2020/04/17 16:05:55 my_log.go:52: [info]eabi_gateway start runing
-2020/04/17 16:05:55 my_log.go:52: [info]eabi_gateway start runing
-2020/04/17 16:05:55 my_log.go:52: [info]eabi_gateway start runing
-2020/04/17 16:05:55 my_log.go:52: [info]eabi_gateway start runing
-2020/04/17 16:05:55 my_log.go:52: [info]eabi_gateway start runing
-2020/04/17 16:08:01 my_log.go:51: [info]eabi_gateway start runing
-2020/04/17 16:08:01 my_log.go:51: [info]eabi_gateway start runing
-2020/04/17 16:08:01 my_log.go:51: [info]eabi_gateway start runing
-2020/04/17 16:08:01 my_log.go:51: [info]eabi_gateway start runing
-2020/04/17 16:08:01 my_log.go:51: [info]eabi_gateway start runing
+2020/04/17 16:35:45 my_log.go:51: [info]eabi_gateway start runing
+2020/04/17 16:35:45 my_log.go:56: [err]msgMap no find field: 
+2020/04/17 16:35:50 my_log.go:61: [warring]websocker close : EOF

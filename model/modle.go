@@ -9,8 +9,8 @@ type NetInterfase interface {
 
 type LogInterfase interface {
 	//printf terminal
-	Printftml(v ...interface{})
-	Printlntml(format string, v ...interface{})
+	Printftml(format string, v ...interface{})
+	Printlntml(v ...interface{})
 
 	PrintlnErr(v ...interface{})
 	PrintlnWarring(v ...interface{})

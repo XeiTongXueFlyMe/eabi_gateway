@@ -62,3 +62,9 @@ func (t *L) PrintlnInfo(v ...interface{}) {
 	t.openFile()
 	t.logger.Printf("[err]", v...)
 }
+func (t *L) Printftml(v ...interface{}) {
+	fmt.Println(v...)
+}
+func (t *L) Printlntml(format string, v ...interface{}) {
+	fmt.Printf(format, v...)
+}

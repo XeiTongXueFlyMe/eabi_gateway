@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 var netDataBufChan chan []byte
@@ -25,19 +24,19 @@ func waitNetData() {
 		tmpField := &tmpField{}
 
 		if !json.Valid(buf) {
-			fmt.Println("json.Valid return false:", string(buf))
+			log.PrintlnWarring("json.Valid return false:", string(buf))
 			continue
 		}
 
 		if err := json.Unmarshal(buf, tmpField); err != nil {
-			fmt.Println(err)
+			log.PrintlnWarring("err:", err, "data:", string(buf))
 			continue
 		}
 
 		if neTmpChan, ok := msgMap[tmpField.MsgParam]; ok {
 			neTmpChan <- buf
 		} else {
-			fmt.Println("msgMap no find field:", tmpField.MsgParam)
+			log.PrintlnErr("msgMap no find field:", tmpField.MsgParam)
 		}
 
 	}

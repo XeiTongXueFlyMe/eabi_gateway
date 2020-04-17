@@ -3,7 +3,6 @@ package main
 import (
 	modle "eabi_gateway/model"
 	webs "eabi_gateway/model/websocket"
-	"fmt"
 	"sync"
 	"time"
 )
@@ -30,10 +29,10 @@ func waitReceive() {
 		mu.Lock()
 		mu.Unlock()
 		if n, err := net.Read(buf); err != nil {
-			fmt.Println("websocker close :", err)
+			log.PrintlnWarring("websocker close :", err)
 			break
 		} else {
-			fmt.Println(string(buf))
+			log.Printlntml(string(buf))
 			netDataBufChan <- buf[0:n]
 		}
 	}
@@ -45,7 +44,7 @@ func rebootConnet(host, path string) {
 	for {
 		net = &webs.Conn{}
 		if err := net.Open(host, path); err != nil {
-			fmt.Println(err)
+			log.PrintlnErr(err)
 			time.Sleep(5 * time.Second)
 			continue
 		}
@@ -67,7 +66,7 @@ func waitHeart() {
 		select {
 		case <-netHeart:
 		case <-time.After(5 * time.Second):
-			fmt.Println("心跳超时")
+			log.PrintfWarring("心跳超时")
 			net.Close()
 			//TODO
 			rebootConnet("192.168.0.168:8286", "/")

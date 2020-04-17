@@ -8,11 +8,15 @@ type NetInterfase interface {
 }
 
 type LogInterfase interface {
-	PrintfErr(format string, v ...interface{})
-	PrintfWarring(format string, v ...interface{})
-	PrintfInfo(format string, v ...interface{})
+	//printf terminal
+	Printftml(v ...interface{})
+	Printlntml(format string, v ...interface{})
 
 	PrintlnErr(v ...interface{})
 	PrintlnWarring(v ...interface{})
 	PrintlnInfo(v ...interface{})
+
+	PrintfErr(format string, v ...interface{})
+	PrintfWarring(format string, v ...interface{})
+	PrintfInfo(format string, v ...interface{})
 }

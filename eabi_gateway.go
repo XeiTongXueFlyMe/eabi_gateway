@@ -1,12 +1,19 @@
 package main
 
 import (
+	modle "eabi_gateway/model"
+	myLog "eabi_gateway/model/my_log"
 	"fmt"
 	"time"
 )
 
+var log modle.LogInterfase
+
 func main() {
 	fmt.Println("eabi_gateway start runing")
+
+	log = &myLog.L{}
+	log.PrintfInfo("eabi_gateway start runing")
 	//TODO:读取本地配置
 
 	//初始化业务逻辑

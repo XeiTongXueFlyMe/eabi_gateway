@@ -8,12 +8,23 @@ import (
 
 type SysParam struct {
 	Myself struct {
-		MsgGwId string `yaml:"msgGwId"`
+		GwId          string `yaml:"gwId"`
+		GwIP          string `yaml:"gwIP"`
+		ServerIP      string `yaml:"serverIP"`
+		ServerPort    string `yaml:"serverPort"`
+		DataUpCycle   int    `yaml:"dataUpCycle"`
+		HeartCycle    int    `yaml:"heartCycle"`
+		DataReadCycle int    `yaml:"dataReadCycle"`
 	}
 
 	Websocket struct {
-		Host string `yaml:"host"`
 		Path string `yaml:"path"`
+	}
+
+	Rf struct {
+		Id      string `yaml:"id"`
+		Channel string `yaml:"channel"`
+		NetId   string `yaml:"netId"`
 	}
 }
 
@@ -72,23 +83,23 @@ func writeSysParamToFile() error {
 func sysParamGwId(v ...interface{}) string {
 	for _, arg := range v {
 		if str, ok := arg.(string); ok {
-			sysParam.Myself.MsgGwId = str
+			sysParam.Myself.GwId = str
 			writeSysParamToFile()
 		}
 	}
 
-	return sysParam.Myself.MsgGwId
+	return sysParam.Myself.GwId
 }
 
-func sysParamHost(v ...interface{}) string {
+func sysParamGwIp(v ...interface{}) string {
 	for _, arg := range v {
 		if str, ok := arg.(string); ok {
-			sysParam.Websocket.Host = str
+			sysParam.Myself.GwIP = str
 			writeSysParamToFile()
 		}
 	}
 
-	return sysParam.Websocket.Host
+	return sysParam.Myself.GwIP
 }
 
 func sysParamPath(v ...interface{}) string {
@@ -100,4 +111,76 @@ func sysParamPath(v ...interface{}) string {
 	}
 
 	return sysParam.Websocket.Path
+}
+
+func sysParamServerIPAndPort(v ...interface{}) (string, string) {
+	for n, arg := range v {
+		if str, ok := arg.(string); ok {
+			defer writeSysParamToFile()
+
+			switch n {
+			case 0:
+				sysParam.Myself.ServerIP = str
+			case 1:
+				sysParam.Myself.ServerPort = str
+			}
+
+		}
+	}
+
+	return sysParam.Myself.ServerIP, sysParam.Myself.ServerPort
+}
+
+func sysParamDataUpCycle(v ...interface{}) int {
+	for _, arg := range v {
+		if value, ok := arg.(int); ok {
+			sysParam.Myself.DataUpCycle = value
+			writeSysParamToFile()
+		}
+	}
+
+	return sysParam.Myself.DataUpCycle
+}
+
+func sysParamHeartCycle(v ...interface{}) int {
+	for _, arg := range v {
+		if value, ok := arg.(int); ok {
+			sysParam.Myself.HeartCycle = value
+			writeSysParamToFile()
+		}
+	}
+
+	return sysParam.Myself.HeartCycle
+}
+
+func sysParamDataReadCycle(v ...interface{}) int {
+	for _, arg := range v {
+		if value, ok := arg.(int); ok {
+			sysParam.Myself.DataReadCycle = value
+			writeSysParamToFile()
+		}
+	}
+
+	return sysParam.Myself.DataReadCycle
+}
+
+// id channel netid
+func sysParamRf(v ...interface{}) (string, string, string) {
+	for n, arg := range v {
+		if str, ok := arg.(string); ok {
+			defer writeSysParamToFile()
+
+			switch n {
+			case 0:
+				sysParam.Rf.Id = str
+			case 1:
+				sysParam.Rf.Channel = str
+			case 2:
+				sysParam.Rf.NetId = str
+			}
+
+		}
+	}
+
+	return sysParam.Rf.Id, sysParam.Rf.Channel, sysParam.Rf.NetId
 }

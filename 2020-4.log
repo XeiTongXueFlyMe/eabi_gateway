@@ -31,3 +31,14 @@
 2020/04/18 10:18:05 my_log.go:59: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: no route to host
 2020/04/18 10:18:13 my_log.go:59: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: no route to host
 2020/04/18 10:18:21 my_log.go:59: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: no route to host
+2020/04/18 13:14:59 my_log.go:54: [info]eabi_gateway start runing
+2020/04/18 13:15:02 my_log.go:54: [info]eabi_gateway start runing
+2020/04/18 13:15:05 my_log.go:59: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: no route to host
+2020/04/18 13:33:53 my_log.go:54: [info]eabi_gateway start runing
+2020/04/18 13:36:22 my_log.go:54: [info]eabi_gateway start runing
+2020/04/18 13:36:22 my_log.go:59: [err]websocket.Dial ws://:/: dial tcp :0: connect: connection refused
+2020/04/18 13:36:27 my_log.go:59: [err]websocket.Dial ws://:/: dial tcp :0: connect: connection refused
+2020/04/18 13:37:08 my_log.go:54: [info]eabi_gateway start runing
+2020/04/18 13:37:11 my_log.go:59: [err]websocket.Dial ws://192.168.0.168:8286: dial tcp 192.168.0.168:8286: connect: no route to host
+2020/04/18 13:37:19 my_log.go:59: [err]websocket.Dial ws://192.168.0.168:8286: dial tcp 192.168.0.168:8286: connect: no route to host
+2020/04/18 13:44:08 my_log.go:54: [info]eabi_gateway start runing

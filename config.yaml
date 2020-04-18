@@ -1,6 +1,14 @@
 myself:
-  msgGwId: ABABABABABAB
+  gwId: ABABABABABAB
+  gwIP: 192.168.0.102
+  serverIP: 192.168.0.168
+  serverPort: "8286"
+  dataUpCycle: 10
+  heartCycle: 15
+  dataReadCycle: 60
 websocket:
-  host: 192.168.0.168:8286
   path: /
-
+rf:
+  id: ACACACACACAC
+  channel: "1"
+  netId: BEBEBEBEBEBE

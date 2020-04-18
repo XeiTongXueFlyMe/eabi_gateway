@@ -23,7 +23,7 @@ func main() {
 
 	//初始化网络链接
 	//TODO:配置参数，不从这里带入
-	netInit(sysParamHost(), sysParamPath())
+	netInit()
 
 	//TODO:初始化射频网络
 

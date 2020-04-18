@@ -68,7 +68,8 @@ func waitHeart() {
 		case <-time.After(5 * time.Second):
 			log.PrintfWarring("心跳超时")
 			net.Close()
-			rebootConnet(sysParamHost(), sysParamPath())
+			ip, p := sysParamServerIPAndPort()
+			rebootConnet(ip+":"+p, sysParamPath())
 		}
 	}
 }
@@ -80,14 +81,16 @@ func pong() {
 	}
 }
 
-func netInit(host, path string) {
+func netInit() {
 	netHeart = make(chan []byte, 1)
 	netPing = make(chan []byte, 1)
 
 	createMsgField("pong", netHeart)
 	createMsgField("ping", netPing)
 
-	rebootConnet(host, path)
+	ip, p := sysParamServerIPAndPort()
+	rebootConnet(ip+":"+p, sysParamPath())
+
 	go ping()
 	go pong()
 	go waitHeart()

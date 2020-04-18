@@ -10,16 +10,14 @@ import (
 var log modle.LogInterfase
 
 func main() {
-	fmt.Println("eabi_gateway start runing")
-
 	log = &myLog.L{}
 	log.PrintfInfo("eabi_gateway start runing")
 
-	//读取本地配置
-	sysParamInit()
-
 	//初始化业务逻辑
 	apiInit()
+
+	//读取本地配置
+	sysParamInit()
 
 	//初始化网络链接
 	//TODO:配置参数，不从这里带入
@@ -27,6 +25,7 @@ func main() {
 
 	//TODO:初始化射频网络
 
+	fmt.Println("hi i am eabi_gateway :)")
 	for {
 		time.Sleep(1 * time.Hour)
 	}

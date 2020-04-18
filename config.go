@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"os"
 
 	"gopkg.in/yaml.v2"
@@ -31,6 +32,7 @@ type SysParam struct {
 var cfgName = `./config.yaml`
 
 var sysParam SysParam
+var gatewayParamChannel chan []byte
 
 //初始化，读取配置文件到缓存
 func sysParamInit() {
@@ -38,6 +40,7 @@ func sysParamInit() {
 	var n int
 	var f *os.File
 
+	log.Printlntml("loading...")
 	buf := make([]byte, 1000)
 
 	f, err = os.OpenFile(cfgName, os.O_RDWR|os.O_CREATE, 0777)
@@ -54,10 +57,37 @@ func sysParamInit() {
 	}
 
 	log.Printlntml(string(buf[0:n]))
+
+	gatewayParamChannel = make(chan []byte, 1)
+	createMsgField("gatewayParam", gatewayParamChannel)
+
+	go waitGatewayParamConfig()
 	return
 
 _exit:
 	panic(err)
+}
+
+func waitGatewayParamConfig() {
+	for {
+		buf := <-gatewayParamChannel
+		m := make(map[string]interface{})
+		if err := json.Unmarshal(buf, &m); err != nil {
+			log.PrintlnErr(err)
+		}
+		for k, v := range m {
+			switch k {
+			case "gwId":
+				if str, ok := v.(string); ok {
+					sysParam.Myself.GwId = str
+				} else {
+					log.PrintfErr("json gwId no is string")
+				}
+			}
+		}
+
+		writeSysParamToFile()
+	}
 }
 
 //写配置文件到缓存

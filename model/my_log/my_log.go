@@ -40,33 +40,27 @@ func (t *L) openFile() {
 
 func (t *L) PrintfErr(format string, v ...interface{}) {
 	t.openFile()
-	str := fmt.Sprintf(format, v...)
-	t.logger.Printf("[err]" + str)
+	t.logger.Output(2, "[err]"+fmt.Sprintf(format, v...))
 }
 func (t *L) PrintfWarring(format string, v ...interface{}) {
 	t.openFile()
-	str := fmt.Sprintf(format, v...)
-	t.logger.Printf("[warring]" + str)
+	t.logger.Output(2, "[warring]"+fmt.Sprintf(format, v...))
 }
 func (t *L) PrintfInfo(format string, v ...interface{}) {
 	t.openFile()
-	str := fmt.Sprintf(format, v...)
-	t.logger.Printf("[info]" + str)
+	t.logger.Output(2, "[info]"+fmt.Sprintf(format, v...))
 }
 func (t *L) PrintlnErr(v ...interface{}) {
 	t.openFile()
-	str := fmt.Sprintln(v...)
-	t.logger.Printf("[err]" + str)
+	t.logger.Output(2, "[err]"+fmt.Sprintln(v...))
 }
 func (t *L) PrintlnWarring(v ...interface{}) {
 	t.openFile()
-	str := fmt.Sprintln(v...)
-	t.logger.Printf("[warring]" + str)
+	t.logger.Output(2, "[warring]"+fmt.Sprintln(v...))
 }
 func (t *L) PrintlnInfo(v ...interface{}) {
 	t.openFile()
-	str := fmt.Sprintln(v...)
-	t.logger.Printf("[info]" + str)
+	t.logger.Output(2, "[info]"+fmt.Sprintln(v...))
 }
 
 func (t *L) Printftml(format string, v ...interface{}) {

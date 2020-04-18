@@ -14,14 +14,16 @@ func main() {
 
 	log = &myLog.L{}
 	log.PrintfInfo("eabi_gateway start runing")
-	//TODO:读取本地配置
+
+	//读取本地配置
+	sysParamInit()
 
 	//初始化业务逻辑
 	apiInit()
 
 	//初始化网络链接
 	//TODO:配置参数，不从这里带入
-	netInit("192.168.0.168:8286", "/")
+	netInit(sysParamHost(), sysParamPath())
 
 	//TODO:初始化射频网络
 

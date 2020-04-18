@@ -68,9 +68,7 @@ func waitHeart() {
 		case <-time.After(5 * time.Second):
 			log.PrintfWarring("心跳超时")
 			net.Close()
-			//TODO
-			rebootConnet("192.168.0.168:8286", "/")
-			//rebootConnet("120.55.191.153:8286", "/")
+			rebootConnet(sysParamHost(), sysParamPath())
 		}
 	}
 }

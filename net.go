@@ -14,14 +14,14 @@ var (
 	netPing  chan []byte
 )
 
-func sendData(buf []byte) (int, error) {
+func sendNetData(buf []byte) (int, error) {
 	mu.Lock()
 	defer mu.Unlock()
 
 	return net.Write(buf)
 }
 
-func waitReceive() {
+func waitNetReceive() {
 	defer net.Close()
 
 	for {
@@ -38,7 +38,7 @@ func waitReceive() {
 	}
 }
 
-func rebootConnet(host, path string) {
+func rebootNetConnet(host, path string) {
 	mu.Lock()
 	defer mu.Unlock()
 	for {
@@ -51,12 +51,12 @@ func rebootConnet(host, path string) {
 		break
 	}
 
-	go waitReceive()
+	go waitNetReceive()
 }
 
 func ping() {
 	for {
-		sendData([]byte("{\"msgType\":\"GET\",\"msgId\":\"a7356eac-71ae-4862-b66c-a212cd292baf\",\"msgGwId\":\"AFAF73EADCF5\",\"msgTimeStamp\":1586162503,\"msgParam\":\"ping\"}"))
+		sendNetData([]byte("{\"msgType\":\"GET\",\"msgId\":\"a7356eac-71ae-4862-b66c-a212cd292baf\",\"msgGwId\":\"AFAF73EADCF5\",\"msgTimeStamp\":1586162503,\"msgParam\":\"ping\"}"))
 		time.Sleep(1 * time.Second)
 	}
 }
@@ -69,7 +69,7 @@ func waitHeart() {
 			log.PrintfWarring("心跳超时")
 			net.Close()
 			ip, p := sysParamServerIPAndPort()
-			rebootConnet(ip+":"+p, sysParamPath())
+			rebootNetConnet(ip+":"+p, sysParamPath())
 		}
 	}
 }
@@ -77,7 +77,7 @@ func waitHeart() {
 func pong() {
 	for {
 		<-netPing
-		sendData([]byte("{\"msgType\":\"XXX\",\"msgId\":\"\",\"msgGwId\":\"XXXXXXXXXXXX\",\"msgTimeStamp\":1586162503,\"msgParam\":\"pong\"}"))
+		sendNetData([]byte("{\"msgType\":\"XXX\",\"msgId\":\"\",\"msgGwId\":\"XXXXXXXXXXXX\",\"msgTimeStamp\":1586162503,\"msgParam\":\"pong\"}"))
 	}
 }
 
@@ -89,7 +89,7 @@ func netInit() {
 	createMsgField("ping", netPing)
 
 	ip, p := sysParamServerIPAndPort()
-	rebootConnet(ip+":"+p, sysParamPath())
+	rebootNetConnet(ip+":"+p, sysParamPath())
 
 	go ping()
 	go pong()

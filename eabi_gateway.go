@@ -11,7 +11,7 @@ var log modle.LogInterfase
 
 func main() {
 	log = &myLog.L{}
-	log.PrintfInfo("eabi_gateway start runing")
+	log.PrintfInfo("eabi_gateway start runing :)")
 
 	//初始化业务逻辑
 	apiInit()
@@ -19,11 +19,13 @@ func main() {
 	//读取本地配置
 	sysParamInit()
 
-	//初始化网络链接
-	//TODO:配置参数，不从这里带入
-	netInit()
-
 	//TODO:初始化射频网络
+
+	//lora网络信息统计
+	rfNetInfoInit()
+
+	//初始化网络链接
+	netInit()
 
 	fmt.Println("hi i am eabi_gateway :)")
 	for {

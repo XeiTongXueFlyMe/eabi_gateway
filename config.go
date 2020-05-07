@@ -77,60 +77,81 @@ func waitGatewayParamConfig() {
 		if err := json.Unmarshal(buf, &m); err != nil {
 			log.PrintlnErr(err)
 		}
-		for k, v := range m {
-			switch k {
-			case "gwId":
-				if str, ok := v.(string); ok {
-					sysParam.Myself.GwId = str
-				} else {
-					log.PrintfErr("json gwId no is string")
+		if v, ok := m["msgType"]; ok {
+			if str, ok := v.(string); ok {
+				switch str {
+				case "GET":
+					sendConfigToServer()
+				case "PUT":
+					configTofile(m)
 				}
-			case "serverIP":
-				if str, ok := v.(string); ok {
-					sysParam.Myself.ServerIP = str
-				} else {
-					log.PrintfErr("json serverIP no is string")
-				}
-			case "serverPort":
-				if str, ok := v.(string); ok {
-					sysParam.Myself.ServerPort = str
-				} else {
-					log.PrintfErr("json serverPort no is string")
-				}
-			case "rfId":
-				if str, ok := v.(string); ok {
-					sysParam.Rf.Id = str
-				} else {
-					log.PrintfErr("json rfId no is string")
-				}
-			case "rfChannel":
-				if n, ok := v.(int); ok {
-					sysParam.Rf.Channel = fmt.Sprintln(n)
-				} else {
-					log.PrintfErr("json Channel no is int")
-				}
-			case "rfNetId":
-				if str, ok := v.(string); ok {
-					sysParam.Rf.NetId = str
-				} else {
-					log.PrintfErr("json rfNetId no is string")
-				}
-			case "dataUpCycle":
-				if n, ok := v.(int); ok {
-					sysParam.Myself.DataUpCycle = n
-				} else {
-					log.PrintfErr("json dataUpCycle no is int")
-				}
-			case "heartCycle":
-				if n, ok := v.(int); ok {
-					sysParam.Myself.HeartCycle = n
-				} else {
-					log.PrintfErr("json heartCycle no is int")
-				}
+			} else {
+				log.PrintfErr("json msgType no is string")
+			}
+		} else {
+			log.PrintlnErr("no find msgType")
+		}
+	}
+}
+
+func sendConfigToServer() {
+	//TODO
+}
+
+func configTofile(m map[string]interface{}) {
+	defer writeSysParamToFile()
+
+	for k, v := range m {
+		switch k {
+		case "gwId":
+			if str, ok := v.(string); ok {
+				sysParam.Myself.GwId = str
+			} else {
+				log.PrintfErr("json gwId no is string")
+			}
+		case "serverIP":
+			if str, ok := v.(string); ok {
+				sysParam.Myself.ServerIP = str
+			} else {
+				log.PrintfErr("json serverIP no is string")
+			}
+		case "serverPort":
+			if str, ok := v.(string); ok {
+				sysParam.Myself.ServerPort = str
+			} else {
+				log.PrintfErr("json serverPort no is string")
+			}
+		case "rfId":
+			if str, ok := v.(string); ok {
+				sysParam.Rf.Id = str
+			} else {
+				log.PrintfErr("json rfId no is string")
+			}
+		case "rfChannel":
+			if n, ok := v.(int); ok {
+				sysParam.Rf.Channel = fmt.Sprintln(n)
+			} else {
+				log.PrintfErr("json Channel no is int")
+			}
+		case "rfNetId":
+			if str, ok := v.(string); ok {
+				sysParam.Rf.NetId = str
+			} else {
+				log.PrintfErr("json rfNetId no is string")
+			}
+		case "dataUpCycle":
+			if n, ok := v.(int); ok {
+				sysParam.Myself.DataUpCycle = n
+			} else {
+				log.PrintfErr("json dataUpCycle no is int")
+			}
+		case "heartCycle":
+			if n, ok := v.(int); ok {
+				sysParam.Myself.HeartCycle = n
+			} else {
+				log.PrintfErr("json heartCycle no is int")
 			}
 		}
-
-		writeSysParamToFile()
 	}
 }
 

@@ -1,3 +1,8 @@
 2020/05/07 10:54:13 eabi_gateway.go:14: [info]eabi_gateway start runing
 2020/05/07 10:54:34 net.go:47: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
 2020/05/07 10:55:00 net.go:47: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+2020/05/08 10:54:39 eabi_gateway.go:14: [info]eabi_gateway start runing :)
+2020/05/08 11:20:55 eabi_gateway.go:14: [info]eabi_gateway start runing :)
+2020/05/08 14:47:11 eabi_gateway.go:16: [info]eabi_gateway start runing :)
+2020/05/08 14:47:25 eabi_gateway.go:16: [info]eabi_gateway start runing :)
+2020/05/08 14:49:24 eabi_gateway.go:16: [info]eabi_gateway start runing :)

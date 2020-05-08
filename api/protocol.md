@@ -211,7 +211,7 @@
 >   "channel_8":"yes",//yes,no
 >   },
 >   {
->   "Id":"AFAF73BADCF7",
+>   "id":"AFAF73BADCF7",
 >   "name":"东二层２号气表",
 >   "softwareVer":"1.0.1",
 >   "hardwareVer":"1.0.2",

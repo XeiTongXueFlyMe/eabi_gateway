@@ -1,7 +1,8 @@
-package main
+package net
 
 import (
 	modle "eabi_gateway/model"
+	log "eabi_gateway/model/my_log"
 	webs "eabi_gateway/model/websocket"
 	"sync"
 	"time"
@@ -81,7 +82,7 @@ func pong() {
 	}
 }
 
-func netInit() {
+func NetInit() {
 	netHeart = make(chan []byte, 1)
 	netPing = make(chan []byte, 1)
 

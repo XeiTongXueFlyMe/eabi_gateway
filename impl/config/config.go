@@ -1,6 +1,8 @@
-package main
+package config
 
 import (
+	modle "eabi_gateway/model"
+	myLog "eabi_gateway/model/my_log"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -10,7 +12,7 @@ import (
 
 type SysParam struct {
 	Myself struct {
-		GwId          string `yaml:"gwId"`
+		GwID          string `yaml:"gwId"`
 		GwIP          string `yaml:"gwIP"`
 		ServerIP      string `yaml:"serverIP"`
 		ServerPort    string `yaml:"serverPort"`
@@ -24,9 +26,9 @@ type SysParam struct {
 	}
 
 	Rf struct {
-		Id      string `yaml:"id"`
+		ID      string `yaml:"id"`
 		Channel string `yaml:"channel"`
-		NetId   string `yaml:"netId"`
+		NetID   string `yaml:"netId"`
 	}
 }
 
@@ -34,14 +36,15 @@ var cfgName = `./config.yaml`
 
 var sysParam SysParam
 var gatewayParamChannel chan []byte
+var log modle.LogInterfase
 
 //初始化，读取配置文件到缓存
-func sysParamInit() {
+func SysParamInit() {
 	var err error
 	var n int
 	var f *os.File
 
-	log.Printlntml("loading...")
+	log = &myLog.L{}
 	buf := make([]byte, 1000)
 
 	f, err = os.OpenFile(cfgName, os.O_RDWR|os.O_CREATE, 0777)
@@ -60,7 +63,8 @@ func sysParamInit() {
 	log.Printlntml(string(buf[0:n]))
 
 	gatewayParamChannel = make(chan []byte, 1)
-	createMsgField("gatewayParam", gatewayParamChannel)
+	//TODO
+	//createMsgField("gatewayParam", gatewayParamChannel)
 
 	go waitGatewayParamConfig()
 	return
@@ -69,6 +73,7 @@ _exit:
 	panic(err)
 }
 
+//TODO　放在你这里不合适
 func waitGatewayParamConfig() {
 	for {
 		buf := <-gatewayParamChannel
@@ -105,7 +110,7 @@ func configTofile(m map[string]interface{}) {
 		switch k {
 		case "gwId":
 			if str, ok := v.(string); ok {
-				sysParam.Myself.GwId = str
+				sysParam.Myself.GwID = str
 			} else {
 				log.PrintfErr("json gwId no is string")
 			}
@@ -123,7 +128,7 @@ func configTofile(m map[string]interface{}) {
 			}
 		case "rfId":
 			if str, ok := v.(string); ok {
-				sysParam.Rf.Id = str
+				sysParam.Rf.ID = str
 			} else {
 				log.PrintfErr("json rfId no is string")
 			}
@@ -135,7 +140,7 @@ func configTofile(m map[string]interface{}) {
 			}
 		case "rfNetId":
 			if str, ok := v.(string); ok {
-				sysParam.Rf.NetId = str
+				sysParam.Rf.NetID = str
 			} else {
 				log.PrintfErr("json rfNetId no is string")
 			}
@@ -175,18 +180,18 @@ func writeSysParamToFile() error {
 }
 
 //各种参数读取与写入
-func sysParamGwId(v ...interface{}) string {
+func SysParamGwId(v ...interface{}) string {
 	for _, arg := range v {
 		if str, ok := arg.(string); ok {
-			sysParam.Myself.GwId = str
+			sysParam.Myself.GwID = str
 			writeSysParamToFile()
 		}
 	}
 
-	return sysParam.Myself.GwId
+	return sysParam.Myself.GwID
 }
 
-func sysParamGwIp(v ...interface{}) string {
+func SysParamGwIp(v ...interface{}) string {
 	for _, arg := range v {
 		if str, ok := arg.(string); ok {
 			sysParam.Myself.GwIP = str
@@ -197,7 +202,7 @@ func sysParamGwIp(v ...interface{}) string {
 	return sysParam.Myself.GwIP
 }
 
-func sysParamPath(v ...interface{}) string {
+func SysParamPath(v ...interface{}) string {
 	for _, arg := range v {
 		if str, ok := arg.(string); ok {
 			sysParam.Websocket.Path = str
@@ -208,7 +213,7 @@ func sysParamPath(v ...interface{}) string {
 	return sysParam.Websocket.Path
 }
 
-func sysParamServerIPAndPort(v ...interface{}) (string, string) {
+func SysParamServerIPAndPort(v ...interface{}) (string, string) {
 	for n, arg := range v {
 		if str, ok := arg.(string); ok {
 			defer writeSysParamToFile()
@@ -226,7 +231,7 @@ func sysParamServerIPAndPort(v ...interface{}) (string, string) {
 	return sysParam.Myself.ServerIP, sysParam.Myself.ServerPort
 }
 
-func sysParamDataUpCycle(v ...interface{}) int {
+func SysParamDataUpCycle(v ...interface{}) int {
 	for _, arg := range v {
 		if value, ok := arg.(int); ok {
 			sysParam.Myself.DataUpCycle = value
@@ -237,7 +242,7 @@ func sysParamDataUpCycle(v ...interface{}) int {
 	return sysParam.Myself.DataUpCycle
 }
 
-func sysParamHeartCycle(v ...interface{}) int {
+func SysParamHeartCycle(v ...interface{}) int {
 	for _, arg := range v {
 		if value, ok := arg.(int); ok {
 			sysParam.Myself.HeartCycle = value
@@ -248,7 +253,7 @@ func sysParamHeartCycle(v ...interface{}) int {
 	return sysParam.Myself.HeartCycle
 }
 
-func sysParamDataReadCycle(v ...interface{}) int {
+func SysParamDataReadCycle(v ...interface{}) int {
 	for _, arg := range v {
 		if value, ok := arg.(int); ok {
 			sysParam.Myself.DataReadCycle = value
@@ -260,22 +265,22 @@ func sysParamDataReadCycle(v ...interface{}) int {
 }
 
 // id channel netid
-func sysParamRf(v ...interface{}) (string, string, string) {
+func SysParamRf(v ...interface{}) (string, string, string) {
 	for n, arg := range v {
 		if str, ok := arg.(string); ok {
 			defer writeSysParamToFile()
 
 			switch n {
 			case 0:
-				sysParam.Rf.Id = str
+				sysParam.Rf.ID = str
 			case 1:
 				sysParam.Rf.Channel = str
 			case 2:
-				sysParam.Rf.NetId = str
+				sysParam.Rf.NetID = str
 			}
 
 		}
 	}
 
-	return sysParam.Rf.Id, sysParam.Rf.Channel, sysParam.Rf.NetId
+	return sysParam.Rf.ID, sysParam.Rf.Channel, sysParam.Rf.NetID
 }

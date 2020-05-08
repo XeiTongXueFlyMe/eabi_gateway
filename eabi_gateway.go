@@ -1,8 +1,10 @@
 package main
 
 import (
+	config "eabi_gateway/impl/config"
 	modle "eabi_gateway/model"
 	myLog "eabi_gateway/model/my_log"
+
 	"fmt"
 	"time"
 )
@@ -14,18 +16,18 @@ func main() {
 	log.PrintfInfo("eabi_gateway start runing :)")
 
 	//初始化业务逻辑
-	apiInit()
+	//apiInit()
 
 	//读取本地配置
-	sysParamInit()
-
+	config.SysParamInit()
 	//TODO:初始化射频网络
 
 	//lora网络信息统计
-	rfNetInfoInit()
+	//rfNetInfoInit()
 
 	//初始化网络链接
-	netInit()
+	//TODO：为了测试，暂时关闭
+	//netInit()
 
 	fmt.Println("hi i am eabi_gateway :)")
 	for {

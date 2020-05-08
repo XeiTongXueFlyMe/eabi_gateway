@@ -1,13 +1,17 @@
 package net
 
 import (
+	model "eabi_gateway/impl"
 	"eabi_gateway/impl/config"
 	module "eabi_gateway/module"
 	myLog "eabi_gateway/module/my_log"
 	webs "eabi_gateway/module/websocket"
+	"encoding/json"
 
 	"sync"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 var (
@@ -59,9 +63,19 @@ func rebootNetConnet(host, path string) {
 
 func ping() {
 	for {
-		//TODO
-		SendData([]byte("{\"msgType\":\"GET\",\"msgId\":\"a7356eac-71ae-4862-b66c-a212cd292baf\",\"msgGwId\":\"AFAF73EADCF5\",\"msgTimeStamp\":1586162503,\"msgParam\":\"ping\"}"))
-		time.Sleep(1 * time.Second)
+		param := &model.StdReq{
+			MsgType:      "GET",
+			MsgID:        uuid.New().String(),
+			MsgGwID:      config.SysParamGwId(),
+			MsgTimeStamp: time.Now().Unix(),
+			MsgParam:     "ping",
+		}
+		if buf, err := json.Marshal(param); err != nil {
+			log.PrintlnErr(err)
+		} else {
+			SendData(buf)
+		}
+		time.Sleep(time.Duration(config.SysParamHeartCycle()) * time.Second)
 	}
 }
 
@@ -81,8 +95,20 @@ func waitHeart() {
 func pong() {
 	for {
 		<-netPing
-		//TODO
-		SendData([]byte("{\"msgType\":\"XXX\",\"msgId\":\"\",\"msgGwId\":\"XXXXXXXXXXXX\",\"msgTimeStamp\":1586162503,\"msgParam\":\"pong\"}"))
+
+		param := &model.StdResp{
+			MsgType:      "GET",
+			MsgID:        uuid.New().String(),
+			MsgGwID:      config.SysParamGwId(),
+			MsgTimeStamp: time.Now().Unix(),
+			MsgParam:     "pong",
+			MsgResp:      "ok",
+		}
+		if buf, err := json.Marshal(param); err != nil {
+			log.PrintlnErr(err)
+		} else {
+			SendData(buf)
+		}
 	}
 }
 

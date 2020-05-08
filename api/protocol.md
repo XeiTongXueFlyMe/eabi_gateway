@@ -102,7 +102,7 @@
 >"serverIP":"10.56.1.34",
 >"serverPort":"8287",
 >"rfId":"AFAF73BADCED",
->"rfChannel":"1",//TODO:范围？
+>"rfChannel":"1",
 >"rfNetId":"AFAF73BADCAA",
 >"dataUpCycle":1, //单位秒
 >"heartCycle":1  //单位秒
@@ -126,7 +126,7 @@
 >"serverIP":"10.56.1.34",
 >"serverPort":"8287",
 >"rfId":"AFAF73BADCED",
->"rfChannel":1,   //TODO:范围？
+>"rfChannel":1, 
 >"rfNetId":"AFAF73BADCAA",
 >"dataUpCycle":1, //单位秒
 >"heartCycle":1  //单位秒

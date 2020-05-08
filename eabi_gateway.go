@@ -7,7 +7,6 @@ import (
 	module "eabi_gateway/module"
 	myLog "eabi_gateway/module/my_log"
 
-	"fmt"
 	"time"
 )
 
@@ -31,13 +30,9 @@ func main() {
 	//TODO:初始化射频网络
 	rfNet.RfNetInfoInit()
 
-	//lora网络信息统计
-	//rfNetInfoInit()
-
 	//初始化网络链接
 	net.NetInit()
 
-	fmt.Println("hi i am eabi_gateway :)")
 	for {
 		time.Sleep(1 * time.Hour)
 	}

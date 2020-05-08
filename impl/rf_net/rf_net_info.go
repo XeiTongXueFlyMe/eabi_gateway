@@ -21,6 +21,10 @@ func CleanInfo() {
 	}
 }
 
+func ReadInfo() map[string]modle.RfNetInfo {
+	return rfNetInfoMap
+}
+
 func WriteInfo(id, name, sVer, hVer, channel string) error {
 	info := modle.RfNetInfo{
 		ID:          id,

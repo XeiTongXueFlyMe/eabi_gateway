@@ -18,7 +18,7 @@ func CreateMsgField(field string, ch chan []byte) {
 
 //按api规定的格式解析
 func waitNetData() {
-
+	//TODO：做一下身份识别
 	for {
 		buf := <-netDataBufChan
 		tmpField := &tmpField{}

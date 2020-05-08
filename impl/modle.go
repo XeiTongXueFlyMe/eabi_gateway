@@ -57,6 +57,6 @@ type RfNetInfoResp struct {
 	MsgTimeStamp int64       `json:"msgTimeStamp"`
 	MsgParam     string      `json:"msgParam"`
 	MsgResp      string      `json:"msgResp"`
-	RfNetNum     string      `json:"rfNetNum"`
+	RfNetNum     int         `json:"rfNetNum"`
 	RfNetInfo    []RfNetInfo `json:"rfNetInfo"`
 }

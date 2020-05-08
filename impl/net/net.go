@@ -17,7 +17,7 @@ var (
 	netPing  chan []byte
 )
 
-func sendNetData(buf []byte) (int, error) {
+func SendData(buf []byte) (int, error) {
 	mu.Lock()
 	defer mu.Unlock()
 
@@ -60,7 +60,7 @@ func rebootNetConnet(host, path string) {
 func ping() {
 	for {
 		//TODO
-		sendNetData([]byte("{\"msgType\":\"GET\",\"msgId\":\"a7356eac-71ae-4862-b66c-a212cd292baf\",\"msgGwId\":\"AFAF73EADCF5\",\"msgTimeStamp\":1586162503,\"msgParam\":\"ping\"}"))
+		SendData([]byte("{\"msgType\":\"GET\",\"msgId\":\"a7356eac-71ae-4862-b66c-a212cd292baf\",\"msgGwId\":\"AFAF73EADCF5\",\"msgTimeStamp\":1586162503,\"msgParam\":\"ping\"}"))
 		time.Sleep(1 * time.Second)
 	}
 }
@@ -82,7 +82,7 @@ func pong() {
 	for {
 		<-netPing
 		//TODO
-		sendNetData([]byte("{\"msgType\":\"XXX\",\"msgId\":\"\",\"msgGwId\":\"XXXXXXXXXXXX\",\"msgTimeStamp\":1586162503,\"msgParam\":\"pong\"}"))
+		SendData([]byte("{\"msgType\":\"XXX\",\"msgId\":\"\",\"msgGwId\":\"XXXXXXXXXXXX\",\"msgTimeStamp\":1586162503,\"msgParam\":\"pong\"}"))
 	}
 }
 

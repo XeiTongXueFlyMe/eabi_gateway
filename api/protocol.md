@@ -95,14 +95,14 @@
 >"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162656,
->"msgParam":"getGatewayParam",
+>"msgParam":"gatewayParam",
 >"msgResp":"ok",
 >"gwId":"AFAF73BADCF6", 
 >"gwIP":"192.168.0.2",
 >"serverIP":"10.56.1.34",
 >"serverPort":"8287",
 >"rfId":"AFAF73BADCED",
->"rfChannel":1,//TODO:范围？
+>"rfChannel":"1",//TODO:范围？
 >"rfNetId":"AFAF73BADCAA",
 >"dataUpCycle":1, //单位秒
 >"heartCycle":1  //单位秒
@@ -397,9 +397,9 @@
 >"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162503,
->"msgParam":"alarmConfig",
+>"msMsgTimeStampg",
 >}
->```
+>```MsgTimeStamp
 * resp:
 >```json
 >{

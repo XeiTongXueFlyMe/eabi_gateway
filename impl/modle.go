@@ -4,7 +4,7 @@ type StdReq struct {
 	MsgType      string `json:"msgType"`
 	MsgID        string `json:"msgId"`
 	MsgGwID      string `json:"msgGwId"`
-	MsgTimeStamp string `json:"msgTimeStamp"`
+	MsgTimeStamp int64  `json:"msgTimeStamp"`
 	MsgParam     string `json:"msgParam"`
 }
 
@@ -12,7 +12,7 @@ type StdResp struct {
 	MsgType      string `json:"msgType"`
 	MsgID        string `json:"msgId"`
 	MsgGwID      string `json:"msgGwId"`
-	MsgTimeStamp string `json:"msgTimeStamp"`
+	MsgTimeStamp int64  `json:"msgTimeStamp"`
 	MsgParam     string `json:"msgParam"`
 	MsgResp      string `json:"msgResp"`
 }
@@ -21,7 +21,7 @@ type GatewayParmResp struct {
 	MsgType      string `json:"msgType"`
 	MsgID        string `json:"msgId"`
 	MsgGwID      string `json:"msgGwId"`
-	MsgTimeStamp string `json:"msgTimeStamp"`
+	MsgTimeStamp int64  `json:"msgTimeStamp"`
 	MsgParam     string `json:"msgParam"`
 	MsgResp      string `json:"msgResp"`
 	GwID         string `json:"gwId"`
@@ -31,8 +31,8 @@ type GatewayParmResp struct {
 	RfID         string `json:"rfId"`
 	RfChannel    string `json:"rfChannel"`
 	RfNetID      string `json:"rfNetId"`
-	DataUpCycle  string `json:"dataUpCycle"`
-	HeartCycle   string `json:"heartCycle"`
+	DataUpCycle  int    `json:"dataUpCycle"`
+	HeartCycle   int    `json:"heartCycle"`
 }
 
 type RfNetInfo struct {
@@ -54,7 +54,7 @@ type RfNetInfoResp struct {
 	MsgType      string      `json:"msgType"`
 	MsgID        string      `json:"msgId"`
 	MsgGwID      string      `json:"msgGwId"`
-	MsgTimeStamp string      `json:"msgTimeStamp"`
+	MsgTimeStamp int64       `json:"msgTimeStamp"`
 	MsgParam     string      `json:"msgParam"`
 	MsgResp      string      `json:"msgResp"`
 	RfNetNum     string      `json:"rfNetNum"`

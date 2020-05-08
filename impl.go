@@ -1,9 +1,11 @@
 package main
 
 import (
+	modle "eabi_gateway/impl"
 	"eabi_gateway/impl/config"
 	"eabi_gateway/impl/net"
 	"encoding/json"
+	"time"
 )
 
 var gatewayParamChannel chan []byte
@@ -20,7 +22,7 @@ func waitGatewayParamConfig() {
 			if str, ok := v.(string); ok {
 				switch str {
 				case "GET":
-					sendConfigToServer()
+					gwParmToServer(m)
 				case "PUT":
 					config.ConfigTofile(m)
 				}
@@ -33,8 +35,53 @@ func waitGatewayParamConfig() {
 	}
 }
 
-func sendConfigToServer() {
-	//TODO
+func gwParmToServer(m map[string]interface{}) {
+	var msgID string
+
+	for k, v := range m {
+		switch k {
+		case "msgId":
+			if str, ok := v.(string); ok {
+				msgID = str
+			} else {
+				log.PrintfErr("json msgId is no string")
+			}
+		}
+	}
+
+	ip, port := config.SysParamServerIPAndPort()
+	rfid, rfchan, rfnetid := config.SysParamRf()
+
+	param := &modle.GatewayParmResp{
+		MsgType:      "GET",
+		MsgID:        msgID,
+		MsgGwID:      config.SysParamGwId(),
+		MsgTimeStamp: time.Now().Unix(),
+		MsgParam:     "gatewayParam",
+		MsgResp:      "ok",
+		GwID:         config.SysParamGwId(),
+		GwIP:         config.SysParamGwIp(),
+		ServerIP:     ip,
+		ServerPort:   port,
+		RfID:         rfid,
+		RfChannel:    rfchan,
+		RfNetID:      rfnetid,
+		DataUpCycle:  config.SysParamDataUpCycle(),
+		HeartCycle:   config.SysParamHeartCycle(),
+	}
+
+	buf, err := json.Marshal(param)
+	if err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+	if _, err := net.SendData(buf); err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+
+_exit:
+	return
 }
 
 func implInit() {

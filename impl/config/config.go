@@ -1,8 +1,8 @@
 package config
 
 import (
-	modle "eabi_gateway/model"
-	myLog "eabi_gateway/model/my_log"
+	module "eabi_gateway/module"
+	myLog "eabi_gateway/module/my_log"
 	"fmt"
 	"os"
 
@@ -34,7 +34,7 @@ type SysParam struct {
 var cfgName = `./config.yaml`
 
 var sysParam SysParam
-var log modle.LogInterfase
+var log module.LogInterfase
 
 //初始化，读取配置文件到缓存
 func SysParamInit() {
@@ -123,7 +123,7 @@ func ConfigTofile(m map[string]interface{}) {
 	}
 }
 
-//写配置文件到缓存
+//写缓存到配置文件
 func writeSysParamToFile() error {
 	if b, err := yaml.Marshal(sysParam); err == nil {
 		f, er := os.OpenFile(cfgName, os.O_RDWR|os.O_CREATE, 0777)

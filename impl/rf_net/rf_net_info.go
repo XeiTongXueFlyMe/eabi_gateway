@@ -1,37 +1,92 @@
-package main
+package rfNet
 
-type rfNetInfo struct {
-	ID          string `json:"id"`
-	Name        string `json:"name"`
-	SoftwareVer string `json:"softwareVer"`
-	HardwareVer string `json:"hardwareVer"`
-	Channel1    string `json:"channel_1"`
-	Channel2    string `json:"channel_2"`
-	Channel3    string `json:"channel_3"`
-	Channel4    string `json:"channel_4"`
-	Channel5    string `json:"channel_5"`
-	Channel6    string `json:"channel_6"`
-	Channel7    string `json:"channel_7"`
-	Channel8    string `json:"channel_8"`
+import (
+	"os"
+
+	modle "eabi_gateway/impl"
+
+	"gopkg.in/yaml.v2"
+)
+
+var rfNetInfoMap map[string]modle.RfNetInfo
+var rfNetInfoFileName = "./rf_net_info.yaml"
+
+func RfNetInfoInit() {
+	rfNetInfoMap = make(map[string]modle.RfNetInfo)
 }
 
-var rfNetInfoMap map[string]rfNetInfo
-var rfNetChan chan []byte
-
-func rfNetInfoInit() {
-	rfNetInfoMap = make(map[string]rfNetInfo)
-	//TODO:
-
-	//createMsgField("")
-
-}
-
-func cleanRfNetInfo() {
+func CleanInfo() {
 	for k := range rfNetInfoMap {
 		delete(rfNetInfoMap, k)
 	}
 }
 
-func readRfNetInfo() {
-	//TODO:sendNetData()
+func WriteInfo(id, name, sVer, hVer, channel string) error {
+	info := modle.RfNetInfo{
+		ID:          id,
+		Name:        name,
+		SoftwareVer: sVer,
+		HardwareVer: hVer,
+		Channel1:    "no",
+		Channel2:    "no",
+		Channel3:    "no",
+		Channel4:    "no",
+		Channel5:    "no",
+		Channel6:    "no",
+		Channel7:    "no",
+		Channel8:    "no",
+	}
+
+	if v, ok := rfNetInfoMap[info.ID]; ok {
+		info.Channel1 = v.Channel1
+		info.Channel2 = v.Channel2
+		info.Channel3 = v.Channel3
+		info.Channel4 = v.Channel4
+		info.Channel5 = v.Channel5
+		info.Channel6 = v.Channel6
+		info.Channel7 = v.Channel7
+		info.Channel8 = v.Channel8
+	}
+
+	switch channel {
+	case "Channel1":
+		info.Channel1 = "yes"
+	case "Channel2":
+		info.Channel2 = "yes"
+	case "Channel3":
+		info.Channel3 = "yes"
+	case "Channel4":
+		info.Channel4 = "yes"
+	case "Channel5":
+		info.Channel5 = "yes"
+	case "Channel6":
+		info.Channel6 = "yes"
+	case "Channel7":
+		info.Channel7 = "yes"
+	case "Channel8":
+		info.Channel8 = "yes"
+
+	}
+
+	defer writeSysParamToFile()
+	rfNetInfoMap[info.ID] = info
+
+	return nil
+}
+
+//写缓存到配置文件
+func writeSysParamToFile() error {
+	if b, err := yaml.Marshal(rfNetInfoMap); err == nil {
+		f, er := os.OpenFile(rfNetInfoFileName, os.O_RDWR|os.O_CREATE, 0777)
+		if er != nil {
+			return er
+		}
+		defer f.Close()
+
+		if _, err = f.Write(b); err != nil {
+			return err
+		}
+	}
+
+	return nil
 }

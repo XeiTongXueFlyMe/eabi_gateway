@@ -1,17 +1,17 @@
 package main
 
 import (
-	"eabi_gateway/impl"
 	config "eabi_gateway/impl/config"
 	net "eabi_gateway/impl/net"
-	modle "eabi_gateway/model"
-	myLog "eabi_gateway/model/my_log"
+	rfNet "eabi_gateway/impl/rf_net"
+	module "eabi_gateway/module"
+	myLog "eabi_gateway/module/my_log"
 
 	"fmt"
 	"time"
 )
 
-var log modle.LogInterfase
+var log module.LogInterfase
 
 func hello() {
 	log = &myLog.L{}
@@ -20,16 +20,16 @@ func hello() {
 
 func main() {
 	hello()
-
 	//初始化业务逻辑
 	net.APIInit()
 
 	//读取本地配置
 	config.SysParamInit()
 
-	impl.ImplInit()
+	implInit()
 
 	//TODO:初始化射频网络
+	rfNet.RfNetInfoInit()
 
 	//lora网络信息统计
 	//rfNetInfoInit()

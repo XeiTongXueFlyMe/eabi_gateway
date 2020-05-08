@@ -2,9 +2,9 @@ package net
 
 import (
 	"eabi_gateway/impl/config"
-	modle "eabi_gateway/model"
-	myLog "eabi_gateway/model/my_log"
-	webs "eabi_gateway/model/websocket"
+	module "eabi_gateway/module"
+	myLog "eabi_gateway/module/my_log"
+	webs "eabi_gateway/module/websocket"
 
 	"sync"
 	"time"
@@ -12,7 +12,7 @@ import (
 
 var (
 	mu       sync.RWMutex
-	net      modle.NetInterfase
+	net      module.NetInterfase
 	netHeart chan []byte
 	netPing  chan []byte
 )
@@ -59,6 +59,7 @@ func rebootNetConnet(host, path string) {
 
 func ping() {
 	for {
+		//TODO
 		sendNetData([]byte("{\"msgType\":\"GET\",\"msgId\":\"a7356eac-71ae-4862-b66c-a212cd292baf\",\"msgGwId\":\"AFAF73EADCF5\",\"msgTimeStamp\":1586162503,\"msgParam\":\"ping\"}"))
 		time.Sleep(1 * time.Second)
 	}
@@ -80,11 +81,12 @@ func waitHeart() {
 func pong() {
 	for {
 		<-netPing
+		//TODO
 		sendNetData([]byte("{\"msgType\":\"XXX\",\"msgId\":\"\",\"msgGwId\":\"XXXXXXXXXXXX\",\"msgTimeStamp\":1586162503,\"msgParam\":\"pong\"}"))
 	}
 }
 
-var log modle.LogInterfase
+var log module.LogInterfase
 
 func NetInit() {
 	log = &myLog.L{}

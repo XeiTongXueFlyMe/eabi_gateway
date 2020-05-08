@@ -1,6 +1,7 @@
 package main
 
 import (
+	"eabi_gateway/impl"
 	config "eabi_gateway/impl/config"
 	net "eabi_gateway/impl/net"
 	modle "eabi_gateway/model"
@@ -25,13 +26,15 @@ func main() {
 
 	//读取本地配置
 	config.SysParamInit()
+
+	impl.ImplInit()
+
 	//TODO:初始化射频网络
 
 	//lora网络信息统计
 	//rfNetInfoInit()
 
 	//初始化网络链接
-	//TODO：为了测试，暂时关闭
 	net.NetInit()
 
 	fmt.Println("hi i am eabi_gateway :)")

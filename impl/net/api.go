@@ -12,7 +12,7 @@ type tmpField struct {
 }
 
 //申请一个消息字典，用于消息解析
-func createMsgField(field string, ch chan []byte) {
+func CreateMsgField(field string, ch chan []byte) {
 	msgMap[field] = ch
 }
 

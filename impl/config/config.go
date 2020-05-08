@@ -3,7 +3,6 @@ package config
 import (
 	modle "eabi_gateway/model"
 	myLog "eabi_gateway/model/my_log"
-	"encoding/json"
 	"fmt"
 	"os"
 
@@ -35,7 +34,6 @@ type SysParam struct {
 var cfgName = `./config.yaml`
 
 var sysParam SysParam
-var gatewayParamChannel chan []byte
 var log modle.LogInterfase
 
 //初始化，读取配置文件到缓存
@@ -62,48 +60,13 @@ func SysParamInit() {
 
 	log.Printlntml(string(buf[0:n]))
 
-	gatewayParamChannel = make(chan []byte, 1)
-	//TODO
-	//createMsgField("gatewayParam", gatewayParamChannel)
-
-	go waitGatewayParamConfig()
 	return
 
 _exit:
 	panic(err)
 }
 
-//TODO　放在你这里不合适
-func waitGatewayParamConfig() {
-	for {
-		buf := <-gatewayParamChannel
-
-		m := make(map[string]interface{})
-		if err := json.Unmarshal(buf, &m); err != nil {
-			log.PrintlnErr(err)
-		}
-		if v, ok := m["msgType"]; ok {
-			if str, ok := v.(string); ok {
-				switch str {
-				case "GET":
-					sendConfigToServer()
-				case "PUT":
-					configTofile(m)
-				}
-			} else {
-				log.PrintfErr("json msgType no is string")
-			}
-		} else {
-			log.PrintlnErr("no find msgType")
-		}
-	}
-}
-
-func sendConfigToServer() {
-	//TODO
-}
-
-func configTofile(m map[string]interface{}) {
+func ConfigTofile(m map[string]interface{}) {
 	defer writeSysParamToFile()
 
 	for k, v := range m {

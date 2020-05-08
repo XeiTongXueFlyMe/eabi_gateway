@@ -92,8 +92,8 @@ func NetInit() {
 	netHeart = make(chan []byte, 1)
 	netPing = make(chan []byte, 1)
 
-	createMsgField("pong", netHeart)
-	createMsgField("ping", netPing)
+	CreateMsgField("pong", netHeart)
+	CreateMsgField("ping", netPing)
 
 	ip, p := config.SysParamServerIPAndPort()
 	rebootNetConnet(ip+":"+p, config.SysParamPath())

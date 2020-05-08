@@ -13,3 +13,13 @@
 2020/05/08 15:06:29 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
 2020/05/08 15:06:37 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
 2020/05/08 15:07:53 eabi_gateway.go:17: [info]eabi_gateway start runing :)
+2020/05/08 15:23:46 eabi_gateway.go:18: [info]eabi_gateway start runing :)
+2020/05/08 15:23:47 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:23:52 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:23:58 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:24:03 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:24:11 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:24:16 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:24:24 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:24:30 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:24:37 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused

@@ -6,3 +6,10 @@
 2020/05/08 14:47:11 eabi_gateway.go:16: [info]eabi_gateway start runing :)
 2020/05/08 14:47:25 eabi_gateway.go:16: [info]eabi_gateway start runing :)
 2020/05/08 14:49:24 eabi_gateway.go:16: [info]eabi_gateway start runing :)
+2020/05/08 15:06:11 eabi_gateway.go:17: [info]eabi_gateway start runing :)
+2020/05/08 15:06:13 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:06:18 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:06:24 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:06:29 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:06:37 net.go:50: [err]websocket.Dial ws://192.168.0.168:8286/: dial tcp 192.168.0.168:8286: connect: connection refused
+2020/05/08 15:07:53 eabi_gateway.go:17: [info]eabi_gateway start runing :)

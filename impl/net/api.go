@@ -42,7 +42,7 @@ func waitNetData() {
 	}
 }
 
-func apiInit() {
+func APIInit() {
 	msgMap = make(map[string]chan []byte)
 	netDataBufChan = make(chan []byte, 1000)
 

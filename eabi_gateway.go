@@ -2,6 +2,7 @@ package main
 
 import (
 	config "eabi_gateway/impl/config"
+	net "eabi_gateway/impl/net"
 	modle "eabi_gateway/model"
 	myLog "eabi_gateway/model/my_log"
 
@@ -11,12 +12,16 @@ import (
 
 var log modle.LogInterfase
 
-func main() {
+func hello() {
 	log = &myLog.L{}
 	log.PrintfInfo("eabi_gateway start runing :)")
+}
+
+func main() {
+	hello()
 
 	//初始化业务逻辑
-	//apiInit()
+	net.APIInit()
 
 	//读取本地配置
 	config.SysParamInit()
@@ -27,7 +32,7 @@ func main() {
 
 	//初始化网络链接
 	//TODO：为了测试，暂时关闭
-	//netInit()
+	net.NetInit()
 
 	fmt.Println("hi i am eabi_gateway :)")
 	for {

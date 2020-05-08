@@ -1,9 +1,11 @@
 package net
 
 import (
+	"eabi_gateway/impl/config"
 	modle "eabi_gateway/model"
-	log "eabi_gateway/model/my_log"
+	myLog "eabi_gateway/model/my_log"
 	webs "eabi_gateway/model/websocket"
+
 	"sync"
 	"time"
 )
@@ -69,8 +71,8 @@ func waitHeart() {
 		case <-time.After(5 * time.Second):
 			log.PrintfWarring("心跳超时")
 			net.Close()
-			ip, p := sysParamServerIPAndPort()
-			rebootNetConnet(ip+":"+p, sysParamPath())
+			ip, p := config.SysParamServerIPAndPort()
+			rebootNetConnet(ip+":"+p, config.SysParamPath())
 		}
 	}
 }
@@ -82,15 +84,19 @@ func pong() {
 	}
 }
 
+var log modle.LogInterfase
+
 func NetInit() {
+	log = &myLog.L{}
+
 	netHeart = make(chan []byte, 1)
 	netPing = make(chan []byte, 1)
 
 	createMsgField("pong", netHeart)
 	createMsgField("ping", netPing)
 
-	ip, p := sysParamServerIPAndPort()
-	rebootNetConnet(ip+":"+p, sysParamPath())
+	ip, p := config.SysParamServerIPAndPort()
+	rebootNetConnet(ip+":"+p, config.SysParamPath())
 
 	go ping()
 	go pong()

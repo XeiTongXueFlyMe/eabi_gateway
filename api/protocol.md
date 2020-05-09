@@ -246,7 +246,7 @@
 * resp:
 >```json
 >{
->"msgType":"GET",
+>"msgType":"DELETE",
 >"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162656,
@@ -328,17 +328,26 @@
 >      {
 >            "sensorId":"AFAF73BADCF6",
 >            "sensorName":"东１层２号气表",
+>            "sensorAdder":1,
+>            "dataAdder":0,
+>            "dataSize":4,
 >            "channelList":
 >            [
 >                {
 >                 "channel":1,
->                 "valueAdder":1,
->                 "ValueSize":2,
->                 "ValueType":"压力(Psi)",
+>                 "valueAdder":0,
+>                 "valueSize":2,
+>                 "valueType":"压力(Psi)",
+>                }, 
+>                {
+>                 "channel":2,
+>                 "valueAdder":2,
+>                 "valueSize":4,
+>                 "valueType":"距离(mm)",
 >                }, 
 >            ]
 >      },
->      ]    
+>      ] 
 >   },
 >}
 >```
@@ -363,13 +372,22 @@
 >      {
 >            "sensorId":"AFAF73BADCF6",
 >            "sensorName":"东１层２号气表",
+>            "sensorAdder":1,
+>            "dataAdder":0,
+>            "dataSize":4,
 >            "channelList":
 >            [
 >                {
 >                 "channel":1,
->                 "valueAdder":1,
->                 "ValueSize":2,
->                 "ValueType":"压力(Psi)",
+>                 "valueAdder":0,
+>                 "valueSize":2,
+>                 "valueType":"压力(Psi)",
+>                }, 
+>                {
+>                 "channel":2,
+>                 "valueAdder":2,
+>                 "valueSize":4,
+>                 "valueType":"距离(mm)",
 >                }, 
 >            ]
 >      },

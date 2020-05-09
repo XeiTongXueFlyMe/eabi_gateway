@@ -155,6 +155,7 @@ func rfNetInfoToServer(m map[string]interface{}) {
 _exit:
 	return
 }
+
 func implInit() {
 	gatewayParamChannel = make(chan []byte, 1)
 	net.CreateMsgField("gatewayParam", gatewayParamChannel)

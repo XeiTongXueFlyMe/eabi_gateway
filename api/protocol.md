@@ -328,9 +328,15 @@
 >      {
 >            "sensorId":"AFAF73BADCF6",
 >            "sensorName":"东１层２号气表",
->            "sensorAdder":1,
+>            "sensorAdder":0,
 >            "dataAdder":0,
 >            "dataSize":4,
+>            "work_Adder":35,
+>            "work_Size":4,
+>            "a_Adder":39,
+>            "a_Size":4,
+>            "b_Adder":43,
+>            "b_Size":4,
 >            "channelList":
 >            [
 >                {
@@ -375,6 +381,12 @@
 >            "sensorAdder":1,
 >            "dataAdder":0,
 >            "dataSize":4,
+>            "work_Adder":38,
+>            "work_Size":1,
+>            "a_Adder":39,
+>            "a_Size":4,
+>            "b_Adder":43,
+>            "b_Size":4,
 >            "channelList":
 >            [
 >                {
@@ -489,10 +501,10 @@
 >"msgParam":"alarmConfig",
 >"sensorId":"AFAF73BADCF6",
 >"channel":1,
->"work":"start", //stop
->"standa_a":20,
->"standa_b":30,
 >"output": 0,  //1
+>"work":"start", //stop
+>"standa_a":0.01,//4字节浮点数
+>"standa_b":0.01,//4字节浮点数
 >}
 >```
 

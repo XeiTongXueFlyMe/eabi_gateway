@@ -12,6 +12,7 @@ import (
 var gatewayParamChannel chan []byte
 var rfNetInfoChannel chan []byte
 var sensorInfoCfgChannel chan []byte
+var alarmInfoCfgChannel chan []byte
 
 func waitGatewayParamConfig() {
 	for {
@@ -207,6 +208,56 @@ func waitSensorCfgInfoConfig() {
 	}
 }
 
+func alarmCfgToServer(req modle.AlarmInfoReq, aInfo []modle.AlarmInfo) {
+
+	param := &modle.AlarmInfoResp{
+		MsgType:      "GET",
+		MsgID:        req.MsgID,
+		MsgGwID:      config.SysParamGwId(),
+		MsgTimeStamp: time.Now().Unix(),
+		MsgParam:     "alarmConfig",
+		MsgResp:      "ok",
+	}
+
+	param.AlarmListNum = config.ReadAlarmCfgNum()
+	param.AlarmList = aInfo
+
+	buf, err := json.Marshal(param)
+	if err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+	if _, err := net.SendData(buf); err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+
+_exit:
+	return
+}
+
+func waitAlarmCfgInfoConfig() {
+	var alarmInfo modle.AlarmInfoReq
+
+	for {
+		buf := <-alarmInfoCfgChannel
+
+		if err := json.Unmarshal(buf, &alarmInfo); err != nil {
+			log.PrintlnErr(err)
+			continue
+		}
+
+		switch alarmInfo.MsgType {
+		case "GET":
+			alarmCfgToServer(alarmInfo, config.ReadAlarmCfg())
+		case "PUT":
+			config.WriteAlarmCfg(alarmInfo.AlarmList)
+		default:
+			log.PrintfErr("json msgType:%s no support ", alarmInfo.MsgType)
+		}
+	}
+}
+
 func implInit() {
 	//网关参数的增删改查
 	gatewayParamChannel = make(chan []byte, 1)
@@ -223,4 +274,10 @@ func implInit() {
 	sensorInfoCfgChannel = make(chan []byte, 1)
 	net.CreateMsgField("sensorInfo", sensorInfoCfgChannel)
 	go waitSensorCfgInfoConfig()
+
+	//报警参数配置
+	//TODO:本地存储或读取配置文件，
+	alarmInfoCfgChannel = make(chan []byte, 1)
+	net.CreateMsgField("alarmConfig", alarmInfoCfgChannel)
+	go waitAlarmCfgInfoConfig()
 }

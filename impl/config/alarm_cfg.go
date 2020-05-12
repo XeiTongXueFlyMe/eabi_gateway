@@ -17,6 +17,11 @@ func (t *AlarmList) findAlarmInfo(s string, c int) (modle.AlarmInfo, error) {
 	return modle.AlarmInfo{}, errors.New("no find")
 }
 
+//ReadAlarmCfgNum 获取报警参数配置数量
+func (t *AlarmList) ReadAlarmCfgNum() int {
+	return len(*t)
+}
+
 //IsAlarm 是否到达报警预值
 func (t *AlarmList) IsAlarm(sensorID string, channel int, value float32) bool {
 	v, err := t.findAlarmInfo(sensorID, channel)
@@ -70,4 +75,9 @@ func WriteAlarmCfg(alarmList []modle.AlarmInfo) {
 //ReadAlarmCfg 读报警参数配置
 func ReadAlarmCfg() []modle.AlarmInfo {
 	return def.ReadAlarmCfg()
+}
+
+//ReadAlarmCfgNum 获取报警参数配置数量
+func ReadAlarmCfgNum() int {
+	return def.ReadAlarmCfgNum()
 }

@@ -1,7 +1,7 @@
 package main
 
 import (
-	webs "eabi_gateway/model/websocket"
+	webs "eabi_gateway/module/websocket"
 	"fmt"
 	"time"
 )

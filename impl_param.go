@@ -204,7 +204,6 @@ func waitSensorCfgInfoConfig() {
 		default:
 			log.PrintfErr("json msgType:%s no support ", sensorInfo.MsgType)
 		}
-
 	}
 }
 
@@ -220,6 +219,7 @@ func implInit() {
 	go waitRfNetInfoConfig()
 
 	//传感器modbus配置
+	//TODO:本地存储或读取配置文件，
 	sensorInfoCfgChannel = make(chan []byte, 1)
 	net.CreateMsgField("sensorInfo", sensorInfoCfgChannel)
 	go waitSensorCfgInfoConfig()

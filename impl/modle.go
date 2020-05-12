@@ -103,3 +103,31 @@ type SensorInfoResp struct {
 	SensorListNum int          `json:"sensorListNum"`
 	SensorList    []SensorInfo `json:"sensorList"`
 }
+
+type AlarmInfo struct {
+	SensorID    string  `json:"sensorId"`
+	Channel     int     `json:"channel"`
+	AlarmValueL float32 `json:"alarmValue_l"`
+	AlarmValueH float32 `json:"alarmValue_h"`
+}
+
+type AlarmInfoReq struct {
+	MsgType      string      `json:"msgType"`
+	MsgID        string      `json:"msgId"`
+	MsgGwID      string      `json:"msgGwId"`
+	MsgTimeStamp int64       `json:"msgTimeStamp"`
+	MsgParam     string      `json:"msgParam"`
+	AlarmListNum int         `json:"alarmListNum"`
+	AlarmList    []AlarmInfo `json:"alarmList"`
+}
+
+type AlarmInfoResp struct {
+	MsgType      string      `json:"msgType"`
+	MsgID        string      `json:"msgId"`
+	MsgGwID      string      `json:"msgGwId"`
+	MsgTimeStamp int64       `json:"msgTimeStamp"`
+	MsgParam     string      `json:"msgParam"`
+	MsgResp      string      `json:"msgResp"`
+	AlarmListNum int         `json:"alarmListNum"`
+	AlarmList    []AlarmInfo `json:"alarmList"`
+}

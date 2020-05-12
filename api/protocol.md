@@ -382,8 +382,6 @@
 >            "sensorAdder":1,
 >            "dataAdder":0,
 >            "dataSize":4,
->            "work_Adder":38,
->            "work_Size":1,
 >            "channelList":
 >            [
 >                {

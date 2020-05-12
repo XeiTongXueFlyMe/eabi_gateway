@@ -96,4 +96,5 @@ func TestWriteSensorCfg(t *testing.T) {
 		assert.EqualValues(t, 28, vsize)
 		assert.EqualValues(t, "温度(℃)", typeV)
 	}
+	assert.EqualValues(t, 3, ReadSensorConfigNum())
 }

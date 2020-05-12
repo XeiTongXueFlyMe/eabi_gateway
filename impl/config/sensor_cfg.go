@@ -119,6 +119,11 @@ func (t *SensorList) ReadSensorConfig() []modle.SensorInfo {
 	return *t
 }
 
+//ReadSensorConfigNum 读传感器配置数量
+func (t *SensorList) ReadSensorConfigNum() int {
+	return len(*t)
+}
+
 //NewSensorConfig 初始化传感器配置
 func NewSensorConfig() *SensorList {
 	return &SensorList{}
@@ -169,4 +174,9 @@ func WriteSensorConfig(sList []modle.SensorInfo) {
 //ReadSensorConfig 读传感器配置
 func ReadSensorConfig() []modle.SensorInfo {
 	return common.ReadSensorConfig()
+}
+
+//ReadSensorConfigNum 读传感器配置数量
+func ReadSensorConfigNum() int {
+	return common.ReadSensorConfigNum()
 }

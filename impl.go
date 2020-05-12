@@ -11,6 +11,7 @@ import (
 
 var gatewayParamChannel chan []byte
 var rfNetInfoChannel chan []byte
+var sensorInfoCfgChannel chan []byte
 
 func waitGatewayParamConfig() {
 	for {
@@ -19,6 +20,7 @@ func waitGatewayParamConfig() {
 		m := make(map[string]interface{})
 		if err := json.Unmarshal(buf, &m); err != nil {
 			log.PrintlnErr(err)
+			continue
 		}
 		if v, ok := m["msgType"]; ok {
 			if str, ok := v.(string); ok {
@@ -93,6 +95,7 @@ func waitRfNetInfoConfig() {
 		m := make(map[string]interface{})
 		if err := json.Unmarshal(buf, &m); err != nil {
 			log.PrintlnErr(err)
+			continue
 		}
 		if v, ok := m["msgType"]; ok {
 			if str, ok := v.(string); ok {
@@ -155,6 +158,55 @@ func rfNetInfoToServer(m map[string]interface{}) {
 _exit:
 	return
 }
+func sensorCfgToServer(req modle.SensorInfoReq, sInfo []modle.SensorInfo) {
+
+	param := &modle.SensorInfoResp{
+		MsgType:      "GET",
+		MsgID:        req.MsgID,
+		MsgGwID:      config.SysParamGwId(),
+		MsgTimeStamp: time.Now().Unix(),
+		MsgParam:     "sensorInfo",
+		MsgResp:      "ok",
+	}
+	param.SensorListNum = config.ReadSensorConfigNum()
+	param.SensorList = sInfo
+
+	buf, err := json.Marshal(param)
+	if err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+	if _, err := net.SendData(buf); err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+
+_exit:
+	return
+}
+
+func waitSensorCfgInfoConfig() {
+	var sensorInfo modle.SensorInfoReq
+
+	for {
+		buf := <-sensorInfoCfgChannel
+
+		if err := json.Unmarshal(buf, &sensorInfo); err != nil {
+			log.PrintlnErr(err)
+			continue
+		}
+
+		switch sensorInfo.MsgType {
+		case "GET":
+			sensorCfgToServer(sensorInfo, config.ReadSensorConfig())
+		case "PUT":
+			config.WriteSensorConfig(sensorInfo.SensorList)
+		default:
+			log.PrintfErr("json msgType:%s no support ", sensorInfo.MsgType)
+		}
+
+	}
+}
 
 func implInit() {
 	//网关参数的增删改查
@@ -168,5 +220,7 @@ func implInit() {
 	go waitRfNetInfoConfig()
 
 	//传感器modbus配置
-
+	sensorInfoCfgChannel = make(chan []byte, 1)
+	net.CreateMsgField("sensorInfo", sensorInfoCfgChannel)
+	go waitSensorCfgInfoConfig()
 }

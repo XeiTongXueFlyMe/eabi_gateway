@@ -19,12 +19,13 @@ func hello() {
 
 func main() {
 	hello()
-	//初始化业务逻辑
+	//初始化业务路由
 	net.APIInit()
 
 	//读取本地配置
 	config.SysParamInit()
 
+	//初始化一些业务
 	implInit()
 
 	//TODO:初始化射频网络

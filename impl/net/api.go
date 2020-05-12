@@ -78,6 +78,7 @@ func waitNetData() {
 
 		if tmpField.MsgGwID != config.SysParamGwId() {
 			gwIdErr(buf)
+			continue
 		}
 
 		if neTmpChan, ok := msgMap[tmpField.MsgParam]; ok {

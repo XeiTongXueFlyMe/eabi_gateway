@@ -16,6 +16,8 @@ func RfNetInfoInit() {
 }
 
 func CleanInfo() {
+	defer writeSysParamToFile()
+
 	for k := range rfNetInfoMap {
 		delete(rfNetInfoMap, k)
 	}

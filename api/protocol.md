@@ -322,8 +322,6 @@
 >"msgResp":"ok",
 >"sensorListNum": 1,
 >"sensorList":
->   {
->   "sersor":
 >   [
 >      {
 >            "sensorId":"AFAF73BADCF6",
@@ -360,7 +358,6 @@
 >            ]
 >      },
 >      ] 
->   },
 >}
 >```
 # 6.２ 设置传感器配置
@@ -378,8 +375,6 @@
 >"msgParam":"sensorInfo",
 >"sensorListNum": 1,
 >"sensorList":
->   {
->   "sersor":
 >   [
 >      {
 >            "sensorId":"AFAF73BADCF6",
@@ -417,8 +412,7 @@
 >                }, 
 >            ]
 >      },
->      ]    
->   },
+>    ]    
 >}
 >```
 * resp:

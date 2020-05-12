@@ -157,11 +157,16 @@ _exit:
 }
 
 func implInit() {
+	//网关参数的增删改查
 	gatewayParamChannel = make(chan []byte, 1)
 	net.CreateMsgField("gatewayParam", gatewayParamChannel)
 	go waitGatewayParamConfig()
 
+	//射频网络的信息的删查
 	rfNetInfoChannel = make(chan []byte, 1)
 	net.CreateMsgField("rfNetInfo", rfNetInfoChannel)
 	go waitRfNetInfoConfig()
+
+	//传感器modbus配置
+
 }

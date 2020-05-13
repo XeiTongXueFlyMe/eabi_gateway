@@ -6,7 +6,10 @@ import (
 	"eabi_gateway/impl/net"
 	rfNet "eabi_gateway/impl/rf_net"
 	"encoding/json"
+	"os"
 	"time"
+
+	"gopkg.in/yaml.v2"
 )
 
 var gatewayParamChannel chan []byte
@@ -186,8 +189,75 @@ _exit:
 	return
 }
 
+type sensorCfgFile struct {
+	SensorList []modle.SensorInfo `json:"sensorList"`
+}
+
+func writeSensorCfgToFile(sList []modle.SensorInfo) {
+	cfg := sensorCfgFile{SensorList: sList}
+
+	if b, err := json.Marshal(cfg); err == nil {
+		f, er := os.OpenFile("sensorCfg.json", os.O_RDWR|os.O_CREATE, 0777)
+		if er != nil {
+			log.Printlntml(er)
+			return
+		}
+		defer f.Close()
+
+		if _, err = f.Write(b); err != nil {
+			log.Printlntml(err)
+			return
+		}
+	}
+
+	if b, err := yaml.Marshal(cfg); err == nil {
+		f, er := os.OpenFile("sensorCfg.yaml", os.O_RDWR|os.O_CREATE, 0777)
+		if er != nil {
+			log.Printlntml(er)
+			return
+		}
+		defer f.Close()
+
+		if _, err = f.Write(b); err != nil {
+			log.Printlntml(err)
+			return
+		}
+	}
+
+	return
+}
+
+func readSensorCfgTofile(cfg *sensorCfgFile) {
+	var err error
+	var n int
+	var f *os.File
+
+	buf := make([]byte, 1024*100)
+
+	f, err = os.OpenFile("sensorCfg.json", os.O_RDWR|os.O_CREATE, 0777)
+	if err != nil {
+		goto _exit
+	}
+	defer f.Close()
+
+	if n, err = f.Read(buf); err != nil {
+		goto _exit
+	}
+	if err = json.Unmarshal(buf[0:n], cfg); err != nil {
+		goto _exit
+	}
+
+	return
+
+_exit:
+	panic(err)
+}
+
 func waitSensorCfgInfoConfig() {
 	var sensorInfo modle.SensorInfoReq
+	var cfg sensorCfgFile
+	readSensorCfgTofile(&cfg)
+	config.WriteSensorConfig(cfg.SensorList)
 
 	for {
 		buf := <-sensorInfoCfgChannel
@@ -202,6 +272,7 @@ func waitSensorCfgInfoConfig() {
 			sensorCfgToServer(sensorInfo, config.ReadSensorConfig())
 		case "PUT":
 			config.WriteSensorConfig(sensorInfo.SensorList)
+			writeSensorCfgToFile(sensorInfo.SensorList)
 		default:
 			log.PrintfErr("json msgType:%s no support ", sensorInfo.MsgType)
 		}
@@ -270,7 +341,6 @@ func implInit() {
 	go waitRfNetInfoConfig()
 
 	//传感器modbus配置
-	//TODO:本地存储或读取配置文件，
 	sensorInfoCfgChannel = make(chan []byte, 1)
 	net.CreateMsgField("sensorInfo", sensorInfoCfgChannel)
 	go waitSensorCfgInfoConfig()

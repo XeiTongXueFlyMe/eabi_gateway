@@ -1,0 +1,39 @@
+sensorlist:
+- sensorid: "123456"
+  sensorname: 东1层1号气表
+  sensoradder: 5
+  dataadder: 1
+  datasize: 4
+  channellist: []
+- sensorid: "234567"
+  sensorname: 东1层2号气表
+  sensoradder: 0
+  dataadder: 0
+  datasize: 0
+  channellist:
+  - channel: 1
+    aadder: 11
+    asize: 12
+    badder: 13
+    bsize: 14
+    workadder: 15
+    worksize: 16
+    valueadder: 17
+    valuesize: 18
+    valuetype: 温度(℃)
+  - channel: 2
+    aadder: 21
+    asize: 22
+    badder: 23
+    bsize: 24
+    workadder: 25
+    worksize: 26
+    valueadder: 27
+    valuesize: 28
+    valuetype: 温度(℃)
+- sensorid: "3456789"
+  sensorname: 东1层3号气表
+  sensoradder: 0
+  dataadder: 0
+  datasize: 0
+  channellist: []

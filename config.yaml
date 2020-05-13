@@ -1,7 +1,7 @@
 myself:
-  gwId: ABABABABABAB
+  gwId: FEFEABABABFE
   gwIP: 192.168.0.102
-  serverIP: 192.168.0.168
+  serverIP: 192.168.0.254
   serverPort: "8286"
   dataUpCycle: 10
   heartCycle: 15

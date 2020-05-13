@@ -1,3 +1,3 @@
-2020/05/13 15:10:06 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 15:11:33 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 15:11:48 eabi_gateway.go:17: [info]eabi_gateway start runing :)
+2020/05/13 15:18:35 eabi_gateway.go:17: [info]eabi_gateway start runing :)
+2020/05/13 15:18:36 net.go:68: [info]Reconnect to the server 1 Second after 
+2020/05/13 15:18:36 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc0000000b"}

@@ -246,11 +246,8 @@ func readSensorCfgTofile(cfg *sensorCfgFile) {
 	if err = json.Unmarshal(buf[0:n], cfg); err != nil {
 		goto _exit
 	}
-
-	return
-
 _exit:
-	panic(err)
+	return
 }
 
 func waitSensorCfgInfoConfig() {
@@ -307,8 +304,73 @@ _exit:
 	return
 }
 
+type alarmCfgFile struct {
+	AlarmList []modle.AlarmInfo `json:"AlarmList"`
+}
+
+func writeAlarmCfgToFile(l []modle.AlarmInfo) {
+	cfg := alarmCfgFile{AlarmList: l}
+
+	if b, err := json.Marshal(cfg); err == nil {
+		f, er := os.OpenFile("alarmCfg.json", os.O_RDWR|os.O_CREATE, 0777)
+		if er != nil {
+			log.Printlntml(er)
+			return
+		}
+		defer f.Close()
+
+		if _, err = f.Write(b); err != nil {
+			log.Printlntml(err)
+			return
+		}
+	}
+
+	if b, err := yaml.Marshal(cfg); err == nil {
+		f, er := os.OpenFile("alarmCfg.yaml", os.O_RDWR|os.O_CREATE, 0777)
+		if er != nil {
+			log.Printlntml(er)
+			return
+		}
+		defer f.Close()
+
+		if _, err = f.Write(b); err != nil {
+			log.Printlntml(err)
+			return
+		}
+	}
+
+	return
+}
+
+func readAlarmCfgTofile(cfg *alarmCfgFile) {
+	var err error
+	var n int
+	var f *os.File
+
+	buf := make([]byte, 1024*100)
+
+	f, err = os.OpenFile("alarmCfg.json", os.O_RDWR|os.O_CREATE, 0777)
+	if err != nil {
+		goto _exit
+	}
+	defer f.Close()
+
+	if n, err = f.Read(buf); err != nil {
+		goto _exit
+	}
+	if err = json.Unmarshal(buf[0:n], cfg); err != nil {
+		goto _exit
+	}
+
+_exit:
+	return
+}
+
 func waitAlarmCfgInfoConfig() {
 	var alarmInfo modle.AlarmInfoReq
+	var cfg alarmCfgFile
+	readAlarmCfgTofile(&cfg)
+	config.WriteAlarmCfg(cfg.AlarmList)
 
 	for {
 		buf := <-alarmInfoCfgChannel
@@ -323,6 +385,7 @@ func waitAlarmCfgInfoConfig() {
 			alarmCfgToServer(alarmInfo, config.ReadAlarmCfg())
 		case "PUT":
 			config.WriteAlarmCfg(alarmInfo.AlarmList)
+			writeAlarmCfgToFile(alarmInfo.AlarmList)
 		default:
 			log.PrintfErr("json msgType:%s no support ", alarmInfo.MsgType)
 		}

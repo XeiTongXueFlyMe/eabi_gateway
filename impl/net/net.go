@@ -46,18 +46,26 @@ func waitNetReceive() {
 }
 
 func rebootNetConnet(host, path string) {
+	var one sync.Once
+
 	mu.Lock()
 	defer mu.Unlock()
+	t := time.Now().Unix()
+
 	for {
 		net = &webs.Conn{}
 		if err := net.Open(host, path); err != nil {
-			log.PrintlnErr(err)
+			one.Do(func() {
+				log.PrintlnErr(err)
+			})
+
 			time.Sleep(5 * time.Second)
 			continue
 		}
 		break
 	}
 
+	log.PrintfInfo("Reconnect to the server %d Second after ", time.Now().Unix()-t)
 	go waitNetReceive()
 }
 

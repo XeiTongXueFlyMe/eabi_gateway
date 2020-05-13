@@ -76,7 +76,7 @@ func waitNetData() {
 			continue
 		}
 
-		if tmpField.MsgGwID != config.SysParamGwId() {
+		if (tmpField.MsgGwID != config.SysParamGwId()) && (tmpField.MsgGwID != "") {
 			gwIdErr(buf)
 			continue
 		}
@@ -84,7 +84,7 @@ func waitNetData() {
 		if neTmpChan, ok := msgMap[tmpField.MsgParam]; ok {
 			neTmpChan <- buf
 		} else {
-			log.PrintlnErr("msgMap no find field:", tmpField.MsgParam)
+			log.PrintlnErr("msgMap no find field:", string(buf))
 		}
 
 	}

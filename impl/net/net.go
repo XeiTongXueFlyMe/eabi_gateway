@@ -63,6 +63,8 @@ func rebootNetConnet(host, path string) {
 
 func ping() {
 	for {
+		mu.Lock()
+		mu.Unlock()
 		param := &model.StdReq{
 			MsgType:      "GET",
 			MsgID:        uuid.New().String(),
@@ -83,7 +85,7 @@ func waitHeart() {
 	for {
 		select {
 		case <-netHeart:
-		case <-time.After(5 * time.Second):
+		case <-time.After(time.Duration(config.SysParamHeartCycle()) * time.Second * 3):
 			log.PrintfWarring("心跳超时")
 			net.Close()
 			ip, p := config.SysParamServerIPAndPort()

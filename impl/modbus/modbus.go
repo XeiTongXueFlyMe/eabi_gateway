@@ -151,6 +151,8 @@ func (m *RespInfo) IsSupportModbusForm() bool {
 		if l != 8 {
 			return false
 		}
+	default:
+		return false
 	}
 
 	return true

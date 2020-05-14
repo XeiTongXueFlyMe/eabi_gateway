@@ -5,6 +5,7 @@ import (
 	net "eabi_gateway/impl/net"
 	rfNet "eabi_gateway/impl/rf_net"
 	module "eabi_gateway/module"
+	"eabi_gateway/module/lora"
 	myLog "eabi_gateway/module/my_log"
 
 	"time"
@@ -29,6 +30,7 @@ func main() {
 	implInit()
 
 	//初始化射频网络
+	defer lora.Close()
 	rfNet.RfNetInfoInit()
 	rfNet.LoraInit()
 	rfInit()
@@ -36,6 +38,7 @@ func main() {
 	//初始化网络链接
 	net.NetInit()
 
+	//TODO:上传本地调试日志到服务器，每天上传一次，或则服务器主动获取
 	for {
 		time.Sleep(1 * time.Hour)
 	}

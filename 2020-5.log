@@ -1,92 +1,110 @@
-2020/05/13 15:18:35 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 15:18:36 net.go:68: [info]Reconnect to the server 1 Second after 
-2020/05/13 15:18:36 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc0000000b"}
-2020/05/13 15:29:14 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 15:29:14 net.go:68: [info]Reconnect to the server 0 Second after 
-2020/05/13 15:29:14 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb80000000e"}
-2020/05/13 17:10:13 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:10:13 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:10:13 net.go:59: [err]websocket.Dial ws://192.168.0.254:8286/: dial tcp 192.168.0.254:8286: connect: connection refused
-2020/05/13 17:10:18 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:10:18 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:10:18 net.go:59: [err]websocket.Dial ws://192.168.0.254:8286/: dial tcp 192.168.0.254:8286: connect: connection refused
-2020/05/13 17:10:20 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:10:20 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:10:20 net.go:59: [err]websocket.Dial ws://192.168.0.254:8286/: dial tcp 192.168.0.254:8286: connect: connection refused
-2020/05/13 17:10:22 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:10:22 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:10:22 net.go:59: [err]websocket.Dial ws://192.168.0.254:8286/: dial tcp 192.168.0.254:8286: connect: connection refused
-2020/05/13 17:10:31 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:10:31 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:10:31 net.go:59: [err]websocket.Dial ws://192.168.0.254:8286/: dial tcp 192.168.0.254:8286: connect: connection refused
-2020/05/13 17:10:58 lora_net.go:44: [err]EOF
-2020/05/13 17:29:22 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:29:22 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:30:02 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:30:02 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:31:43 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:31:43 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:31:49 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:31:49 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:32:15 lora_net.go:44: [err]EOF
-2020/05/13 17:32:20 lora_net.go:44: [err]EOF
-2020/05/13 17:32:25 lora_net.go:44: [err]EOF
-2020/05/13 17:32:30 lora_net.go:44: [err]EOF
-2020/05/13 17:32:34 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:32:34 lora_net.go:63: [err]open /dev/ttyUSB0: no such file or directory
-2020/05/13 17:33:56 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:33:56 lora_net.go:63: [err]open /dev/ttyUSB0: no such file or directory
-2020/05/13 17:34:08 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:34:08 lora_net.go:63: [err]open /dev/ttyUSB0: no such file or directory
-2020/05/13 17:34:26 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:34:26 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:35:54 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:35:54 lora_net.go:73: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:37:16 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:37:16 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:37:36 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:37:36 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:38:51 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:38:51 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:39:36 lora_net.go:44: [err]EOF
-2020/05/13 17:40:13 lora_net.go:44: [err]EOF
-2020/05/13 17:40:56 lora_net.go:44: [err]EOF
-2020/05/13 17:41:00 net.go:59: [err]websocket.Dial ws://192.168.0.254:8286/: dial tcp 192.168.0.254:8286: connect: connection timed out
-2020/05/13 17:41:43 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:41:43 lora_net.go:72: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:42:30 lora_net.go:46: [err]EOF
-2020/05/13 17:42:51 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:42:51 lora_net.go:73: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:43:19 lora_net.go:47: [err]EOF
-2020/05/13 17:44:02 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:44:03 lora_net.go:73: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:45:04 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:45:04 lora_net.go:73: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:45:08 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:45:08 lora_net.go:73: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:46:04 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:46:04 lora_net.go:71: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:46:34 lora_net.go:45: [err]EOF
-2020/05/13 17:47:13 lora_net.go:45: [err]EOF
-2020/05/13 17:47:50 lora_net.go:45: [err]EOF
-2020/05/13 17:48:14 net.go:59: [err]websocket.Dial ws://192.168.0.254:8286/: dial tcp 192.168.0.254:8286: connect: connection timed out
-2020/05/13 17:51:01 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:51:01 lora_net.go:74: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:53:11 net.go:59: [err]websocket.Dial ws://192.168.0.254:8286/: dial tcp 192.168.0.254:8286: connect: connection timed out
-2020/05/13 17:58:06 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 17:58:06 lora_net.go:74: [info]Reconnect open lora module 0 Second after 
-2020/05/13 17:58:06 net.go:68: [info]Reconnect to the server 0 Second after 
-2020/05/13 17:58:06 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb90000000b"}
-2020/05/13 18:17:08 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 18:17:08 lora_net.go:74: [info]Reconnect open lora module 0 Second after 
-2020/05/13 18:17:08 net.go:68: [info]Reconnect to the server 0 Second after 
-2020/05/13 18:17:08 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb90000000d"}
-2020/05/13 19:55:28 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/13 19:55:28 lora_net.go:74: [info]Reconnect open lora module 0 Second after 
-2020/05/13 19:55:28 net.go:68: [info]Reconnect to the server 0 Second after 
-2020/05/13 19:55:28 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbf0000000d"}
-2020/05/14 08:18:49 eabi_gateway.go:17: [info]eabi_gateway start runing :)
-2020/05/14 08:18:49 lora_net.go:74: [info]Reconnect open lora module 0 Second after 
-2020/05/14 08:18:49 net.go:59: [err]websocket.Dial ws://47.108.88.41:8286/: dial tcp 47.108.88.41:8286: connect: connection refused
-2020/05/14 09:01:45 net.go:68: [info]Reconnect to the server 2576 Second after 
-2020/05/14 09:01:45 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc0000000b"}
+2020/05/14 17:46:13 eabi_gateway.go:17: [info]eabi_gateway start runing :)
+2020/05/14 17:46:13 lora_net.go:90: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 17:46:43 lora_net.go:97: [info]Reconnect open lora module 30 Second after 
+2020/05/14 17:46:43 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/14 17:46:43 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb0000002b"}
+2020/05/14 17:47:03 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 17:47:03 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 17:47:53 lora_net.go:76: [info]Reconnect open lora module 50 Second after 
+2020/05/14 17:48:28 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 17:48:28 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 17:51:09 eabi_gateway.go:17: [info]eabi_gateway start runing :)
+2020/05/14 17:51:09 lora_net.go:90: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 17:51:20 eabi_gateway.go:17: [info]eabi_gateway start runing :)
+2020/05/14 17:51:20 lora_net.go:90: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 17:51:45 eabi_gateway.go:17: [info]eabi_gateway start runing :)
+2020/05/14 17:51:45 lora_net.go:97: [info]Reconnect open lora module 0 Second after 
+2020/05/14 17:51:45 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/14 17:51:45 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbf0000002c"}
+2020/05/14 17:51:46 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 17:51:51 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 17:51:56 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 17:52:01 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 17:52:06 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 17:52:11 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 17:52:16 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 17:52:21 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 17:52:26 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 17:52:31 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 17:52:55 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 17:57:24 eabi_gateway.go:17: [info]eabi_gateway start runing :)
+2020/05/14 17:57:24 lora_net.go:90: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 17:58:30 eabi_gateway.go:18: [info]eabi_gateway start runing :)
+2020/05/14 17:58:30 lora_net.go:97: [info]Reconnect open lora module 0 Second after 
+2020/05/14 17:58:30 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/14 17:58:30 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb0000002e"}
+2020/05/14 17:58:35 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 17:58:35 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 17:59:15 lora_net.go:76: [info]Reconnect open lora module 40 Second after 
+2020/05/14 17:59:30 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 17:59:30 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 18:00:50 eabi_gateway.go:18: [info]eabi_gateway start runing :)
+2020/05/14 18:00:50 lora_net.go:90: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 18:01:12 eabi_gateway.go:18: [info]eabi_gateway start runing :)
+2020/05/14 18:01:12 lora_net.go:97: [info]Reconnect open lora module 0 Second after 
+2020/05/14 18:01:12 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/14 18:01:12 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb90000003e"}
+2020/05/14 18:01:14 impl_rf.go:72: [warring]rfNet invalid data:5e435e405e405e405e5f5e42
+2020/05/14 18:01:18 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:01:23 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:01:28 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:01:33 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:01:38 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:01:43 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:01:48 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:02:00 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:02:03 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:02:08 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:02:13 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:02:18 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:02:23 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:02:28 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:02:33 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:02:38 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:02:43 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:02:48 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:02:53 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:02:58 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:03:03 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:03:08 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:03:13 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:03:18 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:03:23 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:03:28 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:03:33 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:03:38 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:03:43 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:03:52 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 18:03:52 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 18:08:51 eabi_gateway.go:18: [info]eabi_gateway start runing :)
+2020/05/14 18:08:51 lora_net.go:90: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 18:09:35 eabi_gateway.go:18: [info]eabi_gateway start runing :)
+2020/05/14 18:09:35 lora_net.go:90: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 18:09:45 lora_net.go:97: [info]Reconnect open lora module 10 Second after 
+2020/05/14 18:09:45 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/14 18:09:45 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbe0000002f"}
+2020/05/14 18:09:46 impl_rf.go:72: [warring]rfNet invalid data:00
+2020/05/14 18:09:55 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 18:09:55 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 18:10:14 eabi_gateway.go:18: [info]eabi_gateway start runing :)
+2020/05/14 18:10:14 lora_net.go:97: [info]Reconnect open lora module 0 Second after 
+2020/05/14 18:10:14 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/14 18:10:14 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb900000041"}
+2020/05/14 18:10:19 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 18:10:19 lora_net.go:46: [err]read /dev/ttyUSB0: file already closed
+2020/05/14 18:10:19 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 18:10:44 lora_net.go:76: [info]Reconnect open lora module 25 Second after 
+2020/05/14 18:10:46 impl_rf.go:72: [warring]rfNet invalid data:02031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d334c
+2020/05/14 18:10:51 impl_rf.go:72: [warring]rfNet invalid data:03031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d02dc
+2020/05/14 18:10:56 impl_rf.go:72: [warring]rfNet invalid data:01031f000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d63bc
+2020/05/14 18:11:04 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 18:11:04 lora_net.go:46: [err]read /dev/ttyUSB0: file already closed
+2020/05/14 18:11:04 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 18:12:57 eabi_gateway.go:18: [info]eabi_gateway start runing :)
+2020/05/14 18:12:57 lora_net.go:97: [info]Reconnect open lora module 0 Second after 
+2020/05/14 18:12:58 net.go:68: [info]Reconnect to the server 1 Second after 
+2020/05/14 18:12:58 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb00000033"}
+2020/05/14 18:13:02 lora_net.go:24: [err]write /dev/ttyUSB0: input/output error
+2020/05/14 18:13:02 lora_net.go:46: [err]read /dev/ttyUSB0: file already closed
+2020/05/14 18:13:02 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/14 18:13:32 lora_net.go:76: [info]Reconnect open lora module 30 Second after 

@@ -28,8 +28,10 @@ func main() {
 	//初始化一些业务
 	implInit()
 
-	//TODO:初始化射频网络
+	//初始化射频网络
 	rfNet.RfNetInfoInit()
+	rfNet.LoraInit()
+	rfInit()
 
 	//初始化网络链接
 	net.NetInit()

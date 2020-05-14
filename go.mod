@@ -7,7 +7,7 @@ require (
 	github.com/google/uuid v1.1.1
 	github.com/imroc/req v0.3.0
 	github.com/stretchr/testify v1.5.1
-	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07 // indirect
+	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 	golang.org/x/net v0.0.0-20200506145744-7e3656a0809f
 	gopkg.in/yaml.v2 v2.2.8
 )

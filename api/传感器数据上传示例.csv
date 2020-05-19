@@ -1,4 +1,4 @@
-sourceId,gwId,sensorName,sensorId,timeStamp,Channel,type,value
+sourceId,gwId,sensorName,sensorId,timeStamp,Channel,unit,value
 a7356eac-71ae-4862-b66c-a212cd292baf,AFAF73BADCF7,东二层1号,AFAF73BADCF7,1586162503,1,温度(℃),38.6
 a7356eac-71ae-4862-b66c-a212cd292baf,AFAF73BADCF7,东二层1号,AFAF73BADCF7,1586162503,2,压力(Psi),1200
 a7356eac-71ae-4862-b66c-a212cd292baf,AFAF73BADCF7,东二层1号,AFAF73BADCF7,1586162503,3,温度(℃),38.6

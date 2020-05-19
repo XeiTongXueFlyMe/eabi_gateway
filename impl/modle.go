@@ -131,3 +131,29 @@ type AlarmInfoResp struct {
 	AlarmListNum int         `json:"alarmListNum"`
 	AlarmList    []AlarmInfo `json:"alarmList"`
 }
+
+//UpDataMetaInfo 传感器上传的元信息
+type UpDataMetaInfo struct {
+	SourceID   string
+	GwID       string
+	SensorName string
+	SensorID   string
+	TimeStamp  int64
+	Channel    uint32
+	Unit       string //单位
+	Value      float64
+}
+
+//AlarmMetaInfo 数据报警的元信息
+type AlarmMetaInfo struct {
+	alarmID     string
+	GwID        string
+	SensorName  string
+	SensorID    string
+	TimeStamp   int64
+	Channel     uint32
+	AlarmParamH float64
+	AlarmParamL float64
+	Param       float64
+	isok        string
+}

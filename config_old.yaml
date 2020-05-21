@@ -1,0 +1,15 @@
+myself:
+  gwId: FEFEABABABFE
+  gwIP: 192.168.0.102
+  serverIP: 47.108.88.41
+  serverPort: "8286"
+  dataUpCycle: 120
+  heartCycle: 30
+  dataReadCycle: 60
+websocket:
+  path: /
+rf:
+  id: ACACACACACAC
+  channel: "1"
+  netId: BEBEBEBEBEBE
+

@@ -4,6 +4,7 @@ import (
 	config "eabi_gateway/impl/config"
 	net "eabi_gateway/impl/net"
 	rfNet "eabi_gateway/impl/rf_net"
+	"eabi_gateway/impl/updata"
 	module "eabi_gateway/module"
 	"eabi_gateway/module/lora"
 	myLog "eabi_gateway/module/my_log"
@@ -28,6 +29,7 @@ func main() {
 
 	//初始化一些业务
 	implInit()
+	updata.Init()
 
 	//初始化射频网络
 	defer lora.Close()

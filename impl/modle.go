@@ -141,19 +141,19 @@ type UpDataMetaInfo struct {
 	TimeStamp  int64
 	Channel    uint32
 	Unit       string //单位
-	Value      float64
+	Value      float32
 }
 
 //AlarmMetaInfo 数据报警的元信息
 type AlarmMetaInfo struct {
-	alarmID     string
+	AlarmID     string
 	GwID        string
 	SensorName  string
 	SensorID    string
 	TimeStamp   int64
 	Channel     uint32
-	AlarmParamH float64
-	AlarmParamL float64
-	Param       float64
-	isok        string
+	AlarmParamH float32
+	AlarmParamL float32
+	Param       float32
+	Isok        string
 }

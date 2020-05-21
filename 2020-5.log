@@ -1,0 +1,10 @@
+2020/05/21 16:02:09 eabi_gateway.go:18: [info]eabi_gateway start runing :)
+2020/05/21 16:02:09 lora_net.go:24: [err]common is null
+2020/05/21 16:02:09 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/21 16:02:09 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/21 16:02:09 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bba000003c3","msgParam":"systemLogin"}
+2020/05/21 17:30:41 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/21 17:30:41 lora_net.go:24: [err]common is null
+2020/05/21 17:30:41 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
+2020/05/21 17:30:41 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/21 17:30:41 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb000000bf","msgParam":"systemLogin"}

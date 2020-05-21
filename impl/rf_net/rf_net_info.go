@@ -27,7 +27,7 @@ func ReadInfo() map[string]modle.RfNetInfo {
 	return rfNetInfoMap
 }
 
-func WriteInfo(id, name, sVer, hVer, channel string) error {
+func WriteInfo(id, name, sVer, hVer, channel string) {
 	info := modle.RfNetInfo{
 		ID:          id,
 		Name:        name,
@@ -76,8 +76,6 @@ func WriteInfo(id, name, sVer, hVer, channel string) error {
 
 	defer writeSysParamToFile()
 	rfNetInfoMap[info.ID] = info
-
-	return nil
 }
 
 //写缓存到配置文件

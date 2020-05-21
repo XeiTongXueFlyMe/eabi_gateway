@@ -32,7 +32,10 @@ func waitGatewayParamConfig() {
 				case "GET":
 					gwParmToServer(m)
 				case "PUT":
-					config.ConfigTofile(m)
+					msgResp := config.ConfigTofile(m)
+					respToServer(m["msgId"], msgResp, "gatewayParam")
+				case "DELETE":
+					respDeleteToServer(m["msgId"], "ok", "gatewayParam")
 				}
 			} else {
 				log.PrintfErr("json msgType no is string")
@@ -41,6 +44,64 @@ func waitGatewayParamConfig() {
 			log.PrintlnErr("no find msgType")
 		}
 	}
+}
+
+func respToServer(msgID interface{}, msgResp string, msgParam string) {
+	param := &modle.StdResp{
+		MsgType:      "PUT",
+		MsgGwID:      config.SysParamGwId(),
+		MsgTimeStamp: time.Now().Unix(),
+		MsgParam:     msgParam,
+		MsgResp:      msgResp,
+	}
+
+	if id, ok := msgID.(string); ok {
+		param.MsgID = id
+	} else {
+		return
+	}
+
+	buf, err := json.Marshal(param)
+	if err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+	if _, err := net.SendData(buf); err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+
+_exit:
+	return
+}
+
+func respDeleteToServer(msgID interface{}, msgResp string, msgParam string) {
+	param := &modle.StdResp{
+		MsgType:      "DELETE",
+		MsgGwID:      config.SysParamGwId(),
+		MsgTimeStamp: time.Now().Unix(),
+		MsgParam:     msgParam,
+		MsgResp:      msgResp,
+	}
+
+	if id, ok := msgID.(string); ok {
+		param.MsgID = id
+	} else {
+		return
+	}
+
+	buf, err := json.Marshal(param)
+	if err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+	if _, err := net.SendData(buf); err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+
+_exit:
+	return
 }
 
 func gwParmToServer(m map[string]interface{}) {
@@ -108,6 +169,7 @@ func waitRfNetInfoConfig() {
 					rfNetInfoToServer(m)
 				case "DELETE":
 					rfNet.CleanInfo()
+					respDeleteToServer(m["msgId"], "ok", "rfNetInfo")
 				}
 			} else {
 				log.PrintfErr("json msgType no is string")
@@ -162,6 +224,7 @@ func rfNetInfoToServer(m map[string]interface{}) {
 _exit:
 	return
 }
+
 func sensorCfgToServer(req modle.SensorInfoReq, sInfo []modle.SensorInfo) {
 
 	param := &modle.SensorInfoResp{
@@ -270,6 +333,7 @@ func waitSensorCfgInfoConfig() {
 		case "PUT":
 			config.WriteSensorConfig(sensorInfo.SensorList)
 			writeSensorCfgToFile(sensorInfo.SensorList)
+			respToServer(sensorInfo.MsgID, "ok", "sensorInfo")
 		default:
 			log.PrintfErr("json msgType:%s no support ", sensorInfo.MsgType)
 		}
@@ -386,6 +450,7 @@ func waitAlarmCfgInfoConfig() {
 		case "PUT":
 			config.WriteAlarmCfg(alarmInfo.AlarmList)
 			writeAlarmCfgToFile(alarmInfo.AlarmList)
+			respToServer(alarmInfo.MsgID, "ok", "alarmConfig")
 		default:
 			log.PrintfErr("json msgType:%s no support ", alarmInfo.MsgType)
 		}

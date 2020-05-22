@@ -1,1 +1,39 @@
-{}
+"111111111111":
+  id: "111111111111"
+  name: 东1层1号温度气压表
+  softwarever: v0.0.0
+  hardwarever: v0.0.0
+  channel1: "yes"
+  channel2: "yes"
+  channel3: "no"
+  channel4: "no"
+  channel5: "no"
+  channel6: "no"
+  channel7: "no"
+  channel8: "no"
+"222222222222":
+  id: "222222222222"
+  name: 东1层１号温度气压表
+  softwarever: v0.0.0
+  hardwarever: v0.0.0
+  channel1: "yes"
+  channel2: "yes"
+  channel3: "no"
+  channel4: "no"
+  channel5: "no"
+  channel6: "no"
+  channel7: "no"
+  channel8: "no"
+"333333333333":
+  id: "333333333333"
+  name: 东1层3号气表
+  softwarever: v0.0.0
+  hardwarever: v0.0.0
+  channel1: "yes"
+  channel2: "yes"
+  channel3: "no"
+  channel4: "no"
+  channel5: "no"
+  channel6: "no"
+  channel7: "no"
+  channel8: "no"

@@ -20,8 +20,9 @@ var alarmCsv *DataCsv
 func Init() {
 	log = &myLog.L{}
 
-	dataCsv = NewDataCsv("updata", "~/sdb/")
-	alarmCsv = NewDataCsv("alarm", "~/sdb/")
+	//TODO:
+	dataCsv = NewDataCsv("updata", "/home/immm/sdb/")
+	alarmCsv = NewDataCsv("alarm", "/home/immm/sdb/")
 	go dataUpCycle()
 
 	return

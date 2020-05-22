@@ -1,10 +1,46 @@
-2020/05/21 16:02:09 eabi_gateway.go:18: [info]eabi_gateway start runing :)
-2020/05/21 16:02:09 lora_net.go:24: [err]common is null
-2020/05/21 16:02:09 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
-2020/05/21 16:02:09 net.go:68: [info]Reconnect to the server 0 Second after 
-2020/05/21 16:02:09 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bba000003c3","msgParam":"systemLogin"}
-2020/05/21 17:30:41 eabi_gateway.go:19: [info]eabi_gateway start runing :)
-2020/05/21 17:30:41 lora_net.go:24: [err]common is null
-2020/05/21 17:30:41 lora_net.go:68: [err]open /dev/ttyUSB0: no such file or directory
-2020/05/21 17:30:41 net.go:68: [info]Reconnect to the server 0 Second after 
-2020/05/21 17:30:41 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb000000bf","msgParam":"systemLogin"}
+2020/05/22 14:25:27 net.go:39: [warring]websocker close : EOF
+2020/05/22 14:26:32 net.go:97: [warring]心跳超时
+2020/05/22 14:26:32 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 14:26:32 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb00000557","msgParam":"systemLogin"}
+2020/05/22 14:27:02 net.go:39: [warring]websocker close : EOF
+2020/05/22 14:28:27 net.go:97: [warring]心跳超时
+2020/05/22 14:28:27 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 14:28:27 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bba00000539","msgParam":"systemLogin"}
+2020/05/22 14:28:57 net.go:39: [warring]websocker close : EOF
+2020/05/22 14:30:44 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/22 14:30:44 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/05/22 14:30:44 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 14:30:44 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbf0000053b","msgParam":"systemLogin"}
+2020/05/22 14:38:11 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/22 14:38:11 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/05/22 14:38:11 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 14:38:12 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb0000055b","msgParam":"systemLogin"}
+2020/05/22 14:38:25 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/22 14:38:25 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/05/22 14:38:26 net.go:68: [info]Reconnect to the server 1 Second after 
+2020/05/22 14:38:26 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb0000055d","msgParam":"systemLogin"}
+2020/05/22 14:38:26 impl_rf.go:89: [warring]rfNet invalid data:1d1ea09d
+2020/05/22 14:39:06 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/22 14:39:06 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/05/22 14:39:06 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 14:39:06 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbd00000540","msgParam":"systemLogin"}
+2020/05/22 14:40:27 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/22 14:40:27 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/05/22 14:40:27 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 14:40:27 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbd00000542","msgParam":"systemLogin"}
+2020/05/22 14:41:04 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/22 14:41:04 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/05/22 14:41:04 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 14:41:04 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbd00000544","msgParam":"systemLogin"}
+2020/05/22 15:02:38 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/22 15:02:38 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/05/22 15:02:38 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 15:02:38 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb9000005cf","msgParam":"systemLogin"}
+2020/05/22 15:04:20 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/22 15:04:20 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/05/22 15:04:20 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 15:04:20 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bba000005f9","msgParam":"systemLogin"}
+2020/05/22 15:04:24 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/05/22 15:04:24 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/05/22 15:04:24 net.go:68: [info]Reconnect to the server 0 Second after 
+2020/05/22 15:04:24 api.go:87: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbf000005fb","msgParam":"systemLogin"}

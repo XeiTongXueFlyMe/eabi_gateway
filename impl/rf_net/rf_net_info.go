@@ -55,21 +55,21 @@ func WriteInfo(id, name, sVer, hVer, channel string) {
 	}
 
 	switch channel {
-	case "Channel1":
+	case "1":
 		info.Channel1 = "yes"
-	case "Channel2":
+	case "2":
 		info.Channel2 = "yes"
-	case "Channel3":
+	case "3":
 		info.Channel3 = "yes"
-	case "Channel4":
+	case "4":
 		info.Channel4 = "yes"
-	case "Channel5":
+	case "5":
 		info.Channel5 = "yes"
-	case "Channel6":
+	case "6":
 		info.Channel6 = "yes"
-	case "Channel7":
+	case "7":
 		info.Channel7 = "yes"
-	case "Channel8":
+	case "8":
 		info.Channel8 = "yes"
 
 	}

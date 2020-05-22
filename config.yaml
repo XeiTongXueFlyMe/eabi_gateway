@@ -3,9 +3,9 @@ myself:
   gwIP: 192.168.0.102
   serverIP: 47.108.88.41
   serverPort: "8286"
-  dataUpCycle: 120
+  dataUpCycle: 3600
   heartCycle: 30
-  dataReadCycle: 60
+  dataReadCycle: 5
 websocket:
   path: /
 rf:

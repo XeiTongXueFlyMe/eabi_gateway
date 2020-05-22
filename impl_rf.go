@@ -47,7 +47,7 @@ func deviceMarshaler() {
 				value := ByteToFloat32(buf[c.ValueAdder:])
 
 				//写rfnetinfo
-				rfNet.WriteInfo(v.SensorID, v.SensorName, "v0.0.0", "0.0.0", fmt.Sprintln(v.ChannelList[n].Channel))
+				rfNet.WriteInfo(v.SensorID, v.SensorName, "v0.0.0", "v0.0.0", fmt.Sprint(v.ChannelList[n].Channel))
 
 				//写上传文件
 				updata.WriteUpdata(v.SensorName, v.SensorID, v.ChannelList[n].ValueType, uint32(v.ChannelList[n].Channel), value)
@@ -118,7 +118,7 @@ func modbusDataTransmit() {
 
 		//按dataReadCycle周期休眠，需要判断读取数据总共用时多少
 		if int64(config.SysParamDataReadCycle()) > (time.Now().Unix() - t) {
-			time.Sleep(time.Duration(int64(config.SysParamDataReadCycle()) - (time.Now().Unix() - t)))
+			time.Sleep(time.Duration(int64(config.SysParamDataReadCycle())-(time.Now().Unix()-t)) * time.Second)
 		}
 	}
 }

@@ -5,6 +5,8 @@ import (
 	"eabi_gateway/impl/config"
 	"encoding/json"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 var netDataBufChan chan []byte
@@ -60,6 +62,23 @@ func gwIdErr(buf []byte) {
 	}
 }
 
+func noknowData(b []byte) {
+	param := &model.StdResp{
+		MsgType:      "XXX",
+		MsgID:        uuid.New().String(),
+		MsgGwID:      config.SysParamGwId(),
+		MsgTimeStamp: time.Now().Unix(),
+		MsgParam:     "XXX",
+		MsgResp:      "no is json data:",
+	}
+	param.MsgResp = param.MsgResp + string(b)
+	if buf, err := json.Marshal(param); err != nil {
+		log.PrintlnErr(err)
+	} else {
+		SendData(buf)
+	}
+}
+
 //按api规定的格式解析
 func waitNetData() {
 	for {
@@ -68,6 +87,7 @@ func waitNetData() {
 
 		if !json.Valid(buf) {
 			log.PrintlnWarring("json.Valid return false:", string(buf))
+			noknowData(buf)
 			continue
 		}
 
@@ -92,7 +112,7 @@ func waitNetData() {
 
 func APIInit() {
 	msgMap = make(map[string]chan []byte)
-	netDataBufChan = make(chan []byte, 1000)
+	netDataBufChan = make(chan []byte, 100)
 
 	go waitNetData()
 }

@@ -7,6 +7,7 @@ import (
 	myLog "eabi_gateway/module/my_log"
 	webs "eabi_gateway/module/websocket"
 	"encoding/json"
+	"fmt"
 
 	"sync"
 	"time"
@@ -32,13 +33,14 @@ func waitNetReceive() {
 	defer net.Close()
 
 	for {
-		buf := make([]byte, 1024)
+		buf := make([]byte, 1024*1024)
 		mu.Lock()
 		mu.Unlock()
 		if n, err := net.Read(buf); err != nil {
 			log.PrintlnWarring("websocker close :", err)
 			break
 		} else {
+			fmt.Printf("buf = %d\n", n)
 			log.Printlntml(string(buf))
 			netDataBufChan <- buf[0:n]
 		}

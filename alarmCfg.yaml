@@ -1,0 +1,5 @@
+alarmlist:
+- sensorid: AFAF73BADCF6
+  channel: 1
+  alarmvaluel: 10
+  alarmvalueh: 100

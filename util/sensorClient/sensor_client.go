@@ -22,6 +22,7 @@ func main() {
 	data := make([]byte, 1024)
 	for i := 0; i < len(data); i++ {
 		data[i] = byte(i)
+		data[i] = data[i] * data[i] / 2
 	}
 	for {
 		buf := make([]byte, 1024)

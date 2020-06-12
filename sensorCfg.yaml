@@ -25,6 +25,16 @@ sensorlist:
     valueadder: 27
     valuesize: 4
     valuetype: 压力(pa)
+  - channel: 2
+    aadder: 21
+    asize: 22
+    badder: 23
+    bsize: 24
+    workadder: 25
+    worksize: 26
+    valueadder: 27
+    valuesize: 4
+    valuetype: 压力(pa)
 - sensorid: "222222222222"
   sensorname: 东1层１号温度气压表
   sensoradder: 2
@@ -67,6 +77,46 @@ sensorlist:
     valueadder: 17
     valuesize: 4
     valuetype: 温度(℃)
+  - channel: 2
+    aadder: 21
+    asize: 22
+    badder: 23
+    bsize: 24
+    workadder: 25
+    worksize: 26
+    valueadder: 27
+    valuesize: 4
+    valuetype: 压力(pa)
+  - channel: 2
+    aadder: 21
+    asize: 22
+    badder: 23
+    bsize: 24
+    workadder: 25
+    worksize: 26
+    valueadder: 27
+    valuesize: 4
+    valuetype: 压力(pa)
+  - channel: 2
+    aadder: 21
+    asize: 22
+    badder: 23
+    bsize: 24
+    workadder: 25
+    worksize: 26
+    valueadder: 27
+    valuesize: 4
+    valuetype: 压力(pa)
+  - channel: 2
+    aadder: 21
+    asize: 22
+    badder: 23
+    bsize: 24
+    workadder: 25
+    worksize: 26
+    valueadder: 27
+    valuesize: 4
+    valuetype: 压力(pa)
   - channel: 2
     aadder: 21
     asize: 22

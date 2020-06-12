@@ -24,6 +24,7 @@ func waitGatewayParamConfig() {
 		m := make(map[string]interface{})
 		if err := json.Unmarshal(buf, &m); err != nil {
 			log.PrintlnErr(err)
+			respToServer(m["msgId"], err.Error(), "gatewayParam")
 			continue
 		}
 		if v, ok := m["msgType"]; ok {
@@ -160,6 +161,7 @@ func waitRfNetInfoConfig() {
 		m := make(map[string]interface{})
 		if err := json.Unmarshal(buf, &m); err != nil {
 			log.PrintlnErr(err)
+			respToServer(m["msgId"], err.Error(), "rfNetInfo")
 			continue
 		}
 		if v, ok := m["msgType"]; ok {
@@ -256,20 +258,20 @@ type sensorCfgFile struct {
 	SensorList []modle.SensorInfo `json:"sensorList"`
 }
 
-func writeSensorCfgToFile(sList []modle.SensorInfo) {
+func writeSensorCfgToFile(sList []modle.SensorInfo) error {
 	cfg := sensorCfgFile{SensorList: sList}
 
 	if b, err := json.Marshal(cfg); err == nil {
 		f, er := os.OpenFile("sensorCfg.json", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			log.Printlntml(er)
-			return
+			return err
 		}
 		defer f.Close()
 
 		if _, err = f.Write(b); err != nil {
 			log.Printlntml(err)
-			return
+			return err
 		}
 	}
 
@@ -277,17 +279,17 @@ func writeSensorCfgToFile(sList []modle.SensorInfo) {
 		f, er := os.OpenFile("sensorCfg.yaml", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			log.Printlntml(er)
-			return
+			return err
 		}
 		defer f.Close()
 
 		if _, err = f.Write(b); err != nil {
 			log.Printlntml(err)
-			return
+			return err
 		}
 	}
 
-	return
+	return nil
 }
 
 func readSensorCfgTofile(cfg *sensorCfgFile) {
@@ -324,7 +326,12 @@ func waitSensorCfgInfoConfig() {
 
 		if err := json.Unmarshal(buf, &sensorInfo); err != nil {
 			log.PrintlnErr(err)
+			respToServer(sensorInfo.MsgID, err.Error(), "sensorInfo")
 			continue
+		}
+
+		if (len(sensorInfo.SensorList) == 0) && (sensorInfo.MsgType == "PUT") {
+			respToServer(sensorInfo.MsgID, "SensorList is null", "sensorInfo")
 		}
 
 		switch sensorInfo.MsgType {

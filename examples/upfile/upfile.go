@@ -17,7 +17,7 @@ func main() {
 	resp, err := req.Post("http://192.168.0.194:8085/Test/addFileUpload", req.FileUpload{
 		File:      file,
 		FieldName: "file",
-		FileName:  "日志2015hello^^.log",
+		FileName:  "日志2015.log",
 	})
 	if err != nil {
 		fmt.Println(err)

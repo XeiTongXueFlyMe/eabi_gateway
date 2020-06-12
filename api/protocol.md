@@ -381,7 +381,7 @@
 >            "sensorName":"东１层２号气表",
 >            "sensorAdder":1,
 >            "dataAdder":0,
->            "dataSize":4,
+>            "dataSize":8,
 >            "channelList":
 >            [
 >                {
@@ -392,8 +392,10 @@
 >                 "b_Size":4,
 >                 "work_Adder":35,
 >                 "work_Size":4,
->                 "valueAdder":0,
->                 "valueSize":2,
+>                 "configAdder":10012,
+>                 "configSize":4,
+>                 "valueAdder":10012,
+>                 "valueSize":4,
 >                 "valueType":"压力(Psi)",
 >                }, 
 >                {
@@ -404,7 +406,7 @@
 >                 "b_Size":4,
 >                 "work_Adder":35,
 >                 "work_Size":4,
->                 "valueAdder":2,
+>                 "valueAdder":10014,
 >                 "valueSize":4,
 >                 "valueType":"距离(mm)",
 >                }, 

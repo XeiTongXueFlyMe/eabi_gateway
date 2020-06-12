@@ -31,19 +31,8 @@ func Init() {
 }
 
 //WriteUpdata 写入需要上传的数据
-func WriteUpdata(SensorName, SensorID, Unit string, Channel uint32, Value float32) {
-	d := modle.UpDataMetaInfo{
-		SourceID:  uuid.New().String(),
-		GwID:      config.SysParamGwId(),
-		TimeStamp: time.Now().Unix(),
-	}
-	d.SensorName = SensorName
-	d.SensorID = SensorID
-	d.Unit = Unit
-	d.Channel = Channel
-	d.Value = Value
-
-	dataCsv.Write(d)
+func WriteUpdata(updata modle.UpDataMetaInfo) {
+	dataCsv.Write(updata)
 }
 
 //TODO：按上传周期主动上传。

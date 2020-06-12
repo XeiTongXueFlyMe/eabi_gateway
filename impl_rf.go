@@ -9,6 +9,8 @@ import (
 	"fmt"
 	"runtime"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 var deviceIDTransmitChan chan uint8
@@ -24,6 +26,13 @@ func findDeviceAndChannel(id uint8) modle.SensorInfo {
 	return modle.SensorInfo{}
 }
 
+type alarmFactry struct {
+	AlarmID string
+	Isok    string
+}
+
+var AlarmMap map[string]alarmFactry
+
 func deviceMarshaler() {
 	runtime.Gosched()
 	for {
@@ -34,7 +43,7 @@ func deviceMarshaler() {
 		code, _ := b.ReadDeviceCode()
 		_, buf, bufsize, _ := b.ReadDeviceData()
 
-		//TODO
+		//TODO:暂时只处理　0x03
 		if code == 0x03 {
 			v := findDeviceAndChannel(id)
 
@@ -50,19 +59,50 @@ func deviceMarshaler() {
 				//TODO:设计有问题，现在只支持８个通道
 				rfNet.WriteInfo(v.SensorID, v.SensorName, "v0.0.0", "v0.0.0", fmt.Sprint(c.Channel))
 
-				//TODO:需要按新的上传文件　写上传文件
-				updata.WriteUpdata(v.SensorName, v.SensorID, c.ValueType, uint32(c.Channel), value)
-				//TODO:判断是否报警
-				//sensorID string, channel int, value float32
-				// if config.IsAlarm(v.SensorID, v.ChannelList[n].Channel, value) {
-				// 	if l, h, err := config.ReadAlarmParamLH(v.SensorID, v.ChannelList[n].Channel); err != nil {
-				// 		log.PrintlnErr(err)
-				// 		continue
-				// 	} else {
-				// 		//SensorName, SensorID, Isok string, Channel uint32, AlarmParamH, AlarmParamL, Value float64
-				// 		updata.WriteAlarmdata(v.SensorName, v.SensorID, "alarm", uint32(v.ChannelList[n].Channel), h, l, value)
-				// 	}
-				// }
+				//判断是否存在报警历史，如果没有，就新建一个报警,报警状态ok
+				if _, ok := AlarmMap[v.SensorID]; !ok {
+					AlarmMap[v.SensorID] = alarmFactry{
+						AlarmID: uuid.New().String(),
+						Isok:    "ok",
+					}
+				}
+
+				//判断是否报警
+				alarm := alarmFactry{}
+				if config.IsAlarm(v.SensorID, c.Channel, value) {
+					alarm = AlarmMap[v.SensorID]
+					if alarm.Isok != "alarm" {
+						alarm.AlarmID = uuid.New().String()
+						alarm.Isok = "alarm"
+					}
+				} else {
+					alarm = AlarmMap[v.SensorID]
+					alarm.Isok = "ok"
+				}
+				AlarmMap[v.SensorID] = alarm
+
+				//读取报警参数
+				l, h, err := config.ReadAlarmParamLH(v.SensorID, c.Channel)
+				if err != nil {
+					l = 0
+					h = 0
+				}
+
+				//写上传文件
+				d := modle.UpDataMetaInfo{
+					SourceID:    uuid.New().String(),
+					GwID:        config.SysParamGwId(),
+					TimeStamp:   time.Now().Unix(),
+					SensorID:    v.SensorID,
+					SensorName:  v.SensorName,
+					Unit:        c.ValueType,
+					Value:       value,
+					AlarmID:     alarm.AlarmID,
+					AlarmParamH: l,
+					AlarmParamL: h,
+					Isok:        alarm.Isok,
+				}
+				updata.WriteUpdata(d)
 			}
 		}
 	}
@@ -124,6 +164,7 @@ func modbusDataTransmit() {
 }
 
 func rfInit() {
+	AlarmMap = make(map[string]alarmFactry)
 	deviceIDTransmitChan = make(chan uint8)
 	deviceDataTransmitChan = make(chan modbus.RespInfo)
 

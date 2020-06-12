@@ -179,4 +179,3 @@ type UpDataMetaInfo struct {
 	AlarmParamL float32
 	Isok        string
 }
-

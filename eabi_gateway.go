@@ -19,6 +19,8 @@ func hello() {
 	log.PrintfInfo("eabi_gateway start runing :)")
 }
 
+var foobar map[string]string
+
 func main() {
 	hello()
 	//初始化业务路由

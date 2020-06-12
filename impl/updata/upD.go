@@ -28,15 +28,6 @@ func NewDataCsv(name, sdpath string) *DataCsv {
 	return &DataCsv{name: name, tempFileName: "temp", sdPath: sdpath}
 }
 
-// //AlarmMetaInfo 数据报警的元信息
-// type AlarmMetaInfo struct {
-
-// 	AlarmParamH float64
-// 	AlarmParamL float64
-// 	Param       float64
-// 	isok        string
-// }
-
 //Write 写入数据
 func (t *DataCsv) Write(d interface{}) {
 	s := []string{}
@@ -52,17 +43,6 @@ func (t *DataCsv) Write(d interface{}) {
 		s = append(s, fmt.Sprintf("%d", info.Channel))
 		s = append(s, info.Unit)
 		s = append(s, fmt.Sprintf("%f", info.Value))
-	case modle.AlarmMetaInfo:
-		info, _ := d.(modle.AlarmMetaInfo)
-		s = append(s, info.AlarmID)
-		s = append(s, info.GwID)
-		s = append(s, info.SensorName)
-		s = append(s, info.SensorID)
-		s = append(s, fmt.Sprintf("%d", info.TimeStamp))
-		s = append(s, fmt.Sprintf("%f", info.AlarmParamH))
-		s = append(s, fmt.Sprintf("%f", info.AlarmParamL))
-		s = append(s, fmt.Sprintf("%f", info.Param))
-		s = append(s, info.Isok)
 	}
 
 	//写永久储存的数据

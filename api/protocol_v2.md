@@ -610,14 +610,14 @@
 >"channelSetList":
 >[
 >   {
->       "chennal":1,
+>       "channal":1,
 >       "ubgAdder":0,//UBG地址设定
 >       "rangeLow":0, //零量程
 >       "rangeHigh":100,//满量程
 >       "k":1.0,//修正系数K
 >       "b":1.0,//修正系数B
 >       "period":10,//传感器周期
->       "channelEn":0,//通道使能\
+>       "channelEn":0,//通道使能
 >       "modbusAdder":25,//通道对应MODBUS地址
 >       "bufse":2, //通道对应数据长度
 >   },

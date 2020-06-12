@@ -75,6 +75,46 @@ type SensorInfo struct {
 	ChannelList []ChanneInfo `json:"channelList"`
 }
 
+//AdapterChanInfo 适配器通道信息
+type AdapterChanInfo struct {
+	Channal     string `json:"channal"`
+	UbgAdder    string `json:"ubgAdder"`    //UBG地址设定
+	RangeLow    string `json:"rangeLow"`    //零量程
+	RangeHigh   string `json:"rangeHigh"`   //满量程
+	K           string `json:"k"`           //修正系数K
+	B           string `json:"b"`           //修正系数B
+	Period      string `json:"period"`      //传感器周期
+	ChannelEn   string `json:"channelEn"`   //通道使能
+	ModbusAdder string `json:"modbusAdder"` //通道对应MODBUS地址
+	Bufse       string `json:"bufse"`       //通道对应数据长度
+}
+
+//AdapterInfo 适配器信息
+type AdapterInfo struct {
+	SensorID       string            `json:"sensorId"`
+	SensorAdder    int               `json:"sensorAdder"`
+	ChannelSetList []AdapterChanInfo `json:"channelSetList"`
+}
+
+type AdapterInfoResp struct {
+	MsgType      string      `json:"msgType"`
+	MsgID        string      `json:"msgId"`
+	MsgGwID      string      `json:"msgGwId"`
+	MsgTimeStamp int64       `json:"msgTimeStamp"`
+	MsgParam     string      `json:"msgParam"`
+	MsgResp      string      `json:"msgResp"`
+	AdapterInfo  AdapterInfo `json:"adapterInfo"`
+}
+
+type AdapterInfoReq struct {
+	MsgType      string      `json:"msgType"`
+	MsgID        string      `json:"msgId"`
+	MsgGwID      string      `json:"msgGwId"`
+	MsgTimeStamp int64       `json:"msgTimeStamp"`
+	MsgParam     string      `json:"msgParam"`
+	AdapterInfo  AdapterInfo `json:"adapterInfo"`
+}
+
 type SensorInfoReq struct {
 	MsgType       string       `json:"msgType"`
 	MsgID         string       `json:"msgId"`
@@ -126,26 +166,17 @@ type AlarmInfoResp struct {
 
 //UpDataMetaInfo 传感器上传的元信息
 type UpDataMetaInfo struct {
-	SourceID   string
-	GwID       string
-	SensorName string
-	SensorID   string
-	TimeStamp  int64
-	Channel    uint32
-	Unit       string //单位
-	Value      float32
-}
-
-//AlarmMetaInfo 数据报警的元信息
-type AlarmMetaInfo struct {
-	AlarmID     string
+	SourceID    string
 	GwID        string
 	SensorName  string
 	SensorID    string
 	TimeStamp   int64
 	Channel     uint32
+	Unit        string //单位
+	Value       float32
+	AlarmID     string
 	AlarmParamH float32
 	AlarmParamL float32
-	Param       float32
 	Isok        string
 }
+

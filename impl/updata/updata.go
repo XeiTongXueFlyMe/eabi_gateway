@@ -23,9 +23,8 @@ var alarmCsv *DataCsv
 func Init() {
 	log = &myLog.L{}
 
-	//TODO:
+	//TODO:文件路径靠配置
 	dataCsv = NewDataCsv("updata", "/home/immm/sdb/")
-	alarmCsv = NewDataCsv("alarm", "/home/immm/sdb/")
 	go dataUpCycle()
 
 	return
@@ -45,25 +44,6 @@ func WriteUpdata(SensorName, SensorID, Unit string, Channel uint32, Value float3
 	d.Value = Value
 
 	dataCsv.Write(d)
-}
-
-//WriteAlarmdata 写入需要上传的报警数据
-//Isok "ok" "alarm"
-func WriteAlarmdata(SensorName, SensorID, Isok string, Channel uint32, AlarmParamH, AlarmParamL, Value float32) {
-	d := modle.AlarmMetaInfo{
-		AlarmID:   uuid.New().String(),
-		GwID:      config.SysParamGwId(),
-		TimeStamp: time.Now().Unix(),
-	}
-	d.SensorName = SensorName
-	d.SensorID = SensorID
-	d.Channel = Channel
-	d.Param = Value
-	d.AlarmParamH = AlarmParamH
-	d.AlarmParamL = AlarmParamL
-	d.Isok = Isok
-
-	alarmCsv.Write(d)
 }
 
 //TODO：按上传周期主动上传。

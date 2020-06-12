@@ -62,16 +62,8 @@ type RfNetInfoResp struct {
 }
 
 type ChanneInfo struct {
-	Channel    int    `json:"channel"`    //通道号
-	AAdder     int    `json:"a_Adder"`    //标定系数ａ地址
-	ASize      int    `json:"a_Size"`     //标定系数ａ大小，浮点数
-	BAdder     int    `json:"b_Adder"`    //标定系数b地址
-	BSize      int    `json:"b_Size"`     //标定系数b大小，浮点数
-	WorkAdder  int    `json:"work_Adder"` //工作状态地址
-	WorkSize   int    `json:"work_Size"`  //工作状态地址大小
-	ValueAdder int    `json:"valueAdder"` //通道值地址
-	ValueSize  int    `json:"valueSize"`  //通道值大小
-	ValueType  string `json:"valueType"`  //通道值类型
+	Channel   int    `json:"channel"`   //通道号
+	ValueType string `json:"valueType"` //通道值类型
 }
 
 type SensorInfo struct {

@@ -61,54 +61,6 @@ _exit:
 	return &modle.ChanneInfo{}, fmt.Errorf("no find sensorId:%s and channel %d in SensorList", sensorID, channel)
 }
 
-//ChannelAFromID 获取传感器某个通道的标定数据a的modbus地址和大小
-func (t *SensorList) ChannelAFromID(sensorID string, channel int) (int, int, error) {
-	var cInfo *modle.ChanneInfo
-	var err error
-
-	if cInfo, err = t.findChanneInfoFromID(sensorID, channel); err != nil {
-		return 0, 0, err
-	}
-
-	return cInfo.AAdder, cInfo.ASize, nil
-}
-
-//ChannelBFromID 获取传感器某个通道的标定数据b的modbus地址和大小
-func (t *SensorList) ChannelBFromID(sensorID string, channel int) (int, int, error) {
-	var cInfo *modle.ChanneInfo
-	var err error
-
-	if cInfo, err = t.findChanneInfoFromID(sensorID, channel); err != nil {
-		return 0, 0, err
-	}
-
-	return cInfo.BAdder, cInfo.BSize, nil
-}
-
-//ChannelWorkFromID 获取传感器某个通道的工作状态的地址和大小
-func (t *SensorList) ChannelWorkFromID(sensorID string, channel int) (int, int, error) {
-	var cInfo *modle.ChanneInfo
-	var err error
-
-	if cInfo, err = t.findChanneInfoFromID(sensorID, channel); err != nil {
-		return 0, 0, err
-	}
-
-	return cInfo.WorkAdder, cInfo.WorkSize, nil
-}
-
-//ChannelValueFromID 获取传感器某个通道的值的地址和大小，值类型
-func (t *SensorList) ChannelValueFromID(sensorID string, channel int) (int, int, string, error) {
-	var cInfo *modle.ChanneInfo
-	var err error
-
-	if cInfo, err = t.findChanneInfoFromID(sensorID, channel); err != nil {
-		return 0, 0, "", err
-	}
-
-	return cInfo.ValueAdder, cInfo.ValueSize, cInfo.ValueType, nil
-}
-
 //WriteSensorConfig 写传感器配置
 func (t *SensorList) WriteSensorConfig(sList []modle.SensorInfo) {
 	*t = sList
@@ -144,26 +96,6 @@ func SensorAdderFromID(sensorID string) (int, error) {
 //SensorDataFromID 获取传感数据地址及其数据总长度，方便一次性获取全部通道的数据
 func SensorDataFromID(sensorID string) (int, int, error) {
 	return common.SensorDataFromID(sensorID)
-}
-
-//ChannelAFromID 获取传感器某个通道的标定数据a的modbus地址和大小
-func ChannelAFromID(sensorID string, channel int) (int, int, error) {
-	return common.ChannelAFromID(sensorID, channel)
-}
-
-//ChannelBFromID 获取传感器某个通道的标定数据b的modbus地址和大小
-func ChannelBFromID(sensorID string, channel int) (int, int, error) {
-	return common.ChannelBFromID(sensorID, channel)
-}
-
-//ChannelWorkFromID 获取传感器某个通道的工作状态的地址和大小
-func ChannelWorkFromID(sensorID string, channel int) (int, int, error) {
-	return common.ChannelWorkFromID(sensorID, channel)
-}
-
-//ChannelValueFromID 获取传感器某个通道的值的地址和大小，值类型
-func ChannelValueFromID(sensorID string, channel int) (int, int, string, error) {
-	return common.ChannelValueFromID(sensorID, channel)
 }
 
 //WriteSensorConfig 写传感器配置

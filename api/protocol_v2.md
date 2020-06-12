@@ -554,6 +554,7 @@
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162656,
 >"msgParam":"adapter",
+>"sensorId":"AFAF73BADCF6",
 >"sensorAdder":1,　//modbus地址
 >"channelSetList":
 >[

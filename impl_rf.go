@@ -5,8 +5,6 @@ import (
 	"eabi_gateway/impl/config"
 	"eabi_gateway/impl/modbus"
 	rfNet "eabi_gateway/impl/rf_net"
-	"eabi_gateway/impl/updata"
-	"fmt"
 	"runtime"
 	"time"
 )
@@ -32,39 +30,33 @@ func deviceMarshaler() {
 		//解析数据
 		id, _ := b.ReadDeviceID()
 		code, _ := b.ReadDeviceCode()
-		_, buf, bufsize, _ := b.ReadDeviceData()
+		//_, buf, bufsize, _ := b.ReadDeviceData()
 
+		//TODO
 		if code == 0x03 {
-			v := findDeviceAndChannel(id)
-			for n, c := range v.ChannelList {
-				if (uint16(c.ValueAdder) + uint16(c.ValueSize)) > bufsize {
-					continue
-				}
-				//FIXME:暂时只支持４字节的float32
-				if c.ValueSize != 4 {
-					continue
-				}
-				value := ByteToFloat32(buf[c.ValueAdder:])
+			//v := findDeviceAndChannel(id)
+			//for n, c := range v.ChannelList {
 
-				//写rfnetinfo
-				rfNet.WriteInfo(v.SensorID, v.SensorName, "v0.0.0", "v0.0.0", fmt.Sprint(v.ChannelList[n].Channel))
+			//value := ByteToFloat32(buf[c.ValueAdder:])
 
-				//写上传文件
-				updata.WriteUpdata(v.SensorName, v.SensorID, v.ChannelList[n].ValueType, uint32(v.ChannelList[n].Channel), value)
-				//TODO:判断是否报警
-				//sensorID string, channel int, value float32
-				if config.IsAlarm(v.SensorID, v.ChannelList[n].Channel, value) {
-					if l, h, err := config.ReadAlarmParamLH(v.SensorID, v.ChannelList[n].Channel); err != nil {
-						log.PrintlnErr(err)
-						continue
-					} else {
-						//SensorName, SensorID, Isok string, Channel uint32, AlarmParamH, AlarmParamL, Value float64
-						updata.WriteAlarmdata(v.SensorName, v.SensorID, "alarm", uint32(v.ChannelList[n].Channel), h, l, value)
-					}
-				}
-			}
+			//写rfnetinfo
+			//rfNet.WriteInfo(v.SensorID, v.SensorName, "v0.0.0", "v0.0.0", fmt.Sprint(v.ChannelList[n].Channel))
+
+			//TODO:写上传文件
+			//updata.WriteUpdata(v.SensorName, v.SensorID, v.ChannelList[n].ValueType, uint32(v.ChannelList[n].Channel), value)
+			//TODO:判断是否报警
+			//sensorID string, channel int, value float32
+			// if config.IsAlarm(v.SensorID, v.ChannelList[n].Channel, value) {
+			// 	if l, h, err := config.ReadAlarmParamLH(v.SensorID, v.ChannelList[n].Channel); err != nil {
+			// 		log.PrintlnErr(err)
+			// 		continue
+			// 	} else {
+			// 		//SensorName, SensorID, Isok string, Channel uint32, AlarmParamH, AlarmParamL, Value float64
+			// 		updata.WriteAlarmdata(v.SensorName, v.SensorID, "alarm", uint32(v.ChannelList[n].Channel), h, l, value)
+			// 	}
+			// }
+			//	}
 		}
-		//TODO：code != 0x03
 	}
 }
 

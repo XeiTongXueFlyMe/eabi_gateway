@@ -509,6 +509,7 @@ func adapterCfgToServer(req modle.AdapterInfoReq, info modle.AdapterInfo) {
 		MsgTimeStamp: time.Now().Unix(),
 		MsgParam:     "adapter",
 		MsgResp:      "ok",
+		SensorID:     req.SensorID,
 	}
 
 	param.AdapterInfo = info
@@ -609,7 +610,7 @@ func waitAdapterInfoCfgInfoConfig() {
 
 		switch adapterInfo.MsgType {
 		case "GET":
-			if info, err := config.ReadAdapterInfo(adapterInfo.AdapterInfo.SensorID); err != nil {
+			if info, err := config.ReadAdapterInfo(adapterInfo.SensorID); err != nil {
 				respGetToServer(adapterInfo.MsgID, err.Error(), "adapter")
 			} else {
 				adapterCfgToServer(adapterInfo, info)
@@ -617,6 +618,7 @@ func waitAdapterInfoCfgInfoConfig() {
 		case "PUT":
 			config.WriteAdapterInfo(adapterInfo.AdapterInfo)
 			writeAdapterCfgToFile()
+			respToServer(adapterInfo.MsgID, "ok", "adapter")
 		default:
 			log.PrintfErr("json msgType:%s no support ", adapterInfo.MsgType)
 		}

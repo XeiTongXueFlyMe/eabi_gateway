@@ -3,24 +3,24 @@ EAACE2CDFFB8:
   name: 报警 3 号
   softwarever: v0.0.0
   hardwarever: v0.0.0
-  channal:
-  - channal_0
-  - channal_6
+  channel:
+  - Channel_0
+  - Channel_6
 EAADE2BBCAC7:
   id: EAADE2BBCAC7
   name: 报警 2 号
   softwarever: v0.0.0
   hardwarever: v0.0.0
-  channal:
-  - channal_0
-  - channal_1
+  channel:
+  - Channel_0
+  - Channel_1
 EADDB2EEFBE6:
   id: EADDB2EEFBE6
   name: 报警 1 号
   softwarever: v0.0.0
   hardwarever: v0.0.0
-  channal:
-  - channal_0
-  - channal_1
-  - channal_2
-  - channal_3
+  channel:
+  - Channel_0
+  - Channel_1
+  - Channel_2
+  - Channel_3

@@ -1,0 +1,28 @@
+EAADE2BBCAC7:
+  sensorid: EAADE2BBCAC7
+  sensoradder: 1
+  channelsetlist:
+  - channel: 1
+    ubgadder: 1
+    rangelow: 1
+    rangehigh: 1
+    k: 1.1
+    b: 0
+    period: 1
+    channelen: 1
+    modbusadder: 2
+    bufse: 1
+EADDB2EEFBE6:
+  sensorid: EADDB2EEFBE6
+  sensoradder: 1
+  channelsetlist:
+  - channel: 1
+    ubgadder: 1
+    rangelow: 1
+    rangehigh: 1
+    k: 1.1
+    b: 0
+    period: 1
+    channelen: 1
+    modbusadder: 2
+    bufse: 1

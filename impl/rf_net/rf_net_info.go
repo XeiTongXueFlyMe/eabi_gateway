@@ -43,13 +43,13 @@ func WriteInfo(id, name, sVer, hVer, channel string) {
 
 	//读取旧的的数据
 	if v, ok := rfNetInfoMap[info.ID]; ok {
-		info.Channal = append(info.Channal, v.Channal...)
+		info.Channel = append(info.Channel, v.Channel...)
 	}
 
 	//查询是否新的数据
 	if _, ok := chanMap[info.ID+channel]; !ok {
-		info.Channal = append(info.Channal, "channal_"+channel)
-		chanMap[info.ID+channel] = "channal_" + channel
+		info.Channel = append(info.Channel, "Channel_"+channel)
+		chanMap[info.ID+channel] = "Channel_" + channel
 	}
 
 	defer writeSysParamToFile()

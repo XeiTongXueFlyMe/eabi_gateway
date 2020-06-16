@@ -77,7 +77,7 @@
         "sensorAdder":1,
         "channelSetList": [
             {
-                "channal":1,
+                "channel":1,
                 "ubgAdder":1,
                 "rangeLow":1.2,
                 "rangeHigh":1.5,

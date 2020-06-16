@@ -40,7 +40,7 @@ type RfNetInfo struct {
 	Name        string   `json:"name"`
 	SoftwareVer string   `json:"softwareVer"`
 	HardwareVer string   `json:"hardwareVer"`
-	Channal     []string `json:"channal"`
+	Channel     []string `json:"channel"`
 }
 
 type RfNetInfoResp struct {
@@ -70,7 +70,7 @@ type SensorInfo struct {
 
 //AdapterChanInfo 适配器通道信息
 type AdapterChanInfo struct {
-	Channal     int     `json:"channal"`
+	Channel     int     `json:"channel"`
 	UbgAdder    int     `json:"ubgAdder"`    //UBG地址设定
 	RangeLow    float64 `json:"rangeLow"`    //零量程
 	RangeHigh   float64 `json:"rangeHigh"`   //满量程
@@ -96,6 +96,7 @@ type AdapterInfoResp struct {
 	MsgTimeStamp int64       `json:"msgTimeStamp"`
 	MsgParam     string      `json:"msgParam"`
 	MsgResp      string      `json:"msgResp"`
+	SensorID     string      `json:"sensorId"`
 	AdapterInfo  AdapterInfo `json:"adapterInfo"`
 }
 
@@ -105,6 +106,7 @@ type AdapterInfoReq struct {
 	MsgGwID      string      `json:"msgGwId"`
 	MsgTimeStamp int64       `json:"msgTimeStamp"`
 	MsgParam     string      `json:"msgParam"`
+	SensorID     string      `json:"sensorId"`
 	AdapterInfo  AdapterInfo `json:"adapterInfo"`
 }
 

@@ -56,7 +56,6 @@ func deviceMarshaler() {
 				value := ByteToFloat32(buf[adder:])
 
 				//写rfnetinfo
-				//TODO:设计有问题，现在只支持８个通道
 				rfNet.WriteInfo(v.SensorID, v.SensorName, "v0.0.0", "v0.0.0", fmt.Sprint(c.Channel))
 
 				//判断是否存在报警历史，如果没有，就新建一个报警,报警状态ok

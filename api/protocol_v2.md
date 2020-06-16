@@ -201,28 +201,24 @@
 >   "name":"东一层２号气表",
 >   "softwareVer":"1.0.1",
 >   "hardwareVer":"1.0.2",
->   "channel_1":"yes",//yes,no  
->   "channel_2":"yes",//yes,no
->   "channel_3":"yes",//yes,no
->   "channel_4":"yes",//yes,no
->   "channel_5":"yes",//yes,no
->   "channel_6":"yes",//yes,no
->   "channel_7":"yes",//yes,no
->   "channel_8":"yes",//yes,no
+>    "channel": [
+>        "channel_0",
+>        "channel_1",
+>        "channel_2",
+>        "channel_3"
+>    ]  
 >   },
 >   {
 >   "id":"AFAF73BADCF7",
 >   "name":"东二层２号气表",
 >   "softwareVer":"1.0.1",
 >   "hardwareVer":"1.0.2",
->   "channel_1":"yes",//yes,no  
->   "channel_2":"yes",//yes,no
->   "channel_3":"yes",//yes,no
->   "channel_4":"yes",//yes,no
->   "channel_5":"yes",//yes,no
->   "channel_6":"yes",//yes,no
->   "channel_7":"yes",//yes,no
->   "channel_8":"yes",//yes,no
+>    "channel": [
+>        "channel_0",
+>        "channel_1",
+>        "channel_2",
+>        "channel_3"
+>    ]
 >   }
 > ]
 >}
@@ -554,6 +550,7 @@
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162656,
 >"msgParam":"adapter",
+>"sensorId":"AFAF73BADCF6",
 >"adapterInfo":
 >{
 >"sensorId":"AFAF73BADCF6",
@@ -608,6 +605,7 @@
 >"msgTimeStamp":1586162503,
 >"msgParam":"adapter",
 >"msgResp":"ok",
+>"sensorId":"AFAF73BADCF6",
 >"adapterInfo":
 >{
 >"sensorId":"AFAF73BADCF6",
@@ -615,7 +613,7 @@
 >"channelSetList":
 >[
 >   {
->       "channal":1,
+>       "channel":1,
 >       "ubgAdder":0,//UBG地址设定
 >       "rangeLow":0, //零量程
 >       "rangeHigh":100,//满量程

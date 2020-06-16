@@ -554,6 +554,8 @@
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162656,
 >"msgParam":"adapter",
+>"adapterInfo":
+>{
 >"sensorId":"AFAF73BADCF6",
 >"sensorAdder":1,　//modbus地址
 >"channelSetList":
@@ -571,6 +573,7 @@
 >       "bufse":2, //通道对应数据长度
 >   },
 >]
+>}
 >}
 >```
 * resp:
@@ -605,6 +608,8 @@
 >"msgTimeStamp":1586162503,
 >"msgParam":"adapter",
 >"msgResp":"ok",
+>"adapterInfo":
+>{
 >"sensorId":"AFAF73BADCF6",
 >"sensorAdder":1,　//modbus地址
 >"channelSetList":
@@ -622,6 +627,7 @@
 >       "bufse":2, //通道对应数据长度
 >   },
 >]
+>}
 >}
 >}
 >```

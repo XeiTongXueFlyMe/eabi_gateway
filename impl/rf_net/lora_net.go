@@ -78,23 +78,23 @@ func rebootOpenTTY() {
 
 //LoraInit 初始化lora网络模块，维护
 func LoraInit() {
-	//	var one sync.Once
+	var one sync.Once
 
 	log = &myLog.L{}
 	receiveChan = make(chan []byte)
 
 	//TODO:debug
-	// t := time.Now().Unix()
-	// for {
-	// 	if err := lora.Open(defttyName, defBaud, defReadTimeOut); err != nil {
-	// 		one.Do(func() {
-	// 			log.PrintlnErr(err)
-	// 		})
-	// 		time.Sleep(time.Second * 5)
-	// 		continue
-	// 	}
-	// 	break
-	// }
-	// log.PrintfInfo("Reconnect open lora module %d Second after ", time.Now().Unix()-t)
-	// go waitReceive()
+	t := time.Now().Unix()
+	for {
+		if err := lora.Open(defttyName, defBaud, defReadTimeOut); err != nil {
+			one.Do(func() {
+				log.PrintlnErr(err)
+			})
+			time.Sleep(time.Second * 5)
+			continue
+		}
+		break
+	}
+	log.PrintfInfo("Reconnect open lora module %d Second after ", time.Now().Unix()-t)
+	go waitReceive()
 }

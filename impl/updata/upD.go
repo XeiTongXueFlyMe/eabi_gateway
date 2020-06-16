@@ -43,6 +43,10 @@ func (t *DataCsv) Write(d interface{}) {
 		s = append(s, fmt.Sprintf("%d", info.Channel))
 		s = append(s, info.Unit)
 		s = append(s, fmt.Sprintf("%f", info.Value))
+		s = append(s, info.AlarmID)
+		s = append(s, fmt.Sprintf("%f", info.AlarmParamH))
+		s = append(s, fmt.Sprintf("%f", info.AlarmParamL))
+		s = append(s, info.Isok)
 	}
 
 	//写永久储存的数据
@@ -65,7 +69,7 @@ func isFile(path string) bool {
 //ReadUpFilePath 读取需要上传的文件路径及其名称，如果没有返回空字符串
 func (t *DataCsv) ReadUpFilePath() string {
 	if isFile(TEMPPATH + t.tempFileName + ".csv") {
-		defer func() { t.tempFileName = "" }()
+		defer func() { t.tempFileName = "temp" }()
 		return TEMPPATH + t.tempFileName + ".csv"
 	}
 	return ""

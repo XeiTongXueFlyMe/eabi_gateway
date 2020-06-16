@@ -1,129 +1,35 @@
 sensorlist:
-- sensorid: "111111111111"
-  sensorname: 东1层1号温度气压表
+- sensorid: EADDB2EEFBE6
+  sensorname: 报警 1 号
   sensoradder: 1
   dataadder: 0
-  datasize: 31
+  datasize: 8
   channellist:
-  - channel: 1
-    aadder: 11
-    asize: 12
-    badder: 13
-    bsize: 14
-    workadder: 15
-    worksize: 16
-    valueadder: 17
-    valuesize: 4
+  - channel: 0
     valuetype: 温度(℃)
-  - channel: 2
-    aadder: 21
-    asize: 22
-    badder: 23
-    bsize: 24
-    workadder: 25
-    worksize: 26
-    valueadder: 27
-    valuesize: 4
+  - channel: 1
     valuetype: 压力(pa)
   - channel: 2
-    aadder: 21
-    asize: 22
-    badder: 23
-    bsize: 24
-    workadder: 25
-    worksize: 26
-    valueadder: 27
-    valuesize: 4
     valuetype: 压力(pa)
-- sensorid: "222222222222"
-  sensorname: 东1层１号温度气压表
+  - channel: 3
+    valuetype: 压力(pa)
+- sensorid: EAADE2BBCAC7
+  sensorname: 报警 2 号
   sensoradder: 2
   dataadder: 0
-  datasize: 31
+  datasize: 4
   channellist:
-  - channel: 1
-    aadder: 11
-    asize: 12
-    badder: 13
-    bsize: 14
-    workadder: 15
-    worksize: 16
-    valueadder: 17
-    valuesize: 4
+  - channel: 0
     valuetype: 温度(℃)
-  - channel: 2
-    aadder: 21
-    asize: 22
-    badder: 23
-    bsize: 24
-    workadder: 25
-    worksize: 26
-    valueadder: 27
-    valuesize: 4
-    valuetype: 压力(pa)
-- sensorid: "333333333333"
-  sensorname: 东1层3号气表
+  - channel: 1
+    valuetype: 温度(pa)
+- sensorid: EAACE2CDFFB8
+  sensorname: 报警 3 号
   sensoradder: 3
   dataadder: 0
-  datasize: 31
+  datasize: 14
   channellist:
-  - channel: 1
-    aadder: 11
-    asize: 12
-    badder: 13
-    bsize: 14
-    workadder: 15
-    worksize: 16
-    valueadder: 17
-    valuesize: 4
+  - channel: 0
     valuetype: 温度(℃)
-  - channel: 2
-    aadder: 21
-    asize: 22
-    badder: 23
-    bsize: 24
-    workadder: 25
-    worksize: 26
-    valueadder: 27
-    valuesize: 4
-    valuetype: 压力(pa)
-  - channel: 2
-    aadder: 21
-    asize: 22
-    badder: 23
-    bsize: 24
-    workadder: 25
-    worksize: 26
-    valueadder: 27
-    valuesize: 4
-    valuetype: 压力(pa)
-  - channel: 2
-    aadder: 21
-    asize: 22
-    badder: 23
-    bsize: 24
-    workadder: 25
-    worksize: 26
-    valueadder: 27
-    valuesize: 4
-    valuetype: 压力(pa)
-  - channel: 2
-    aadder: 21
-    asize: 22
-    badder: 23
-    bsize: 24
-    workadder: 25
-    worksize: 26
-    valueadder: 27
-    valuesize: 4
-    valuetype: 压力(pa)
-  - channel: 2
-    aadder: 21
-    asize: 22
-    badder: 23
-    bsize: 24
-    workadder: 25
-    worksize: 26
-    valueadder: 27
-    valuesize: 4
-    valuetype: 压力(pa)
+  - channel: 6
+    valuetype: 温度(pa)

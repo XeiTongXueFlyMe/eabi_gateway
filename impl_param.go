@@ -6,6 +6,7 @@ import (
 	"eabi_gateway/impl/net"
 	rfNet "eabi_gateway/impl/rf_net"
 	"encoding/json"
+	"fmt"
 	"os"
 	"time"
 
@@ -16,7 +17,7 @@ var gatewayParamChannel chan []byte
 var rfNetInfoChannel chan []byte
 var sensorInfoCfgChannel chan []byte
 var alarmInfoCfgChannel chan []byte
-var AdapterInfoCfgChannel chan []byte
+var adapterInfoCfgChannel chan []byte
 
 func waitGatewayParamConfig() {
 	for {
@@ -51,6 +52,35 @@ func waitGatewayParamConfig() {
 func respToServer(msgID interface{}, msgResp string, msgParam string) {
 	param := &modle.StdResp{
 		MsgType:      "PUT",
+		MsgGwID:      config.SysParamGwId(),
+		MsgTimeStamp: time.Now().Unix(),
+		MsgParam:     msgParam,
+		MsgResp:      msgResp,
+	}
+
+	if id, ok := msgID.(string); ok {
+		param.MsgID = id
+	} else {
+		return
+	}
+
+	buf, err := json.Marshal(param)
+	if err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+	if _, err := net.SendData(buf); err != nil {
+		log.PrintlnErr(err)
+		goto _exit
+	}
+
+_exit:
+	return
+}
+
+func respGetToServer(msgID interface{}, msgResp string, msgParam string) {
+	param := &modle.StdResp{
+		MsgType:      "GET",
 		MsgGwID:      config.SysParamGwId(),
 		MsgTimeStamp: time.Now().Unix(),
 		MsgParam:     msgParam,
@@ -263,6 +293,7 @@ func writeSensorCfgToFile(sList []modle.SensorInfo) error {
 	cfg := sensorCfgFile{SensorList: sList}
 
 	if b, err := json.Marshal(cfg); err == nil {
+		os.Remove("sensorCfg.json")
 		f, er := os.OpenFile("sensorCfg.json", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			log.Printlntml(er)
@@ -277,6 +308,7 @@ func writeSensorCfgToFile(sList []modle.SensorInfo) error {
 	}
 
 	if b, err := yaml.Marshal(cfg); err == nil {
+		os.Remove("sensorCfg.yaml")
 		f, er := os.OpenFile("sensorCfg.yaml", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			log.Printlntml(er)
@@ -384,6 +416,7 @@ func writeAlarmCfgToFile(l []modle.AlarmInfo) {
 	cfg := alarmCfgFile{AlarmList: l}
 
 	if b, err := json.Marshal(cfg); err == nil {
+		os.Remove("alarmCfg.json")
 		f, er := os.OpenFile("alarmCfg.json", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			log.Printlntml(er)
@@ -398,6 +431,7 @@ func writeAlarmCfgToFile(l []modle.AlarmInfo) {
 	}
 
 	if b, err := yaml.Marshal(cfg); err == nil {
+		os.Remove("alarmCfg.yaml")
 		f, er := os.OpenFile("alarmCfg.yaml", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			log.Printlntml(er)
@@ -503,14 +537,17 @@ func readAdapterCfgFromFile() {
 
 	f, err = os.OpenFile("AdapterCfg.json", os.O_RDWR|os.O_CREATE, 0777)
 	if err != nil {
+		fmt.Println(err)
 		goto _exit
 	}
 	defer f.Close()
 
 	if n, err = f.Read(buf); err != nil {
+		fmt.Println(err)
 		goto _exit
 	}
-	if err = json.Unmarshal(buf[0:n], m); err != nil {
+	if err = json.Unmarshal(buf[0:n], &m); err != nil {
+		fmt.Println(err)
 		goto _exit
 	}
 
@@ -524,6 +561,7 @@ func writeAdapterCfgToFile() {
 	m := config.ReadAdapterMapInfo()
 
 	if b, err := json.Marshal(m); err == nil {
+		os.Remove("AdapterCfg.json")
 		f, er := os.OpenFile("AdapterCfg.json", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			log.Printlntml(er)
@@ -538,6 +576,7 @@ func writeAdapterCfgToFile() {
 	}
 
 	if b, err := yaml.Marshal(m); err == nil {
+		os.Remove("AdapterCfg.yaml")
 		f, er := os.OpenFile("AdapterCfg.yaml", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			log.Printlntml(er)
@@ -561,7 +600,7 @@ func waitAdapterInfoCfgInfoConfig() {
 	readAdapterCfgFromFile()
 
 	for {
-		buf := <-AdapterInfoCfgChannel
+		buf := <-adapterInfoCfgChannel
 		if err := json.Unmarshal(buf, &adapterInfo); err != nil {
 			log.PrintlnErr(err)
 			respToServer(adapterInfo.MsgID, err.Error(), "adapter")
@@ -571,7 +610,7 @@ func waitAdapterInfoCfgInfoConfig() {
 		switch adapterInfo.MsgType {
 		case "GET":
 			if info, err := config.ReadAdapterInfo(adapterInfo.AdapterInfo.SensorID); err != nil {
-				respToServer(adapterInfo.MsgID, err.Error(), "adapter")
+				respGetToServer(adapterInfo.MsgID, err.Error(), "adapter")
 			} else {
 				adapterCfgToServer(adapterInfo, info)
 			}
@@ -607,9 +646,10 @@ func implInit() {
 	go waitAlarmCfgInfoConfig()
 
 	//设配器参数配置
-	AdapterInfoCfgChannel = make(chan []byte, 1)
-	net.CreateMsgField("adapter", AdapterInfoCfgChannel)
+	adapterInfoCfgChannel = make(chan []byte, 1)
+	net.CreateMsgField("adapter", adapterInfoCfgChannel)
 	go waitAdapterInfoCfgInfoConfig()
+
 	//TODO:需要开辟一个线程队列发送服务器的下发的配置数据
 
 }

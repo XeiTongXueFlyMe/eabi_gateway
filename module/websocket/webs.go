@@ -23,6 +23,7 @@ func (t *Conn) Write(buf []byte) (int, error) {
 }
 
 func (t *Conn) Read(buf []byte) (int, error) {
+	//TODO:由于网络原因，可能一包数据变成两包
 	return t.Ws.Read(buf)
 }
 

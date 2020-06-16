@@ -19,7 +19,7 @@ func ReadAdapterInfo(SensorID string) (modle.AdapterInfo, error) {
 	}
 
 _end:
-	return modle.AdapterInfo{}, errors.New("no find")
+	return modle.AdapterInfo{}, errors.New("不存在配置，请配置相关参数！")
 }
 
 //WriteAdapterInfo 写入某一个适配器数据

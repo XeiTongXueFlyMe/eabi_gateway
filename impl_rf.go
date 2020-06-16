@@ -49,8 +49,8 @@ func deviceMarshaler() {
 
 			for _, c := range v.ChannelList {
 				adder := uint16(c.Channel * 4)
-				if adder > bufsize {
-					break
+				if adder >= bufsize {
+					continue
 				}
 
 				value := ByteToFloat32(buf[adder:])
@@ -60,26 +60,30 @@ func deviceMarshaler() {
 				rfNet.WriteInfo(v.SensorID, v.SensorName, "v0.0.0", "v0.0.0", fmt.Sprint(c.Channel))
 
 				//判断是否存在报警历史，如果没有，就新建一个报警,报警状态ok
-				if _, ok := AlarmMap[v.SensorID]; !ok {
-					AlarmMap[v.SensorID] = alarmFactry{
+				if _, ok := AlarmMap[v.SensorID+fmt.Sprintf("%d", c.Channel)]; !ok {
+					AlarmMap[v.SensorID+fmt.Sprintf("%d", c.Channel)] = alarmFactry{
 						AlarmID: uuid.New().String(),
 						Isok:    "ok",
 					}
 				}
 
 				//判断是否报警
-				alarm := alarmFactry{}
+				alarm := AlarmMap[v.SensorID+fmt.Sprintf("%d", c.Channel)]
+
 				if config.IsAlarm(v.SensorID, c.Channel, value) {
-					alarm = AlarmMap[v.SensorID]
 					if alarm.Isok != "alarm" {
 						alarm.AlarmID = uuid.New().String()
-						alarm.Isok = "alarm"
 					}
+					alarm.Isok = "alarm"
+
 				} else {
-					alarm = AlarmMap[v.SensorID]
+					if alarm.Isok != "ok" {
+						alarm.AlarmID = uuid.New().String()
+					}
 					alarm.Isok = "ok"
 				}
-				AlarmMap[v.SensorID] = alarm
+
+				AlarmMap[v.SensorID+fmt.Sprintf("%d", c.Channel)] = alarm
 
 				//读取报警参数
 				l, h, err := config.ReadAlarmParamLH(v.SensorID, c.Channel)
@@ -95,11 +99,12 @@ func deviceMarshaler() {
 					TimeStamp:   time.Now().Unix(),
 					SensorID:    v.SensorID,
 					SensorName:  v.SensorName,
+					Channel:     uint32(c.Channel),
 					Unit:        c.ValueType,
 					Value:       value,
 					AlarmID:     alarm.AlarmID,
-					AlarmParamH: l,
-					AlarmParamL: h,
+					AlarmParamH: h,
+					AlarmParamL: l,
 					Isok:        alarm.Isok,
 				}
 				updata.WriteUpdata(d)
@@ -141,6 +146,7 @@ func modbusDataTransmit() {
 
 		//modbusDataTransmit 由于lora网络传输数据较慢，所以通过接受超时来控制发送速率
 		for _, v := range deviceList {
+			fmt.Println(modbus.ReadDeviceReg(uint8(v.SensorAdder), uint16(v.DataAdder), uint16(v.DataSize)))
 			rfNet.Send(modbus.ReadDeviceReg(uint8(v.SensorAdder), uint16(v.DataAdder), uint16(v.DataSize)))
 			for {
 				//等待数据返回，或超时

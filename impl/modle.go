@@ -36,18 +36,11 @@ type GatewayParmResp struct {
 }
 
 type RfNetInfo struct {
-	ID          string `json:"id"`
-	Name        string `json:"name"`
-	SoftwareVer string `json:"softwareVer"`
-	HardwareVer string `json:"hardwareVer"`
-	Channel1    string `json:"channel_1"`
-	Channel2    string `json:"channel_2"`
-	Channel3    string `json:"channel_3"`
-	Channel4    string `json:"channel_4"`
-	Channel5    string `json:"channel_5"`
-	Channel6    string `json:"channel_6"`
-	Channel7    string `json:"channel_7"`
-	Channel8    string `json:"channel_8"`
+	ID          string   `json:"id"`
+	Name        string   `json:"name"`
+	SoftwareVer string   `json:"softwareVer"`
+	HardwareVer string   `json:"hardwareVer"`
+	Channal     []string `json:"channal"`
 }
 
 type RfNetInfoResp struct {
@@ -77,16 +70,16 @@ type SensorInfo struct {
 
 //AdapterChanInfo 适配器通道信息
 type AdapterChanInfo struct {
-	Channal     string `json:"channal"`
-	UbgAdder    string `json:"ubgAdder"`    //UBG地址设定
-	RangeLow    string `json:"rangeLow"`    //零量程
-	RangeHigh   string `json:"rangeHigh"`   //满量程
-	K           string `json:"k"`           //修正系数K
-	B           string `json:"b"`           //修正系数B
-	Period      string `json:"period"`      //传感器周期
-	ChannelEn   string `json:"channelEn"`   //通道使能
-	ModbusAdder string `json:"modbusAdder"` //通道对应MODBUS地址
-	Bufse       string `json:"bufse"`       //通道对应数据长度
+	Channal     int     `json:"channal"`
+	UbgAdder    int     `json:"ubgAdder"`    //UBG地址设定
+	RangeLow    float64 `json:"rangeLow"`    //零量程
+	RangeHigh   float64 `json:"rangeHigh"`   //满量程
+	K           float64 `json:"k"`           //修正系数K
+	B           float64 `json:"b"`           //修正系数B
+	Period      int     `json:"period"`      //传感器周期
+	ChannelEn   int     `json:"channelEn"`   //通道使能
+	ModbusAdder int     `json:"modbusAdder"` //通道对应MODBUS地址
+	Bufse       int     `json:"bufse"`       //通道对应数据长度
 }
 
 //AdapterInfo 适配器信息

@@ -3,7 +3,7 @@ myself:
   gwIP: 192.168.0.102
   serverIP: 47.108.88.41
   serverPort: "8286"
-  dataUpCycle: 10
+  dataUpCycle: 15
   heartCycle: 30
   dataReadCycle: 5
 websocket:
@@ -12,4 +12,3 @@ rf:
   id: ACACACACACAC
   channel: "1"
   netId: BEBEBEBEBEBE
-

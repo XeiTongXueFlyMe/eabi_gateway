@@ -1,39 +1,26 @@
-"111111111111":
-  id: "111111111111"
-  name: 东1层1号温度气压表
+EAACE2CDFFB8:
+  id: EAACE2CDFFB8
+  name: 报警 3 号
   softwarever: v0.0.0
   hardwarever: v0.0.0
-  channel1: "yes"
-  channel2: "yes"
-  channel3: "no"
-  channel4: "no"
-  channel5: "no"
-  channel6: "no"
-  channel7: "no"
-  channel8: "no"
-"222222222222":
-  id: "222222222222"
-  name: 东1层１号温度气压表
+  channal:
+  - channal_0
+  - channal_6
+EAADE2BBCAC7:
+  id: EAADE2BBCAC7
+  name: 报警 2 号
   softwarever: v0.0.0
   hardwarever: v0.0.0
-  channel1: "yes"
-  channel2: "yes"
-  channel3: "no"
-  channel4: "no"
-  channel5: "no"
-  channel6: "no"
-  channel7: "no"
-  channel8: "no"
-"333333333333":
-  id: "333333333333"
-  name: 东1层3号气表
+  channal:
+  - channal_0
+  - channal_1
+EADDB2EEFBE6:
+  id: EADDB2EEFBE6
+  name: 报警 1 号
   softwarever: v0.0.0
   hardwarever: v0.0.0
-  channel1: "yes"
-  channel2: "yes"
-  channel3: "no"
-  channel4: "no"
-  channel5: "no"
-  channel6: "no"
-  channel7: "no"
-  channel8: "no"
+  channal:
+  - channal_0
+  - channal_1
+  - channal_2
+  - channal_3

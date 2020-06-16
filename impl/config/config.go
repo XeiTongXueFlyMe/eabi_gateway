@@ -135,6 +135,7 @@ func ConfigTofile(m map[string]interface{}) string {
 //写缓存到配置文件
 func writeSysParamToFile() error {
 	if b, err := yaml.Marshal(sysParam); err == nil {
+		os.Remove(cfgName)
 		f, er := os.OpenFile(cfgName, os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			log.PrintlnErr(er)

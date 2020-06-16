@@ -72,6 +72,7 @@ func writeSensorCfgToFile(sList []modle.SensorInfo) {
 	cfg := sensorCfgFile{SensorList: sList}
 
 	if b, err := json.Marshal(cfg); err == nil {
+		os.Remove("sensorCfg.json")
 		f, er := os.OpenFile("sensorCfg.json", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			return
@@ -84,6 +85,7 @@ func writeSensorCfgToFile(sList []modle.SensorInfo) {
 	}
 
 	if b, err := yaml.Marshal(cfg); err == nil {
+		os.Remove("sensorCfg.yaml")
 		f, er := os.OpenFile("sensorCfg.yaml", os.O_RDWR|os.O_CREATE, 0777)
 		if er != nil {
 			return

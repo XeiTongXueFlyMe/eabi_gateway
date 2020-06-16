@@ -18,6 +18,7 @@ var rfNetInfoChannel chan []byte
 var sensorInfoCfgChannel chan []byte
 var alarmInfoCfgChannel chan []byte
 var adapterInfoCfgChannel chan []byte
+var adapterSendRfDataChannel chan modle.AdapterInfo
 
 func waitGatewayParamConfig() {
 	for {
@@ -597,6 +598,8 @@ func writeAdapterCfgToFile() {
 func waitAdapterInfoCfgInfoConfig() {
 	var adapterInfo modle.AdapterInfoReq
 
+	adapterSendRfDataChannel = make(chan modle.AdapterInfo, 50)
+
 	//读取本地设配器配置
 	readAdapterCfgFromFile()
 
@@ -619,6 +622,7 @@ func waitAdapterInfoCfgInfoConfig() {
 			config.WriteAdapterInfo(adapterInfo.AdapterInfo)
 			writeAdapterCfgToFile()
 			respToServer(adapterInfo.MsgID, "ok", "adapter")
+			adapterSendRfDataChannel <- adapterInfo.AdapterInfo
 		default:
 			log.PrintfErr("json msgType:%s no support ", adapterInfo.MsgType)
 		}
@@ -651,7 +655,5 @@ func implInit() {
 	adapterInfoCfgChannel = make(chan []byte, 1)
 	net.CreateMsgField("adapter", adapterInfoCfgChannel)
 	go waitAdapterInfoCfgInfoConfig()
-
-	//TODO:需要开辟一个线程队列发送服务器的下发的配置数据
 
 }

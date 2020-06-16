@@ -456,66 +456,6 @@
 >}
 >```
 
-# 8 传感器控制
-> json字段可以随意组合
-> y = standa_a *x + standa_b
-
-**websocket example:**
-* req:
->```json
->{
->"msgType":"GET",
->"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
->"msgGwId":"AFAF73BADCF6",
->"msgTimeStamp":1586162503,
->"msgParam":"alarmConfig",
->"sensorId":"AFAF73BADCF6",
->"channel":1,
->"output": 0,  //1
->"work":"start", //stop
->"standa_a":0.01,//4字节浮点数
->"standa_b":0.01,//4字节浮点数
->}
->```
-
->>```json
->>{
->>"msgType":"GET",
->>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
->>"msgGwId":"AFAF73BADCF6",
->>"msgTimeStamp":1586162503,
->>"msgParam":"alarmConfig",
->>"sensorId":"AFAF73BADCF6",
->>"channel":1,
->>"output": 0,  //1
->>}
->>```
-
->>```json
->>{
->>"msgType":"GET",
->>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
->>"msgGwId":"AFAF73BADCF6",
->>"msgTimeStamp":1586162503,
->>"msgParam":"alarmConfig",
->>"sensorId":"AFAF73BADCF6",
->>"channel":1,
->>"standa_a":20,
->>"standa_b":30,
->>}
->>```
-
-* resp:
->```json
->{
->"msgType":"GET",
->"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
->"msgGwId":"AFAF73BADCF6",
->"msgTimeStamp":1586162656,
->"msgParam":"alarmConfig",
->"msgResp":"ok",
->}
->```
 
 # 9 异常处理及数据对账
 * 接口说明

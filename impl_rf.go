@@ -135,15 +135,37 @@ func waitRfData() {
 	}
 }
 
+func sendAdapterData(v modle.AdapterInfo) {
+
+	for _, chanV := range v.ChannelSetList {
+		var buf [20]byte
+		// regNum uint16, byteSize uint8, buf []byte
+		fmt.Println(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 10, buf[:]))
+		rfNet.Send(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 10, buf[:]))
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 5):
+			goto _continue
+		case id := <-deviceIDTransmitChan:
+			if id == uint8(v.SensorAdder) {
+				goto _continue
+			}
+		}
+
+	_continue:
+	}
+}
+
 //采用轮训模式
 func modbusDataTransmit() {
 
 	//每次轮训都重新读取传感器配置和报警配置
+	//modbusDataTransmit 由于lora网络传输数据较慢，所以通过接受超时来控制发送速率
 	for {
 		t := time.Now().Unix()
 		deviceList = config.ReadSensorConfig()
 
-		//modbusDataTransmit 由于lora网络传输数据较慢，所以通过接受超时来控制发送速率
+		//轮训发送数据数据
 		for _, v := range deviceList {
 			fmt.Println(modbus.ReadDeviceReg(uint8(v.SensorAdder), uint16(v.DataAdder), uint16(v.DataSize)))
 			rfNet.Send(modbus.ReadDeviceReg(uint8(v.SensorAdder), uint16(v.DataAdder), uint16(v.DataSize)))
@@ -156,6 +178,13 @@ func modbusDataTransmit() {
 					if id == uint8(v.SensorAdder) {
 						goto _continue
 					}
+				}
+
+				//TODO:等待适配器配置数据
+				select {
+				case v := <-adapterSendRfDataChannel:
+					sendAdapterData(v)
+				default:
 				}
 			}
 		_continue:

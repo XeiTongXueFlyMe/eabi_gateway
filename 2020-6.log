@@ -367,3 +367,7 @@
 2020/06/16 11:20:35 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
 2020/06/16 11:20:35 net.go:70: [info]Reconnect to the server 0 Second after 
 2020/06/16 11:20:36 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb800003036","msgParam":"systemLogin"}
+2020/06/16 11:27:21 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/16 11:27:21 lora_net.go:98: [info]Reconnect open lora module 0 Second after 
+2020/06/16 11:27:21 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/16 11:27:21 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00003478","msgParam":"systemLogin"}

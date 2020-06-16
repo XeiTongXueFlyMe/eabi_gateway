@@ -17,12 +17,12 @@ EADDB2EEFBE6:
   sensoradder: 1
   channelsetlist:
   - channel: 1
-    ubgadder: 1
-    rangelow: 1
-    rangehigh: 1
-    k: 1.1
-    b: 0
-    period: 1
-    channelen: 1
-    modbusadder: 2
-    bufse: 1
+    ubgadder: 2
+    rangelow: 3
+    rangehigh: 4
+    k: 5
+    b: 6
+    period: 7
+    channelen: 8
+    modbusadder: 9
+    bufse: 2

@@ -138,10 +138,24 @@ func waitRfData() {
 func sendAdapterData(v modle.AdapterInfo) {
 
 	for _, chanV := range v.ChannelSetList {
-		var buf [20]byte
-		// regNum uint16, byteSize uint8, buf []byte
-		fmt.Println(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 10, buf[:]))
-		rfNet.Send(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 10, buf[:]))
+		buf := make([]byte, 0)
+		buf = append(buf, byte((uint16(chanV.UbgAdder)&0xff00)>>8))
+		buf = append(buf, byte(chanV.UbgAdder&0xff))
+		buf = append(buf, Float32ToByte(float32(chanV.RangeLow))...)
+		buf = append(buf, Float32ToByte(float32(chanV.RangeHigh))...)
+		buf = append(buf, Float32ToByte(float32(chanV.K))...)
+		buf = append(buf, Float32ToByte(float32(chanV.B))...)
+		buf = append(buf, byte(uint16(chanV.Period&0xff00)>>8))
+		buf = append(buf, byte(chanV.Period&0xff))
+		buf = append(buf, byte(uint16(chanV.ChannelEn&0xff00)>>8))
+		buf = append(buf, byte(chanV.ChannelEn&0xff))
+		buf = append(buf, byte(uint16(chanV.ModbusAdder&0xff00)>>8))
+		buf = append(buf, byte(chanV.ModbusAdder&0xff))
+		buf = append(buf, byte(uint16(chanV.Bufse&0xff00)>>8))
+		buf = append(buf, byte(chanV.Bufse&0xff))
+
+		fmt.Println(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 13, 26, buf[:]))
+		rfNet.Send(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 13, 26, buf[:]))
 		//等待数据返回，或超时
 		select {
 		case <-time.After(time.Second * 5):
@@ -179,15 +193,14 @@ func modbusDataTransmit() {
 						goto _continue
 					}
 				}
-
-				//TODO:等待适配器配置数据
-				select {
-				case v := <-adapterSendRfDataChannel:
-					sendAdapterData(v)
-				default:
-				}
 			}
 		_continue:
+			//TODO:等待适配器配置数据
+			select {
+			case v := <-adapterSendRfDataChannel:
+				sendAdapterData(v)
+			default:
+			}
 		}
 
 		//按dataReadCycle周期休眠，需要判断读取数据总共用时多少

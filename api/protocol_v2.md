@@ -500,8 +500,8 @@
 >   {
 >       "chennal":1,
 >       "ubgAdder":0,//UBG地址设定
->       "rangeLow":0, //零量程
->       "rangeHigh":100,//满量程
+>       "rangeLow":0.0, //零量程
+>       "rangeHigh":100.0,//满量程
 >       "k":1.0,//修正系数K
 >       "b":1.0,//修正系数B
 >       "period":10,//传感器周期
@@ -555,8 +555,8 @@
 >   {
 >       "channel":1,
 >       "ubgAdder":0,//UBG地址设定
->       "rangeLow":0, //零量程
->       "rangeHigh":100,//满量程
+>       "rangeLow":0.0, //零量程
+>       "rangeHigh":100.0,//满量程
 >       "k":1.0,//修正系数K
 >       "b":1.0,//修正系数B
 >       "period":10,//传感器周期

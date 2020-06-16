@@ -78,7 +78,7 @@ func ReadDeviceReg(id uint8, adder uint16, size uint16) []byte {
 func WriteDeviceOneReg(id uint8, adder uint16, value uint16) []byte {
 	b := make([]byte, 6)
 	b[0] = byte(id)
-	b[1] = 0x03
+	b[1] = 0x06
 	b[2] = byte((adder & 0xff00) >> 8)
 	b[3] = byte(adder & 0x00ff)
 	b[4] = byte((value & 0xff00) >> 8)
@@ -95,7 +95,7 @@ func WriteDeviceOneReg(id uint8, adder uint16, value uint16) []byte {
 func WriteDeviceReg(id uint8, adder uint16, regNum uint16, byteSize uint8, buf []byte) []byte {
 	b := make([]byte, 7)
 	b[0] = byte(id)
-	b[1] = 0x03
+	b[1] = 0x10
 	b[2] = byte((adder & 0xff00) >> 8)
 	b[3] = byte(adder & 0x00ff)
 	b[4] = byte((regNum & 0xff00) >> 8)

@@ -569,3 +569,29 @@
 >}
 >}
 >```
+
+# 传感器别名设置
+**websocket example:**
+* req:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162503,
+>"msgParam":"sensorName",
+>"sensorId":"AFAF73BADCF6",
+>"name":"foobar",
+>}
+>```
+* resp:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162656,
+>"msgParam":"sensorName",
+>"msgResp":"ok",
+>}
+>```

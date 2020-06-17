@@ -18,21 +18,22 @@ type StdResp struct {
 }
 
 type GatewayParmResp struct {
-	MsgType      string `json:"msgType"`
-	MsgID        string `json:"msgId"`
-	MsgGwID      string `json:"msgGwId"`
-	MsgTimeStamp int64  `json:"msgTimeStamp"`
-	MsgParam     string `json:"msgParam"`
-	MsgResp      string `json:"msgResp"`
-	GwID         string `json:"gwId"`
-	GwIP         string `json:"gwIP"`
-	ServerIP     string `json:"serverIP"`
-	ServerPort   string `json:"serverPort"`
-	RfID         string `json:"rfId"`
-	RfChannel    string `json:"rfChannel"`
-	RfNetID      string `json:"rfNetId"`
-	DataUpCycle  int    `json:"dataUpCycle"`
-	HeartCycle   int    `json:"heartCycle"`
+	MsgType       string `json:"msgType"`
+	MsgID         string `json:"msgId"`
+	MsgGwID       string `json:"msgGwId"`
+	MsgTimeStamp  int64  `json:"msgTimeStamp"`
+	MsgParam      string `json:"msgParam"`
+	MsgResp       string `json:"msgResp"`
+	GwID          string `json:"gwId"`
+	GwIP          string `json:"gwIP"`
+	ServerIP      string `json:"serverIP"`
+	ServerPort    string `json:"serverPort"`
+	RfID          string `json:"rfId"`
+	RfChannel     string `json:"rfChannel"`
+	RfNetID       string `json:"rfNetId"`
+	DataUpCycle   int    `json:"dataUpCycle"`
+	HeartCycle    int    `json:"heartCycle"`
+	DataReadCycle int    `json:"dataReadCycle"`
 }
 
 type RfNetInfo struct {

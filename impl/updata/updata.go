@@ -22,7 +22,7 @@ func Init() {
 	log = &myLog.L{}
 
 	//TODO:文件路径靠配置
-	dataCsv = NewDataCsv("updata", "/home/immm/sdb/")
+	dataCsv = NewDataCsv("updata", "/root/sdb/")
 	go dataUpCycle()
 
 	return

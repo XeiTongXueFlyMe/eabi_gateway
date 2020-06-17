@@ -125,6 +125,13 @@ func ConfigTofile(m map[string]interface{}) string {
 				log.PrintfErr("json heartCycle no is int")
 				resp = "json heartCycle no is int"
 			}
+		case "dataReadCycle":
+			if n, ok := v.(float64); ok {
+				sysParam.Myself.DataReadCycle = int(n)
+			} else {
+				log.PrintfErr("json dataReadCycle no is int")
+				resp = "json dataReadCycle no is int"
+			}
 		}
 
 	}

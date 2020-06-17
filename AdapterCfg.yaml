@@ -16,13 +16,23 @@ EADDB2EEFBE6:
   sensorid: EADDB2EEFBE6
   sensoradder: 1
   channelsetlist:
+  - channel: 0
+    ubgadder: 1
+    rangelow: 1.23
+    rangehigh: 40
+    k: 1
+    b: 0.12
+    period: 3
+    channelen: 1
+    modbusadder: 0
+    bufse: 2
   - channel: 1
     ubgadder: 2
-    rangelow: 3
-    rangehigh: 4
-    k: 5
-    b: 6
-    period: 7
-    channelen: 8
-    modbusadder: 9
+    rangelow: 2.34
+    rangehigh: 80
+    k: 1.1
+    b: 1.23
+    period: 3
+    channelen: 1
+    modbusadder: 2
     bufse: 2

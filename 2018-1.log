@@ -1,0 +1,15 @@
+2018/01/28 16:14:04 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2018/01/28 16:14:04 lora_net.go:100: [info]Reconnect open lora module 0 Second after 
+2018/01/28 16:14:04 net.go:70: [info]Reconnect to the server 0 Second after 
+2018/01/28 16:15:34 net.go:99: [warring]心跳超时
+2018/01/28 16:15:34 net.go:70: [info]Reconnect to the server 0 Second after 
+2018/01/28 16:15:35 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00003c38","msgParam":"systemLogin"}
+2018/01/28 16:15:35 impl_rf.go:133: [warring]rfNet invalid data:00
+2018/01/28 16:17:04 net.go:99: [warring]心跳超时
+2018/01/28 16:17:04 net.go:70: [info]Reconnect to the server 0 Second after 
+2018/01/28 16:17:06 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00003c5b","msgParam":"systemLogin"}
+2018/01/28 16:18:34 net.go:99: [warring]心跳超时
+2018/01/28 16:18:34 net.go:70: [info]Reconnect to the server 0 Second after 
+2018/01/28 15:59:33 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2018/01/28 15:59:33 lora_net.go:100: [info]Reconnect open lora module 0 Second after 
+2018/01/28 15:59:33 net.go:70: [info]Reconnect to the server 0 Second after 

@@ -155,21 +155,22 @@ func gwParmToServer(m map[string]interface{}) {
 	rfid, rfchan, rfnetid := config.SysParamRf()
 
 	param := &modle.GatewayParmResp{
-		MsgType:      "GET",
-		MsgID:        msgID,
-		MsgGwID:      config.SysParamGwId(),
-		MsgTimeStamp: time.Now().Unix(),
-		MsgParam:     "gatewayParam",
-		MsgResp:      "ok",
-		GwID:         config.SysParamGwId(),
-		GwIP:         config.SysParamGwIp(),
-		ServerIP:     ip,
-		ServerPort:   port,
-		RfID:         rfid,
-		RfChannel:    rfchan,
-		RfNetID:      rfnetid,
-		DataUpCycle:  config.SysParamDataUpCycle(),
-		HeartCycle:   config.SysParamHeartCycle(),
+		MsgType:       "GET",
+		MsgID:         msgID,
+		MsgGwID:       config.SysParamGwId(),
+		MsgTimeStamp:  time.Now().Unix(),
+		MsgParam:      "gatewayParam",
+		MsgResp:       "ok",
+		GwID:          config.SysParamGwId(),
+		GwIP:          config.SysParamGwIp(),
+		ServerIP:      ip,
+		ServerPort:    port,
+		RfID:          rfid,
+		RfChannel:     rfchan,
+		RfNetID:       rfnetid,
+		DataUpCycle:   config.SysParamDataUpCycle(),
+		HeartCycle:    config.SysParamHeartCycle(),
+		DataReadCycle: config.SysParamDataReadCycle(),
 	}
 
 	buf, err := json.Marshal(param)

@@ -3,3 +3,7 @@ alarmlist:
   channel: 0
   alarmvaluel: 10
   alarmvalueh: 170
+- sensorid: EADDB2EEFBE6
+  channel: 8
+  alarmvaluel: 10
+  alarmvalueh: 170

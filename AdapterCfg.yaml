@@ -1,3 +1,247 @@
+EAACE2CDFFB8:
+  sensorid: EAACE2CDFFB8
+  sensoradder: 1
+  channelsetlist:
+  - channel: 0
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 40
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 0
+    bufse: 2
+  - channel: 1
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 2
+    b: 1
+    period: 3
+    channelen: 1
+    modbusadder: 2
+    bufse: 2
+  - channel: 2
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 0
+    modbusadder: 4
+    bufse: 2
+  - channel: 3
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 4
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 8
+    bufse: 2
+  - channel: 5
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1.05
+    b: -10
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 6
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 7
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 8
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 9
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 10
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 11
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 12
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 13
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 14
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 15
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 16
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 8
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 8
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 8
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 8
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 8
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 8
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
+  - channel: 8
+    ubgadder: 1
+    rangelow: 0
+    rangehigh: 80
+    k: 1
+    b: 0
+    period: 3
+    channelen: 1
+    modbusadder: 6
+    bufse: 2
 EAADE2BBCAC7:
   sensorid: EAADE2BBCAC7
   sensoradder: 1

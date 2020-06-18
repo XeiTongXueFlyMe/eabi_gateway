@@ -16,6 +16,7 @@ import (
 var gatewayParamChannel chan []byte
 var rfNetInfoChannel chan []byte
 var sensorInfoCfgChannel chan []byte
+var sensorNameChannel chan []byte
 var alarmInfoCfgChannel chan []byte
 var adapterInfoCfgChannel chan []byte
 var adapterSendRfDataChannel chan modle.AdapterInfo
@@ -382,6 +383,62 @@ func waitSensorCfgInfoConfig() {
 	}
 }
 
+func waitSensorNameConfig() {
+	for {
+		buf := <-sensorNameChannel
+
+		m := make(map[string]interface{})
+		if err := json.Unmarshal(buf, &m); err != nil {
+			log.PrintlnErr(err)
+			respToServer(m["msgId"], err.Error(), "sensorName")
+			continue
+		}
+		var msgType, msgID, sensorId, name string
+
+		if v, ok := m["msgType"]; ok {
+			if str, ok := v.(string); ok {
+				msgType = str
+			} else {
+				continue
+			}
+		}
+		if v, ok := m["msgId"]; ok {
+			if str, ok := v.(string); ok {
+				msgID = str
+			} else {
+				continue
+			}
+		}
+		if v, ok := m["sensorId"]; ok {
+			if str, ok := v.(string); ok {
+				sensorId = str
+			} else {
+				continue
+			}
+		}
+		if v, ok := m["name"]; ok {
+			if str, ok := v.(string); ok {
+				name = str
+			} else {
+				continue
+			}
+		}
+
+		switch msgType {
+		case "PUT":
+			if err := config.SetSensorNameWithID(sensorId, name); err == nil {
+				writeSensorCfgToFile(config.ReadSensorConfig())
+				respToServer(msgID, "ok", "sensorName")
+			} else {
+				respToServer(msgID, err.Error(), "sensorName")
+			}
+		default:
+
+		}
+
+	}
+}
+
 func alarmCfgToServer(req modle.AlarmInfoReq, aInfo []modle.AlarmInfo) {
 
 	param := &modle.AlarmInfoResp{
@@ -645,6 +702,11 @@ func implInit() {
 	sensorInfoCfgChannel = make(chan []byte, 1)
 	net.CreateMsgField("sensorInfo", sensorInfoCfgChannel)
 	go waitSensorCfgInfoConfig()
+
+	//配置传感器别名
+	sensorNameChannel = make(chan []byte, 1)
+	net.CreateMsgField("sensorName", sensorNameChannel)
+	go waitSensorNameConfig()
 
 	//报警参数配置
 	//本地存储或读取配置文件，

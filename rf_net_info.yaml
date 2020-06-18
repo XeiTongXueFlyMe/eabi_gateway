@@ -1,6 +1,14 @@
+EAADE2BBCAC7:
+  id: EAADE2BBCAC7
+  name: 报警 2 号
+  softwarever: v0.0.0
+  hardwarever: v0.0.0
+  channel:
+  - Channel_0
+  - Channel_1
 EADDB2EEFBE6:
   id: EADDB2EEFBE6
-  name: 报警 1 号
+  name: 适配器
   softwarever: v0.0.0
   hardwarever: v0.0.0
   channel:
@@ -8,3 +16,7 @@ EADDB2EEFBE6:
   - Channel_1
   - Channel_2
   - Channel_3
+  - Channel_5
+  - Channel_6
+  - Channel_7
+  - Channel_8

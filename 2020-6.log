@@ -15,3 +15,874 @@
 2020/06/17 11:45:20 lora_net.go:49: [err]read /dev/ttyUSB0: file already closed
 2020/06/17 11:45:20 lora_net.go:71: [err]open /dev/ttyUSB0: no such file or directory
 2020/06/17 11:46:29 net.go:40: [warring]websocker close : EOF
+2020/06/17 16:42:40 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 16:42:40 lora_net.go:94: [err]input/output error
+2020/06/17 16:43:06 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 16:43:06 lora_net.go:94: [err]input/output error
+2020/06/17 16:43:43 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 16:43:43 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/17 16:43:43 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/17 16:43:44 impl_rf.go:133: [warring]rfNet invalid data:0000
+2020/06/17 16:43:44 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00004d25","msgParam":"systemLogin"}
+2020/06/17 16:43:44 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/17 16:45:17 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 16:45:17 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/17 16:45:17 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/17 16:45:18 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00004d7e","msgParam":"systemLogin"}
+2020/06/17 16:45:18 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/17 16:59:40 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 16:59:40 lora_net.go:94: [err]open /dev/ttyUSB0: no such file or directory
+2020/06/17 16:59:50 lora_net.go:101: [info]Reconnect open lora module 10 Second after 
+2020/06/17 16:59:50 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/17 16:59:51 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00005045","msgParam":"systemLogin"}
+2020/06/17 16:59:51 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/17 17:05:50 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 17:05:50 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/17 17:05:50 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/17 17:05:50 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c010310db7eac41dbf98a40cdcca04085eb91403ca1020300000004443a030300
+2020/06/17 17:05:50 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc000050d2","msgParam":"systemLogin"}
+2020/06/17 17:05:56 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/17 17:13:27 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 17:13:27 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/17 17:13:28 net.go:70: [info]Reconnect to the server 1 Second after 
+2020/06/17 17:13:28 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc000051af","msgParam":"systemLogin"}
+2020/06/17 17:13:28 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/17 17:14:34 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 17:14:34 lora_net.go:94: [err]input/output error
+2020/06/17 17:14:46 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 17:14:46 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/17 17:14:46 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/17 17:14:47 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbf00004a27","msgParam":"systemLogin"}
+2020/06/17 17:14:47 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/17 17:14:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:14:50 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:15:16 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:15:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:15:21 impl_rf.go:133: [warring]rfNet invalid data:03030000000ec5ec
+2020/06/17 17:15:30 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:15:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:15:46 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:15:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:17:27 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/17 17:17:27 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/17 17:17:27 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/17 17:17:27 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc000051fc","msgParam":"systemLogin"}
+2020/06/17 17:17:27 impl_rf.go:133: [warring]rfNet invalid data:00
+2020/06/17 17:17:28 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/17 17:17:57 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:17:58 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:18:13 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:18:13 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:19:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:19:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:19:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:19:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:19:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:19:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:19:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:19:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:20:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:20:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:20:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:20:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:20:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:20:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:20:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:20:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:21:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:21:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:21:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:21:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:21:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:21:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:21:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:21:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:22:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:22:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:22:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:22:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:22:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:22:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:22:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:23:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:23:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:23:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:23:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:23:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:23:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:23:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:23:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:24:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:24:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:24:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:24:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:24:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:24:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:24:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:24:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:25:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:25:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:25:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:25:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:25:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:25:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:25:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:25:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:26:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:26:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:26:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:26:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:26:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:26:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:26:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:26:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:27:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:27:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:27:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:27:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:27:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:27:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:27:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:27:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:28:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:28:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:28:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:28:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:28:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:28:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:28:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:28:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:29:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:29:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:29:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:29:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:29:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:29:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:29:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:29:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:30:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:30:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:30:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:30:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:30:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:30:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:30:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:30:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:31:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:31:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:31:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:31:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:31:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:31:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:31:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:31:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:32:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:32:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:32:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:32:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:32:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:32:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:32:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:32:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:33:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:33:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:33:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:33:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:33:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:33:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:33:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:33:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:34:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:34:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:34:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:34:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:34:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:34:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:34:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:34:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:35:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:35:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:35:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:35:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:35:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:35:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:35:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:35:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:36:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:36:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:36:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:36:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:36:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:36:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:36:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:36:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:37:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:37:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:37:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:37:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:37:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:37:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:37:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:37:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:38:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:38:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:38:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:38:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:38:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:38:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:38:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:38:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:39:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:39:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:39:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:39:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:39:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:39:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:39:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:39:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:40:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:40:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:40:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:40:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:40:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:40:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:40:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:40:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:41:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:41:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:41:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:41:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:41:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:41:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:41:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:41:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:42:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:42:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:42:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:42:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:42:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:42:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:42:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:42:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:43:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:43:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:43:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:43:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:43:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:43:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:43:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:43:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:44:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:44:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:44:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:44:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:44:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:44:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:44:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:44:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:45:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:45:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:45:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:45:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:45:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:45:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:45:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:45:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:46:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:46:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:46:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:46:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:46:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:46:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:46:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:46:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:47:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:47:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:47:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:47:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:47:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:47:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:47:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:47:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:48:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:48:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:48:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:48:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:48:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:48:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:48:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:48:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:49:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:49:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:49:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:49:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:49:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:49:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:49:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:49:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:50:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:50:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:50:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:50:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:50:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:50:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:50:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:50:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:51:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:51:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:51:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:51:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:51:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:51:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:51:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:51:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:52:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:52:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:52:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:52:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:52:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:52:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:52:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:53:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:53:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:53:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:53:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:53:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:53:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:53:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:53:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:54:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:54:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:54:17 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:54:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:54:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:54:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:54:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:54:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:55:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:55:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:55:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:55:18 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:55:32 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:55:33 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:55:47 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:55:48 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/17 17:56:02 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/17 17:56:03 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:00:38 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/18 11:00:38 lora_net.go:94: [err]input/output error
+2020/06/18 11:01:44 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/18 11:01:44 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/18 11:01:44 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/18 11:01:44 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb80000545e","msgParam":"systemLogin"}
+2020/06/18 11:02:04 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/18 11:02:04 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/18 11:02:04 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/18 11:02:05 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbd000052e0","msgParam":"systemLogin"}
+2020/06/18 11:02:05 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/18 11:02:15 lora_net.go:27: [err]write /dev/ttyUSB0: input/output error
+2020/06/18 11:02:15 lora_net.go:71: [err]open /dev/ttyUSB0: no such file or directory
+2020/06/18 11:19:55 lora_net.go:79: [info]Reconnect open lora module 1060 Second after 
+2020/06/18 11:20:11 lora_net.go:27: [err]write /dev/ttyUSB0: input/output error
+2020/06/18 11:20:11 lora_net.go:71: [err]open /dev/ttyUSB0: no such file or directory
+2020/06/18 11:20:16 lora_net.go:79: [info]Reconnect open lora module 5 Second after 
+2020/06/18 11:20:46 lora_net.go:27: [err]write /dev/ttyUSB0: input/output error
+2020/06/18 11:20:46 lora_net.go:49: [err]read /dev/ttyUSB0: file already closed
+2020/06/18 11:20:46 lora_net.go:71: [err]open /dev/ttyUSB0: no such file or directory
+2020/06/18 11:20:51 lora_net.go:79: [info]Reconnect open lora module 5 Second after 
+2020/06/18 11:21:11 lora_net.go:27: [err]write /dev/ttyUSB0: input/output error
+2020/06/18 11:21:11 lora_net.go:49: [err]read /dev/ttyUSB0: file already closed
+2020/06/18 11:21:11 lora_net.go:71: [err]open /dev/ttyUSB0: no such file or directory
+2020/06/18 11:21:21 lora_net.go:79: [info]Reconnect open lora module 10 Second after 
+2020/06/18 11:21:26 lora_net.go:27: [err]write /dev/ttyUSB0: input/output error
+2020/06/18 11:21:26 lora_net.go:49: [err]read /dev/ttyUSB0: file already closed
+2020/06/18 11:21:26 lora_net.go:71: [err]open /dev/ttyUSB0: no such file or directory
+2020/06/18 11:25:21 lora_net.go:79: [info]Reconnect open lora module 235 Second after 
+2020/06/18 11:25:26 lora_net.go:27: [err]write /dev/ttyUSB0: input/output error
+2020/06/18 11:25:26 lora_net.go:49: [err]read /dev/ttyUSB0: file already closed
+2020/06/18 11:25:26 lora_net.go:71: [err]open /dev/ttyUSB0: no such file or directory
+2020/06/18 11:25:46 lora_net.go:79: [info]Reconnect open lora module 20 Second after 
+2020/06/18 11:45:50 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/18 11:45:50 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/18 11:45:50 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/18 11:45:50 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00005b9a","msgParam":"systemLogin"}
+2020/06/18 11:45:50 impl_rf.go:133: [warring]rfNet invalid data:00010300000008440c0103102bccac41a9898a40b746a040e93392407cf4020300
+2020/06/18 11:45:51 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/18 11:45:56 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:45:56 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:46:10 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:46:11 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:48:33 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/18 11:48:33 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/18 11:48:33 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/18 11:48:33 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00005c16","msgParam":"systemLogin"}
+2020/06/18 11:48:33 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/18 11:49:20 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/18 11:49:20 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/18 11:49:20 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/18 11:49:20 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbf000053f1","msgParam":"systemLogin"}
+2020/06/18 11:49:21 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/18 11:50:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:50:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:50:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:50:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:50:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:50:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:51:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:51:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:51:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:51:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:51:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:51:35 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:51:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:51:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:52:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:52:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:52:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:52:20 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:52:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:52:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:52:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:52:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:53:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:53:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:53:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:53:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:53:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:53:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:53:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:53:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:54:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:54:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:54:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:54:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:54:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:54:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:54:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:54:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:55:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:55:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:55:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:55:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:55:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:55:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:55:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:55:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:56:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:56:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:56:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:56:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:56:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:56:35 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:56:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:56:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:57:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:57:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:57:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:57:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:57:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:57:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:57:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:57:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:58:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:58:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:58:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:58:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:58:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:58:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:58:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:58:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:59:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:59:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:59:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:59:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:59:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:59:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 11:59:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 11:59:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:00:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:00:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:00:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:00:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:00:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:00:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:00:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:00:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:01:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:01:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:01:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:01:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:01:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:01:35 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:01:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:01:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:02:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:02:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:02:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:02:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:02:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:02:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:02:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:02:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:03:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:03:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:03:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:03:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:03:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:03:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:03:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:03:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:04:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:04:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:04:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:04:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:04:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:04:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:04:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:04:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:05:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:05:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:05:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:05:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:05:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:05:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:05:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:05:50 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:06:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:06:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:06:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:06:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:06:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:06:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:06:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:06:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:07:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:07:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:07:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:07:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:07:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:07:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:07:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:07:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:08:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:08:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:08:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:08:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:08:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:08:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:08:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:08:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:09:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:09:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:09:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:09:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:09:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:09:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:09:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:09:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:10:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:10:05 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:10:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:10:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:10:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:10:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:10:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:10:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:11:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:11:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:11:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:11:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:11:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:11:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:11:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:11:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:12:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:12:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:12:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:12:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:12:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:12:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:12:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:12:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:13:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:13:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:13:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:13:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:13:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:13:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:13:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:13:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:14:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:14:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:14:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:14:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:14:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:14:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:14:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:14:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:15:04 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:15:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:15:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:15:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:15:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:15:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:15:49 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:15:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:16:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:16:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:16:18 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:16:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:16:34 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:16:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:16:48 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:16:49 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:17:03 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:17:04 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:17:19 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:17:19 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 12:17:33 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c
+2020/06/18 12:17:34 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:10:55 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/18 15:10:55 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/18 15:10:55 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/18 15:10:56 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00006b97","msgParam":"systemLogin"}
+2020/06/18 15:10:56 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/18 15:22:28 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/18 15:22:28 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/18 15:22:28 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/18 15:22:28 impl_rf.go:133: [warring]rfNet invalid data:010300000008440c0103104c8e1cc1b81e3540cdcc5c4085eb9140bfdb020300000004443a020308
+2020/06/18 15:22:28 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb8000065f5","msgParam":"systemLogin"}
+2020/06/18 15:22:29 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/18 15:22:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:22:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:22:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:22:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:23:06 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:23:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:23:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:23:36 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:23:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:23:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:24:01 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:24:02 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:24:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:24:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:24:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:24:35 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:24:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:24:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:25:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:25:05 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:25:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:25:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:25:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:25:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:25:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:25:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:26:05 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:26:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:26:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:26:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:26:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:26:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:26:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:27:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:27:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:27:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:27:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:27:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:27:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:27:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:27:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:28:01 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:28:02 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:28:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:28:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:28:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:28:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:28:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:28:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:29:01 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:29:02 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:29:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:29:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:29:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:29:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:29:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:29:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:30:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:30:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:30:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:30:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:30:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:30:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:30:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:30:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:31:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:31:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:31:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:31:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:31:35 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:31:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:31:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:32:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:32:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:32:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:32:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:32:35 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:32:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:32:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:33:01 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:33:02 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:33:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:33:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:33:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:33:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:33:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:33:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:34:01 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:34:02 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:34:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:34:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:34:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:34:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:34:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:34:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:35:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:35:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:35:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:35:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:35:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:35:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:35:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:35:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:36:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:36:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:36:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:36:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:36:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:36:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:36:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:36:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:37:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:37:01 impl_rf.go:133: [warring]rfNet invalid data:01102710000d1a000100000000000020420000803f000000000003000100000002a815
+2020/06/18 15:37:02 impl_rf.go:133: [warring]rfNet invalid data:01102724000d1a0001000000000000a042000000400000803f00030001000200023b5b
+2020/06/18 15:37:03 impl_rf.go:133: [warring]rfNet invalid data:01102738000d1a0001000000000000a0420000803f000000000003000000040002cbfc
+2020/06/18 15:37:04 impl_rf.go:133: [warring]rfNet invalid data:0110274c000d1a0001000000000000a0420000803f00000000000300010006000204fc
+2020/06/18 15:37:04 impl_rf.go:133: [warring]rfNet invalid data:01102760000d1a0001000000000000a0420000803f000000000003000100080002543f
+2020/06/18 15:37:05 impl_rf.go:133: [warring]rfNet invalid data:01102774000d1a0001000000000000a0420000803f0000000000030001000600022efc
+2020/06/18 15:37:06 impl_rf.go:133: [warring]rfNet invalid data:01102788000d1a0001000000000000a0420000803f00000000000300010006000293fc
+2020/06/18 15:37:07 impl_rf.go:133: [warring]rfNet invalid data:0110279c000d1a0001000000000000a0420000803f00000000000300010006000288fc
+2020/06/18 15:37:08 impl_rf.go:133: [warring]rfNet invalid data:011027b0000d1a0001000000000000a0420000803f000000000003000100060002b9fc
+2020/06/18 15:37:08 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:37:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:37:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:37:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:37:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:37:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:37:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:38:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:38:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:38:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:38:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:38:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:38:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:38:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:38:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:39:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:39:02 impl_rf.go:133: [warring]rfNet invalid data:01102710000d1a000100000000000020420000803f000000000003000100000002a815
+2020/06/18 15:39:02 impl_rf.go:133: [warring]rfNet invalid data:01102724000d1a0001000000000000a042000000400000803f00030001000200023b5b
+2020/06/18 15:39:08 impl_rf.go:133: [warring]rfNet invalid data:0110274c000d1a0001000000000000a0420000803f00000000000300010006000204fc
+2020/06/18 15:39:09 impl_rf.go:133: [warring]rfNet invalid data:01102760000d1a0001000000000000a0420000803f000000000003000100080002543f
+2020/06/18 15:39:10 impl_rf.go:133: [warring]rfNet invalid data:01102774000d1a0001000000000000a0426666863f000020c1000300010006000239a5
+2020/06/18 15:39:10 impl_rf.go:133: [warring]rfNet invalid data:01102788000d1a0001000000000000a0420000803f00000000000300010006000293fc
+2020/06/18 15:39:11 impl_rf.go:133: [warring]rfNet invalid data:0110279c000d1a0001000000000000a0420000803f00000000000300010006000288fc
+2020/06/18 15:39:12 impl_rf.go:133: [warring]rfNet invalid data:011027b0000d1a0001000000000000a0420000803f000000000003000100060002b9fc
+2020/06/18 15:39:13 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:39:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:39:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:39:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:39:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:39:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:39:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:40:01 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:40:02 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:40:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:40:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:40:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:40:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:40:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:40:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:41:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:41:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:41:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:41:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:41:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:41:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:41:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:41:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:42:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:42:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:42:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:42:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:42:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:42:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:42:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:42:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:43:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:43:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:43:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:43:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:43:32 api.go:89: [warring]json.Valid return false: {"msgId":"B92B5114-FAA2-A6BF-9E8B-1A09B9252D1E:1","msgGwId":"FEFEABABABFE","msgTimeStamp":1592466212,"msgParam":"adapter","sensorId":"EAACE2CDFFB8","adapterInfo":{"sensorId":"EAACE2CDFFB8","sensorAdder":1,"channelSetList":[{"channel":0,"ubgAdder":1,"rangeLow":0,"rangeHigh":40,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":0,"bufse":2},{"channel":1,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":2,"b":1,"period":3,"channelEn":1,"modbusAdder":2,"bufse":2},{"channel":2,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":0,"modbusAdder":4,"bufse":2},{"channel":3,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":4,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":8,"bufse":2},{"channel":5,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1.05,"b":-10,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":6,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":7,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":8,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":9,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6
+2020/06/18 15:43:32 api.go:89: [warring]json.Valid return false: ,"bufse":2}]},"msgType":"PUT"}
+2020/06/18 15:43:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:43:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:43:52 api.go:89: [warring]json.Valid return false: {"msgId":"6B3DD0DF-9AA1-64D2-C9C9-E655C604614B:1","msgGwId":"FEFEABABABFE","msgTimeStamp":1592466232,"msgParam":"adapter","sensorId":"EAACE2CDFFB8","adapterInfo":{"sensorId":"EAACE2CDFFB8","sensorAdder":1,"channelSetList":[{"channel":0,"ubgAdder":1,"rangeLow":0,"rangeHigh":40,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":0,"bufse":2},{"channel":1,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":2,"b":1,"period":3,"channelEn":1,"modbusAdder":2,"bufse":2},{"channel":2,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":0,"modbusAdder":4,"bufse":2},{"channel":3,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":4,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":8,"bufse":2},{"channel":5,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1.05,"b":-10,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":6,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":7,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":8,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6,"bufse":2},{"channel":9,"ubgAdder":1,"rangeLow":0,"rangeHigh":80,"k":1,"b":0,"period":3,"channelEn":1,"modbusAdder":6
+2020/06/18 15:43:52 api.go:89: [warring]json.Valid return false: ,"bufse":2}]},"msgType":"PUT"}
+2020/06/18 15:44:01 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:44:02 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:44:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:44:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:44:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:44:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:44:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:44:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:45:01 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:45:02 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:45:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:45:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:45:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:45:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:45:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:45:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:46:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:46:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:46:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:46:16 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:46:30 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:46:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:46:46 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:46:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:47:00 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:47:01 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:47:16 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:47:17 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:47:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:47:31 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:47:45 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:47:46 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 15:48:01 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 15:48:02 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 16:03:49 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/18 16:03:49 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/18 16:03:49 net.go:72: [info]Reconnect to the server 0 Second after 
+2020/06/18 16:03:49 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412010340e6271ec1b81ed540cdcc5c4085eb9140d7237a44fca934c18fc215c0cd
+2020/06/18 16:03:49 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb800006b5b","msgParam":"systemLogin"}
+2020/06/18 16:03:49 upD.go:89: [warring]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/18 16:04:06 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 16:04:15 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 16:04:20 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 16:04:31 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 16:04:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
+2020/06/18 16:04:47 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
+2020/06/18 16:04:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a0203084c8e1cc1b81e3540759d

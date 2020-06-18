@@ -1,9 +1,9 @@
 sensorlist:
 - sensorid: EADDB2EEFBE6
-  sensorname: 报警 1 号
+  sensorname: 适配器
   sensoradder: 1
   dataadder: 0
-  datasize: 8
+  datasize: 18
   channellist:
   - channel: 0
     valuetype: 温度(℃)
@@ -12,6 +12,14 @@ sensorlist:
   - channel: 2
     valuetype: 压力(pa)
   - channel: 3
+    valuetype: 压力(pa)
+  - channel: 5
+    valuetype: 温度(℃)
+  - channel: 6
+    valuetype: 压力(pa)
+  - channel: 7
+    valuetype: 压力(pa)
+  - channel: 8
     valuetype: 压力(pa)
 - sensorid: EAADE2BBCAC7
   sensorname: 报警 2 号

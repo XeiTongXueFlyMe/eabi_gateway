@@ -11,9 +11,9 @@ import (
 var log module.LogInterfase
 var mu sync.RWMutex
 
-//var defttyName = "/dev/ttyUSB0"
+var defttyName = "/dev/ttyUSB0"
 
-var defttyName = "/dev/ttyS7"
+//var defttyName = "/dev/ttyS7"
 var defBaud = 9600
 var defReadTimeOut = time.Millisecond * 1
 var receiveChan chan []byte

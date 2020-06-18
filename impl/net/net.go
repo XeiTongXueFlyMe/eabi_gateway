@@ -40,9 +40,11 @@ func waitNetReceive() {
 			log.PrintlnWarring("websocker close :", err)
 			break
 		} else {
-			fmt.Printf("buf = %d\n", n)
-			log.Printlntml(string(buf))
-			netDataBufChan <- buf[0:n]
+			if n != 0 {
+				fmt.Printf("buf = %d\n", n)
+				log.Printlntml(string(buf))
+				netDataBufChan <- buf[0:n]
+			}
 		}
 	}
 }

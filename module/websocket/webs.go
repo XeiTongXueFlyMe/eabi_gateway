@@ -3,7 +3,7 @@ package webs
 import (
 	"net/url"
 
-	"golang.org/x/net/websocket"
+	"github.com/gorilla/websocket"
 )
 
 type Conn struct {
@@ -13,18 +13,22 @@ type Conn struct {
 func (t *Conn) Open(host, path string) error {
 	var err error
 	u := url.URL{Scheme: "ws", Host: host, Path: path}
-	t.Ws, err = websocket.Dial(u.String(), "", "http://"+host+"/")
+	t.Ws, _, err = websocket.DefaultDialer.Dial(u.String(), nil)
 
 	return err
 }
-
 func (t *Conn) Write(buf []byte) (int, error) {
-	return t.Ws.Write(buf)
+	err := t.Ws.WriteMessage(websocket.TextMessage, buf)
+	return len(buf), err
 }
 
 func (t *Conn) Read(buf []byte) (int, error) {
-	//TODO:由于网络原因，可能一包数据变成两包
-	return t.Ws.Read(buf)
+	_, message, err := t.Ws.ReadMessage()
+	if err != nil {
+		return 0, err
+	}
+	copy(buf, message)
+	return len(message), nil
 }
 
 func (t *Conn) Close() error {

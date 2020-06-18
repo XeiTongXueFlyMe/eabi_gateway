@@ -2,6 +2,7 @@ package config
 
 import (
 	modle "eabi_gateway/impl"
+	"errors"
 	"fmt"
 )
 
@@ -25,6 +26,16 @@ func (t *SensorList) SensorNameFromID(sensorID string) (string, error) {
 	} else {
 		return sensor.SensorName, nil
 	}
+}
+
+//SetSensorNameWithID 获取传感器名称
+func (t *SensorList) SetSensorNameWithID(sensorID string, name string) error {
+	if sensor, err := t.findSensorFromID(sensorID); err == nil {
+		sensor.SensorName = name
+		return nil
+	}
+
+	return errors.New("没有查询到相关的传感器")
 }
 
 //SensorAdderFromID 获取传感器modbus地址
@@ -86,6 +97,11 @@ var common SensorList
 //SensorNameFromID 获取传感器名称
 func SensorNameFromID(sensorID string) (string, error) {
 	return common.SensorNameFromID(sensorID)
+}
+
+//SetSensorNameWithID 获取传感器名称
+func SetSensorNameWithID(sensorID string, name string) error {
+	return common.SetSensorNameWithID(sensorID, name)
 }
 
 //SensorAdderFromID 获取传感器modbus地址

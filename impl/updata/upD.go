@@ -35,6 +35,9 @@ func (t *DataCsv) Write(d interface{}) {
 	switch d.(type) {
 	case modle.UpDataMetaInfo:
 		info, _ := d.(modle.UpDataMetaInfo)
+		timestamp := time.Unix(info.TimeStamp, 0)
+		t := fmt.Sprintf("当前时间:%d-%d-%dT %d:%d:%d\n", timestamp.Year(), timestamp.Month(), timestamp.Day(), timestamp.Hour(), timestamp.Minute(), timestamp.Second())
+		s = append(s, t)
 		s = append(s, info.SourceID)
 		s = append(s, info.GwID)
 		s = append(s, info.SensorName)
@@ -86,7 +89,7 @@ func (t *DataCsv) writeSdb(s []string) {
 	f, err := os.OpenFile(fn, os.O_RDWR|os.O_APPEND|os.O_CREATE, 0777)
 	if err != nil {
 		t.one.Do(func() {
-			log.PrintlnWarring(err)
+			log.PrintlnErr(err)
 		})
 		return
 	}

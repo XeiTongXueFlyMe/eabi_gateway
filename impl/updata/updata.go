@@ -41,7 +41,6 @@ func dataUpCycle() {
 		if fp := dataCsv.ReadUpFilePath(); fp != "" {
 			file, _ := os.Open(fp)
 
-			//TODO
 			fn := uuid.New().String()
 			url := "http://gas.elitesemicon.com.cn/Index/handlePowerData/msgId/" + fn + "/msgGwId/" + config.SysParamGwId()
 			_, err := req.Post(url, req.FileUpload{
@@ -50,7 +49,9 @@ func dataUpCycle() {
 				FileName:  fn + ".csv",
 			})
 			if err != nil {
+				file.Close()
 				log.PrintlnErr(err)
+				continue
 			}
 
 			file.Close()

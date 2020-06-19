@@ -144,13 +144,9 @@ func (m *RespInfo) IsSupportModbusForm() bool {
 			return false
 		}
 	case 0x06:
-		if l != 8 {
-			return false
-		}
+		return true
 	case 0x10:
-		if l != 8 {
-			return false
-		}
+		return true
 	default:
 		return false
 	}

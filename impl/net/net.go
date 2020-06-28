@@ -7,7 +7,6 @@ import (
 	myLog "eabi_gateway/module/my_log"
 	webs "eabi_gateway/module/websocket"
 	"encoding/json"
-	"fmt"
 
 	"sync"
 	"time"
@@ -41,7 +40,6 @@ func waitNetReceive() {
 			break
 		} else {
 			if n != 0 {
-				fmt.Printf("buf = %d\n", n)
 				log.Printlntml(string(buf))
 				netDataBufChan <- buf[0:n]
 			}
@@ -50,23 +48,16 @@ func waitNetReceive() {
 }
 
 func rebootNetConnet(host, path string) {
-	var one sync.Once
-
 	mu.Lock()
 	defer mu.Unlock()
 	t := time.Now().Unix()
 
-	for {
-		net = &webs.Conn{}
-		if err := net.Open(host, path); err != nil {
-			one.Do(func() {
-				log.PrintlnErr(err)
-			})
+	net = &webs.Conn{}
+	if err := net.Open(host, path); err != nil {
 
-			time.Sleep(5 * time.Second)
-			continue
-		}
-		break
+		log.PrintlnErr(err)
+
+		panic(err)
 	}
 
 	log.PrintfInfo("Reconnect to the server %d Second after ", time.Now().Unix()-t)

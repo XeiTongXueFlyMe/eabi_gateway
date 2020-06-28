@@ -67,5 +67,5 @@ func (t *L) Printftml(format string, v ...interface{}) {
 	fmt.Printf(format, v...)
 }
 func (t *L) Printlntml(v ...interface{}) {
-	fmt.Println(v...)
+	//fmt.Println(v...)
 }

@@ -886,3 +886,24 @@
 2020/06/18 16:04:32 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a
 2020/06/18 16:04:47 impl_rf.go:133: [warring]rfNet invalid data:0103000000204412
 2020/06/18 16:04:47 impl_rf.go:133: [warring]rfNet invalid data:020300000004443a0203084c8e1cc1b81e3540759d
+2020/06/19 10:28:35 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/19 10:28:35 lora_net.go:94: [err]input/output error
+2020/06/19 10:29:02 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/19 10:29:02 lora_net.go:94: [err]input/output error
+2020/06/19 10:30:03 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/19 10:30:03 lora_net.go:101: [info]Reconnect open lora module 0 Second after 
+2020/06/19 10:30:03 net.go:72: [info]Reconnect to the server 0 Second after 
+2020/06/19 10:30:04 impl_rf.go:133: [warring]rfNet invalid data:00
+2020/06/19 10:30:04 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00007be2","msgParam":"systemLogin"}
+2020/06/19 10:30:04 upD.go:94: [err]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/23 17:40:44 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/23 17:40:44 lora_net.go:100: [info]Reconnect open lora module 0 Second after 
+2020/06/23 17:40:44 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/23 17:40:44 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00007f22","msgParam":"systemLogin"}
+2020/06/23 17:40:44 impl_rf.go:133: [warring]rfNet invalid data:4052b80e4088417840ffffffff85eb9140d7237a44a4
+2020/06/23 17:40:45 upD.go:94: [err]open /root/sdb/updata-2020-6.csv: permission denied
+2020/06/24 10:38:59 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/06/24 10:38:59 lora_net.go:27: [err]common is null
+2020/06/24 10:38:59 lora_net.go:70: [err]open /dev/ttyUSB1: no such file or directory
+2020/06/24 10:38:59 net.go:70: [info]Reconnect to the server 0 Second after 
+2020/06/24 10:38:59 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc000083c9","msgParam":"systemLogin"}

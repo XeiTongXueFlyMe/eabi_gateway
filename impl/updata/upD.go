@@ -31,13 +31,11 @@ func NewDataCsv(name, sdpath string) *DataCsv {
 //Write 写入数据
 func (t *DataCsv) Write(d interface{}) {
 	s := []string{}
+	var info modle.UpDataMetaInfo
 
 	switch d.(type) {
 	case modle.UpDataMetaInfo:
-		info, _ := d.(modle.UpDataMetaInfo)
-		timestamp := time.Unix(info.TimeStamp, 0)
-		t := fmt.Sprintf("当前时间:%d-%d-%dT %d:%d:%d\n", timestamp.Year(), timestamp.Month(), timestamp.Day(), timestamp.Hour(), timestamp.Minute(), timestamp.Second())
-		s = append(s, t)
+		info, _ = d.(modle.UpDataMetaInfo)
 		s = append(s, info.SourceID)
 		s = append(s, info.GwID)
 		s = append(s, info.SensorName)
@@ -52,10 +50,14 @@ func (t *DataCsv) Write(d interface{}) {
 		s = append(s, info.Isok)
 	}
 
-	//写永久储存的数据
-	t.writeSdb(s)
 	//写入临时存储
 	t.writeTemp(s)
+
+	timestamp := time.Unix(info.TimeStamp, 0)
+	tm := fmt.Sprintf("%d-%d-%dT %d:%d:%d", timestamp.Year(), timestamp.Month(), timestamp.Day(), timestamp.Hour(), timestamp.Minute(), timestamp.Second())
+	s = append(s, tm)
+	//写永久储存的数据
+	t.writeSdb(s)
 
 	return
 }

@@ -181,7 +181,6 @@ func modbusDataTransmit() {
 
 		//轮训发送数据数据
 		for _, v := range deviceList {
-			fmt.Println(modbus.ReadDeviceReg(uint8(v.SensorAdder), uint16(v.DataAdder), uint16(v.DataSize)))
 			rfNet.Send(modbus.ReadDeviceReg(uint8(v.SensorAdder), uint16(v.DataAdder), uint16(v.DataSize)))
 			for {
 				//等待数据返回，或超时

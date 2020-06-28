@@ -11,9 +11,9 @@ import (
 var log module.LogInterfase
 var mu sync.RWMutex
 
-var defttyName = "/dev/ttyUSB0"
+//var defttyName = "/dev/ttyUSB1"
 
-//var defttyName = "/dev/ttyS7"
+var defttyName = "/dev/ttyS7"
 var defBaud = 9600
 var defReadTimeOut = time.Millisecond * 1
 var receiveChan chan []byte
@@ -44,7 +44,6 @@ func waitReceive() {
 		buf := make([]byte, 1024)
 		mu.Lock()
 		mu.Unlock()
-		//TODO可能出现突然收不到数据，但是可以发送数据
 		if n, err := lora.Read(buf); err != nil {
 			log.PrintlnErr(err)
 			time.Sleep(time.Second * 10)
@@ -81,12 +80,11 @@ func rebootOpenTTY() {
 
 //LoraInit 初始化lora网络模块，维护
 func LoraInit() {
-	var one sync.Once
-
 	log = &myLog.L{}
 	receiveChan = make(chan []byte)
 
 	//TODO:debug
+	var one sync.Once
 	t := time.Now().Unix()
 	for {
 		if err := lora.Open(defttyName, defBaud, defReadTimeOut); err != nil {

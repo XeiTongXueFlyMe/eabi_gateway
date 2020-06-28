@@ -570,7 +570,7 @@
 >}
 >```
 
-# 传感器别名设置
+# 11 传感器别名设置
 **websocket example:**
 * req:
 >```json
@@ -593,5 +593,163 @@
 >"msgTimeStamp":1586162656,
 >"msgParam":"sensorName",
 >"msgResp":"ok",
+>}
+>```
+
+# 12.1 自动投料相关的数据
+* req:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162503,
+>"msgParam":"autoFeeding",
+>"timerOneFlag":true,
+>"timerOneHour":1,
+>"timerOneMinutes":30,
+>"timerTwoFlag":true,
+>"timerTwoHour":1,
+>"timerTwoMinutes":30,
+>"timeFlag":true,
+>"timeStamp":1586162503,
+>"incrementFlag":true,
+>"increment":100,
+>"intervalTimeFlag":true,
+>"iTimerDay":1,
+>"iTimerHour":1,
+>"iTimerMinutes":30,
+>"intervalExitFlag":true,
+>"timeModuleFlag":true,
+>"timerOneModuleFlag":true,
+>"timerTwoModuleFlag":true,
+>"timeModuleExitFlag":true,
+>"intervalMoudleFlag":true,
+>}
+>```
+* resp:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162656,
+>"msgParam":"autoFeeding",
+>"msgResp":"ok",
+>}
+>```
+
+# 12.1 自动投料相关的数据
+* req:
+>```json
+>{
+>"msgType":"GET",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162503,
+>"msgParam":"autoFeeding",
+>}
+>```
+* resp:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162656,
+>"msgParam":"autoFeeding",
+>"msgResp":"ok",
+>"timerOneFlag":true,
+>"timerOneHour":1,
+>"timerOneMinutes":30,
+>"timerTwoFlag":true,
+>"timerTwoHour":1,
+>"timerTwoMinutes":30,
+>"timeFlag":true,
+>"timeStamp":1586162503,
+>"incrementFlag":true,
+>"increment":100,
+>"intervalTimeFlag":true,
+>"iTimerDay":1,
+>"iTimerHour":1,
+>"iTimerMinutes":30,
+>"intervalExitFlag":true,
+>"timeModuleFlag":true,
+>"timerOneModuleFlag":true,
+>"timerTwoModuleFlag":true,
+>"timeModuleExitFlag":true,
+>"intervalMoudleFlag":true,
+>}
+>```
+
+
+# 13.1 加液量参数
+* req:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162503,
+>"msgParam":"materialNum",
+>"yg":1.3,
+>"dti":1.3,
+>"dto":1.3,
+>"dci":1.3,
+>"ht":1.3,
+>"hr":1.3,
+>"pco":1.3,
+>"qg":1.3,
+>"qw":1.3,
+>"twh":1.3,
+>"tr":1.3,
+>"hour":1,
+>"minutes":2,
+>}
+>```
+* resp:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162656,
+>"msgParam":"materialNum",
+>"msgResp":"ok",
+>}
+>```
+# 13.2 加液量参数
+* req:
+>```json
+>{
+>"msgType":"GET",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162503,
+>"msgParam":"materialNum",
+>}
+>```
+* resp:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162656,
+>"msgParam":"materialNum",
+>"msgResp":"ok",
+>"yg":1.3,
+>"dti":1.3,
+>"dto":1.3,
+>"dci":1.3,
+>"ht":1.3,
+>"hr":1.3,
+>"pco":1.3,
+>"qg":1.3,
+>"qw":1.3,
+>"twh":1.3,
+>"tr":1.3,
+>"hour":1,
+>"minutes":2,
 >}
 >```

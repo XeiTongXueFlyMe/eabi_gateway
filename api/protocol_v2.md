@@ -605,6 +605,8 @@
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162503,
 >"msgParam":"autoFeeding",
+>"autoFeeding":
+>{
 >"timerOneFlag":true,
 >"timerOneHour":1,
 >"timerOneMinutes":30,
@@ -625,6 +627,7 @@
 >"timerTwoModuleFlag":true,
 >"timeModuleExitFlag":true,
 >"intervalMoudleFlag":true,
+>}
 >}
 >```
 * resp:
@@ -659,6 +662,8 @@
 >"msgTimeStamp":1586162656,
 >"msgParam":"autoFeeding",
 >"msgResp":"ok",
+>"autoFeeding":
+>{
 >"timerOneFlag":true,
 >"timerOneHour":1,
 >"timerOneMinutes":30,
@@ -680,6 +685,7 @@
 >"timeModuleExitFlag":true,
 >"intervalMoudleFlag":true,
 >}
+>}
 >```
 
 
@@ -692,6 +698,8 @@
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162503,
 >"msgParam":"materialNum",
+>"materialNum"
+>{
 >"yg":1.3,
 >"dti":1.3,
 >"dto":1.3,
@@ -705,6 +713,7 @@
 >"tr":1.3,
 >"hour":1,
 >"minutes":2,
+>}
 >}
 >```
 * resp:
@@ -738,6 +747,8 @@
 >"msgTimeStamp":1586162656,
 >"msgParam":"materialNum",
 >"msgResp":"ok",
+>"materialNum"
+>{
 >"yg":1.3,
 >"dti":1.3,
 >"dto":1.3,
@@ -751,5 +762,6 @@
 >"tr":1.3,
 >"hour":1,
 >"minutes":2,
+>}
 >}
 >```

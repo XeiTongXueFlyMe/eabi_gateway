@@ -160,6 +160,10 @@ type AlarmInfoResp struct {
 	AlarmList    []AlarmInfo `json:"alarmList"`
 }
 
+type AutoFeeding struct {
+
+}
+
 //UpDataMetaInfo 传感器上传的元信息
 type UpDataMetaInfo struct {
 	SourceID    string

@@ -1,0 +1,50 @@
+2020/07/01 09:39:36 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/01 09:39:36 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/01 09:39:36 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb9000000a0","msgParam":"systemLogin"}
+2020/07/01 09:39:46 lora_net.go:27: [err]common is null
+2020/07/01 09:39:46 lora_net.go:70: [err]open /dev/ttyUSB1: no such file or directory
+2020/07/01 09:51:06 net.go:93: [warring]心跳超时
+2020/07/01 09:51:06 net.go:40: [warring]websocker close : read tcp 192.168.100.101:39028->47.108.88.41:8286: use of closed network connection
+2020/07/01 09:51:06 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/01 09:51:06 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc000000f7","msgParam":"systemLogin"}
+2020/07/01 10:58:13 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/01 10:58:13 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/01 10:58:13 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb9000006aa","msgParam":"systemLogin"}
+2020/07/01 10:58:23 lora_net.go:27: [err]common is null
+2020/07/01 10:58:23 lora_net.go:70: [err]open /dev/ttyUSB1: no such file or directory
+2020/07/01 10:59:01 impl_auto_feeding.go:100: [err]json: cannot unmarshal number into Go struct field MaterialNum.materialNum.yg of type string
+2020/07/01 10:59:58 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/01 10:59:58 lora_net.go:27: [err]common is null
+2020/07/01 10:59:58 lora_net.go:70: [err]open /dev/ttyUSB1: no such file or directory
+2020/07/01 10:59:58 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/01 10:59:58 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb9000006f4","msgParam":"systemLogin"}
+2020/07/01 11:00:18 impl_auto_feeding.go:100: [err]json: cannot unmarshal number 2.7 into Go struct field MaterialNum.materialNum.dto of type int64
+2020/07/01 11:00:57 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/01 11:00:57 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/01 11:00:57 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbf00000488","msgParam":"systemLogin"}
+2020/07/01 11:01:07 lora_net.go:27: [err]common is null
+2020/07/01 11:01:07 lora_net.go:70: [err]open /dev/ttyUSB1: no such file or directory
+2020/07/01 11:05:02 impl_auto_feeding.go:48: [err]json: cannot unmarshal bool into Go struct field AutoFeeding.autoFeeding.timeStamp of type int64
+2020/07/01 13:45:05 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/01 13:45:05 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/01 13:45:06 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb00000e2d","msgParam":"systemLogin"}
+2020/07/01 13:45:15 lora_net.go:27: [err]common is null
+2020/07/01 13:45:15 lora_net.go:70: [err]open /dev/ttyUSB1: no such file or directory
+2020/07/03 15:50:11 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/03 15:50:11 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/03 15:50:11 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb90000414b","msgParam":"systemLogin"}
+2020/07/03 15:50:21 lora_net.go:27: [err]common is null
+2020/07/03 15:50:21 lora_net.go:70: [err]open /dev/ttyUSB1: no such file or directory
+2020/07/03 15:56:10 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/03 15:56:10 lora_net.go:27: [err]common is null
+2020/07/03 15:56:10 lora_net.go:70: [err]open /dev/ttyUSB1: no such file or directory
+2020/07/03 15:56:10 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/03 15:56:10 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bba00002bd5","msgParam":"systemLogin"}
+2020/07/03 16:04:16 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/03 16:04:16 lora_net.go:27: [err]common is null
+2020/07/03 16:04:16 lora_net.go:70: [err]open /dev/ttyUSB1: no such file or directory
+2020/07/03 16:04:16 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/03 16:04:16 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbb00003200","msgParam":"systemLogin"}
+2020/07/03 16:05:08 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/03 16:05:08 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/03 16:05:08 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bba00002c41","msgParam":"systemLogin"}

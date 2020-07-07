@@ -43,12 +43,16 @@ func deviceMarshaler() {
 		code, _ := b.ReadDeviceCode()
 		_, buf, bufsize, _ := b.ReadDeviceData()
 
-		//TODO:暂时只处理　0x03
+		//FIXME:暂时只处理　0x03
 		if code == 0x03 {
 			v := findDeviceAndChannel(id)
 
 			for _, c := range v.ChannelList {
-				adder := uint16(c.Channel * 4)
+				if c.Channel == 0 {
+					continue
+				}
+
+				adder := uint16((c.Channel - 1) * 4)
 				if adder >= bufsize {
 					continue
 				}
@@ -154,7 +158,6 @@ func sendAdapterData(v modle.AdapterInfo) {
 		buf = append(buf, byte(uint16(chanV.Bufse&0xff00)>>8))
 		buf = append(buf, byte(chanV.Bufse&0xff))
 
-		fmt.Println(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 13, 26, buf[:]))
 		rfNet.Send(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 13, 26, buf[:]))
 		//等待数据返回，或超时
 		select {

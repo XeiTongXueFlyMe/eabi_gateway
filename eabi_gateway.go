@@ -39,10 +39,15 @@ func main() {
 	rfNet.LoraInit()
 	rfInit()
 
+	//初始化自动喂料
+	autoFeedingInit()
+
 	//初始化网络链接
 	net.NetInit()
 
-	//TODO:上传本地调试日志到服务器，每天上传一次，或则服务器主动获取
+	//上传本地调试日志到服务器，服务器主动获取
+	logUpdataInit()
+
 	for {
 		time.Sleep(1 * time.Hour)
 	}

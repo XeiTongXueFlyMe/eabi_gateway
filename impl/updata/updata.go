@@ -12,6 +12,9 @@ import (
 	"github.com/imroc/req"
 )
 
+//SDPATH 由外部脚本决定，只会是"/root/sdb/"
+var SDPATH string = "/root/sdb/"
+
 //临时上传文件使用uuid命名，并且存在内存文件系统中，不长期保存，上传到服务器后直接销毁
 //在sd卡中存储所有采集的数据，没有sd卡，不存储数据，按每天一个文件进行存储。
 var log module.LogInterfase
@@ -21,8 +24,7 @@ var dataCsv *DataCsv
 func Init() {
 	log = &myLog.L{}
 
-	//TODO:文件路径靠配置
-	dataCsv = NewDataCsv("updata", "/root/sdb/")
+	dataCsv = NewDataCsv("updata", SDPATH)
 	go dataUpCycle()
 
 	return

@@ -5,8 +5,6 @@ sensorlist:
   dataadder: 0
   datasize: 18
   channellist:
-  - channel: 0
-    valuetype: 温度(℃)
   - channel: 1
     valuetype: 压力(pa)
   - channel: 2

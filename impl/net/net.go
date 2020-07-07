@@ -25,6 +25,7 @@ func SendData(buf []byte) (int, error) {
 	mu.Lock()
 	defer mu.Unlock()
 
+	log.Printlntml(string(buf))
 	return net.Write(buf)
 }
 

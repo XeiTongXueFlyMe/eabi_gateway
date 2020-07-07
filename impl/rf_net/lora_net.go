@@ -83,7 +83,6 @@ func LoraInit() {
 	log = &myLog.L{}
 	receiveChan = make(chan []byte)
 
-	//TODO:debug
 	var one sync.Once
 	t := time.Now().Unix()
 	for {

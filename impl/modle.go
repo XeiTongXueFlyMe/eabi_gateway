@@ -57,6 +57,7 @@ type RfNetInfoResp struct {
 
 type ChanneInfo struct {
 	Channel   int    `json:"channel"`   //通道号
+	CName     string `json:"cName"`     //通道别名
 	ValueType string `json:"valueType"` //通道值类型
 }
 
@@ -160,8 +161,83 @@ type AlarmInfoResp struct {
 	AlarmList    []AlarmInfo `json:"alarmList"`
 }
 
+//AutoFeeding 自动投料相关数据
 type AutoFeeding struct {
+	TimerOneFlag       bool  `json:"timerOneFlag"`
+	TimerOneHour       int64 `json:"timerOneHour"`
+	TimerOneMinutes    int64 `json:"timerOneMinutes"`
+	TimerTwoFlag       bool  `json:"timerTwoFlag"`
+	TimerTwoHour       int64 `json:"timerTwoHour"`
+	TimerTwoMinutes    int64 `json:"timerTwoMinutes"`
+	TimeFlag           bool  `json:"timeFlag"`
+	TimeStamp          int64 `json:"timeStamp"`
+	IncrementFlag      bool  `json:"incrementFlag"`
+	Increment          int64 `json:"increment"`
+	IntervalTimeFlag   bool  `json:"intervalTimeFlag"`
+	ITimerDay          int64 `json:"iTimerDay"`
+	ITimerHour         int64 `json:"iTimerHour"`
+	ITimerMinutes      int64 `json:"iTimerMinutes"`
+	IntervalExitFlag   bool  `json:"intervalExitFlag"`
+	TimeModuleFlag     bool  `json:"timeModuleFlag"`
+	TimerOneModuleFlag bool  `json:"timerOneModuleFlag"`
+	TimerTwoModuleFlag bool  `json:"timerTwoModuleFlag"`
+	TimeModuleExitFlag bool  `json:"timeModuleExitFlag"`
+	IntervalMoudleFlag bool  `json:"intervalMoudleFlag"`
+}
 
+type AutoFeedingReq struct {
+	MsgType      string      `json:"msgType"`
+	MsgID        string      `json:"msgId"`
+	MsgGwID      string      `json:"msgGwId"`
+	MsgTimeStamp int64       `json:"msgTimeStamp"`
+	MsgParam     string      `json:"msgParam"`
+	AutoFeeding  AutoFeeding `json:"autoFeeding"`
+}
+
+type AutoFeedingResp struct {
+	MsgType      string      `json:"msgType"`
+	MsgID        string      `json:"msgId"`
+	MsgGwID      string      `json:"msgGwId"`
+	MsgTimeStamp int64       `json:"msgTimeStamp"`
+	MsgParam     string      `json:"msgParam"`
+	MsgResp      string      `json:"msgResp"`
+	AutoFeeding  AutoFeeding `json:"autoFeeding"`
+}
+
+//MaterialNum 加液量参数
+type MaterialNum struct {
+	Yg      float32 `json:"yg"`
+	Dti     float32 `json:"dti"`
+	Dto     float32 `json:"dto"`
+	Dci     float32 `json:"dci"`
+	Ht      float32 `json:"ht"`
+	Hr      float32 `json:"hr"`
+	Pco     float32 `json:"pco"`
+	Qg      float32 `json:"qg"`
+	Qw      float32 `json:"qw"`
+	Twh     float32 `json:"twh"`
+	Tr      float32 `json:"tr"`
+	Hour    float32 `json:"hour"`
+	Minutes float32 `json:"minutes"`
+}
+
+type MaterialNumReq struct {
+	MsgType      string      `json:"msgType"`
+	MsgID        string      `json:"msgId"`
+	MsgGwID      string      `json:"msgGwId"`
+	MsgTimeStamp int64       `json:"msgTimeStamp"`
+	MsgParam     string      `json:"msgParam"`
+	MaterialNum  MaterialNum `json:"materialNum"`
+}
+
+type MaterialNumResp struct {
+	MsgType      string      `json:"msgType"`
+	MsgID        string      `json:"msgId"`
+	MsgGwID      string      `json:"msgGwId"`
+	MsgTimeStamp int64       `json:"msgTimeStamp"`
+	MsgParam     string      `json:"msgParam"`
+	MsgResp      string      `json:"msgResp"`
+	MaterialNum  MaterialNum `json:"materialNum"`
 }
 
 //UpDataMetaInfo 传感器上传的元信息

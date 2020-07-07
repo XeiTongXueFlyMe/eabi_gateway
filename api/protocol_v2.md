@@ -329,10 +329,12 @@
 >            [
 >                {
 >                 "channel":1,
+>                 "cName":"xxx",//通道名称
 >                 "valueType":"压力(Psi)",
 >                }, 
 >                {
 >                 "channel":2,
+>                 "cName":"xxx",//通道名称
 >                 "valueType":"距离(mm)",
 >                }, 
 >            ]
@@ -366,10 +368,12 @@
 >            [
 >                {
 >                 "channel":1,
+>                 "cName":"xxx",//通道名称
 >                 "valueType":"压力(Psi)",
 >                }, 
 >                {
 >                 "channel":2,
+>                 "cName":"xxx",//通道名称
 >                 "valueType":"距离(mm)",
 >                }, 
 >            ]
@@ -397,9 +401,10 @@
 >"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162503,
->"msMsgTimeStampg",
+>"msgParam":"alarmConfig",
 >}
->```MsgTimeStamp
+>```
+
 * resp:
 >```json
 >{
@@ -505,7 +510,7 @@
 >       "k":1.0,//修正系数K
 >       "b":1.0,//修正系数B
 >       "period":10,//传感器周期
->       "channelEn":0,//通道使能\
+>       "channelEn":0,//通道使能
 >       "modbusAdder":25,//通道对应MODBUS地址
 >       "bufse":2, //通道对应数据长度
 >   },
@@ -763,5 +768,56 @@
 >"hour":1,
 >"minutes":2,
 >}
+>}
+>```
+
+# 14.１ 读取集控器系统日志
+**websocket example:**
+* req:
+>```json
+>{
+>"msgType":"GET",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162656,
+>"msgParam":"eabiLog",
+>}
+>```
+
+* resp:
+>```json
+>{
+>"msgType":"GET",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162503,
+>"msgParam":"eabiLog",
+>"msgResp":"ok",
+>"logData":"xxxxxxxxxxx",
+>}
+>```
+
+# 14.2 删除集控器系统日志
+**websocket example:**
+* req:
+>```json
+>{
+>"msgType":"DELETE",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162656,
+>"msgParam":"eabiLog",
+>}
+>```
+
+* resp:
+>```json
+>{
+>"msgType":"DELETE",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162503,
+>"msgParam":"eabiLog",
+>"msgResp":"ok",
 >}
 >```

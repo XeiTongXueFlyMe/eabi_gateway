@@ -821,3 +821,30 @@
 >"msgResp":"ok",
 >}
 >```
+
+
+# 15.１ 读取集控器算法日志
+**websocket example:**
+* req:
+>```json
+>{
+>"msgType":"GET",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162656,
+>"msgParam":"feedingAlgo",
+>}
+>```
+
+* resp:
+>```json
+>{
+>"msgType":"GET",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162503,
+>"msgParam":"feedingAlgo",
+>"msgResp":"ok",
+>"logData":"xxxxxxxxxxx",
+>}
+>```

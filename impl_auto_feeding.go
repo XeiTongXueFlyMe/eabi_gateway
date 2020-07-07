@@ -114,6 +114,21 @@ func waitMaterialNumParamConfig() {
 	}
 }
 
+func autoFeedingAlgo() {
+	for {
+		//TODO:判断是否到时间点
+		//hour, min, _ := time.Now().Clock()
+
+		//TODO:判断开井，关井标志
+
+		//TODO:记录上次油压和套压
+		//TODO:判断是否处于开井
+		//TODO:套压大于油压判断
+
+		time.Sleep(time.Minute * 1)
+	}
+}
+
 func autoFeedingInit() {
 	//网关参数的增删改查
 	feedingParamChannel = make(chan []byte, 1)
@@ -124,5 +139,7 @@ func autoFeedingInit() {
 	materialNumChannel = make(chan []byte, 1)
 	net.CreateMsgField("materialNum", materialNumChannel)
 	go waitMaterialNumParamConfig()
-	//TODO：ＪＹＬ定时计算线程
+
+	//定时自动投料
+	go autoFeedingAlgo()
 }

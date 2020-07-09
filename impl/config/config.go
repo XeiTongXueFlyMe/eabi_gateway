@@ -24,9 +24,10 @@ type SysParam struct {
 	}
 
 	Rf struct {
-		ID      string `yaml:"id"`
-		Channel string `yaml:"channel"`
-		NetID   string `yaml:"netId"`
+		Hardware string `yaml:"hardware"` //485,lora
+		ID       string `yaml:"id"`
+		Channel  string `yaml:"channel"`
+		NetID    string `yaml:"netId"`
 	}
 }
 
@@ -132,6 +133,13 @@ func ConfigTofile(m map[string]interface{}) string {
 				log.PrintfErr("json dataReadCycle no is int")
 				resp = "json dataReadCycle no is int"
 			}
+		case "hardware":
+			if str, ok := v.(string); ok {
+				sysParam.Rf.Hardware = str
+			} else {
+				log.PrintfErr("json Hardware no is srting")
+				resp = "json Hardware no is srting"
+			}
 		}
 
 	}
@@ -232,6 +240,8 @@ func SysParamHeartCycle(v ...interface{}) int {
 
 	return sysParam.Myself.HeartCycle
 }
+
+func SysHardware() string { return sysParam.Rf.Hardware }
 
 func SysParamDataReadCycle(v ...interface{}) int {
 	for _, arg := range v {

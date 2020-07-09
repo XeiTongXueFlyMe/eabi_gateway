@@ -12,7 +12,6 @@ import (
 var common *serial.Port
 var one sync.Once
 
-//Open Name: "/dev/ttyUSB0", Baud: 115200,
 func Open(name string, baud int, t time.Duration) error {
 	var err error
 

@@ -48,3 +48,11 @@
 2020/07/03 16:05:08 eabi_gateway.go:19: [info]eabi_gateway start runing :)
 2020/07/03 16:05:08 net.go:64: [info]Reconnect to the server 0 Second after 
 2020/07/03 16:05:08 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bba00002c41","msgParam":"systemLogin"}
+2020/07/08 08:56:14 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/08 08:56:14 lora_net.go:91: [err]input/output error
+2020/07/08 08:58:33 eabi_gateway.go:19: [info]eabi_gateway start runing :)
+2020/07/08 08:58:33 lora_net.go:91: [err]input/output error
+2020/07/09 09:40:15 eabi_gateway.go:20: [info]eabi_gateway start runing :)
+2020/07/09 09:40:15 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/07/09 09:40:15 lora_net.go:91: [err]input/output error
+2020/07/09 09:40:15 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bb900005290","msgParam":"systemLogin"}

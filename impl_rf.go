@@ -2,6 +2,7 @@ package main
 
 import (
 	modle "eabi_gateway/impl"
+	busNet "eabi_gateway/impl/Industrial_bus"
 	"eabi_gateway/impl/config"
 	"eabi_gateway/impl/modbus"
 	rfNet "eabi_gateway/impl/rf_net"
@@ -123,6 +124,39 @@ func waitRfData() {
 		log.Printlntml("read rfdata num = ", n)
 		log.Printlntml("read rfdata  = ", buf[:n])
 
+		//判断是否是485通信
+		if config.SysHardware() != "lora" {
+			continue
+		}
+
+		b := buf[:n]
+		if b.IsSupportModbusForm() {
+			id, _ := b.ReadDeviceID()
+
+			select {
+			case deviceIDTransmitChan <- id:
+			default:
+			}
+
+			deviceDataTransmitChan <- b[:n]
+		} else {
+			log.PrintfWarring("rfNet invalid data:%x", b)
+		}
+	}
+}
+
+func waitBusData() {
+	buf := make(modbus.RespInfo, 1024)
+	for {
+		n := busNet.Read(buf)
+		log.Printlntml("read rfdata num = ", n)
+		log.Printlntml("read rfdata  = ", buf[:n])
+
+		//判断是否是485通信
+		if config.SysHardware() != "485" {
+			continue
+		}
+
 		b := buf[:n]
 		if b.IsSupportModbusForm() {
 			id, _ := b.ReadDeviceID()
@@ -158,15 +192,26 @@ func sendAdapterData(v modle.AdapterInfo) {
 		buf = append(buf, byte(uint16(chanV.Bufse&0xff00)>>8))
 		buf = append(buf, byte(chanV.Bufse&0xff))
 
-		rfNet.Send(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 13, 26, buf[:]))
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "lora":
+			rfNet.Send(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 13, 26, buf[:]))
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 13, 26, buf[:]))
+		default:
+			continue
+		}
+
 		//等待数据返回，或超时
 		select {
 		case <-time.After(time.Second * 5):
+			log.PrintlnErr("send adapter data timeout(5s):", modbus.WriteDeviceReg(uint8(v.SensorAdder), uint16(chanV.Channel)*20+10000, 13, 26, buf[:]))
 			goto _continue
 		case id := <-deviceIDTransmitChan:
 			if id == uint8(v.SensorAdder) {
 				goto _continue
 			}
+			log.PrintfErr("modbus return id = %d  != %d", id, v.SensorAdder)
 		}
 
 	_continue:
@@ -177,28 +222,38 @@ func sendAdapterData(v modle.AdapterInfo) {
 func modbusDataTransmit() {
 
 	//每次轮训都重新读取传感器配置和报警配置
-	//modbusDataTransmit 由于lora网络传输数据较慢，所以通过接受超时来控制发送速率
+	//modbusDataTransmit 由于lora，485网络传输数据较慢，所以通过接受超时来控制发送速率
 	for {
 		t := time.Now().Unix()
 		deviceList = config.ReadSensorConfig()
 
 		//轮训发送数据数据
 		for _, v := range deviceList {
-			rfNet.Send(modbus.ReadDeviceReg(uint8(v.SensorAdder), uint16(v.DataAdder), uint16(v.DataSize)))
+			//判断 lora通信，485通信
+			switch config.SysHardware() {
+			case "lora":
+				rfNet.Send(modbus.ReadDeviceReg(uint8(v.SensorAdder), uint16(v.DataAdder), uint16(v.DataSize)))
+			case "485":
+				busNet.Send(modbus.ReadDeviceReg(uint8(v.SensorAdder), uint16(v.DataAdder), uint16(v.DataSize)))
+			default:
+				continue
+			}
+
 			for {
 				//等待数据返回，或超时
 				select {
 				case <-time.After(time.Second * 5):
+					log.PrintfErr("modbus wait sensorId = %d return timeout(5s)", v.SensorAdder)
 					goto _continue
 				case id := <-deviceIDTransmitChan:
 					if id == uint8(v.SensorAdder) {
 						goto _continue
 					}
+					log.PrintfErr("modbus return id = %d  != %d", id, v.SensorAdder)
 				}
 			}
 		_continue:
-			//TODO:等待适配器配置数据
-			select {
+			select { //适配器配置数据
 			case v := <-adapterSendRfDataChannel:
 				sendAdapterData(v)
 			default:
@@ -216,8 +271,11 @@ func rfInit() {
 	AlarmMap = make(map[string]alarmFactry)
 	deviceIDTransmitChan = make(chan uint8)
 	deviceDataTransmitChan = make(chan modbus.RespInfo)
-
+	//lora
 	go waitRfData()
+	//485
+	go waitBusData()
+
 	go modbusDataTransmit()
 	go deviceMarshaler()
 }

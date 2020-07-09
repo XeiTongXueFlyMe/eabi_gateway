@@ -166,6 +166,7 @@ func gwParmToServer(m map[string]interface{}) {
 		GwIP:          config.SysParamGwIp(),
 		ServerIP:      ip,
 		ServerPort:    port,
+		Hardware:      config.SysHardware(),
 		RfID:          rfid,
 		RfChannel:     rfchan,
 		RfNetID:       rfnetid,

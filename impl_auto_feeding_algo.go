@@ -1,6 +1,8 @@
 package main
 
 import (
+	modle "eabi_gateway/impl"
+	"errors"
 	"fmt"
 	"math"
 )
@@ -452,9 +454,45 @@ func Hagedorn_Brown() {
 	}
 }
 
+//输入参数
+var (
+	//定义井身结构
+	Dti float32 = 64   //油管内径，m
+	Dto float32 = 73   //油管外径，m
+	Dci float32 = 112  //套管内径，m
+	Ht  float32 = 2000 //油管下入深度，m
+	Hr  float32 = 2100 //储层中深，m
+	//定义生产数据
+	Pt  float32 = 0        //油压，MPa
+	Pc  float32 = 0        //套压，MPa
+	Qg  float32 = 1.0      //日产气，万方/天
+	Qw  float32 = 1.0      //日产水，方
+	Twh float32 = 22 + 273 //井口温度，K
+	//定义测试数据
+	Pcg float32 = 0
+	Tr  float32 = 120 + 273 //地层温度，K
+	//
+	Yg  float32 = 0.56
+	Tav float32 = 0
+	Pav float32 = 0
+	DT  float32 = 0
+	Z   float32 = 0
+	//
+	Pc0 float32 = 15 //积液前套压,MPa
+	Pwf float32 = 0
+	Pti float32 = 0
+	Ht1 float32 = 0
+	//基础数据3
+	g float32 = 9.81
+	//
+	I_Select_JY uint8 = 0
+)
+
 //点击计算
 // Pt 油压 Pc  套压
-func Set_OK(pt, pc float32) {
+//return D_YGJYGD, D_TGJYGD, D_JYL, D_JiaYL
+func feedingCalculate(pt, pc float32) (float32, float32, float32, float32, error) {
+	//TODO:需要加上执行超时，避免算法不收敛，导致一直计算
 	var djsvaue float32 = 0
 	var At float32 = 0
 	var Ac float32 = 0
@@ -462,6 +500,21 @@ func Set_OK(pt, pc float32) {
 	var hcl float32 = 0
 
 	g = 9.81 //重力加速度
+
+	var materialNum modle.MaterialNum
+	readMaterialNumCfgTofile(&materialNum)
+
+	Yg = materialNum.Yg
+	Dti = materialNum.Dti
+	Dto = materialNum.Dto
+	Dci = materialNum.Dci
+	Ht = materialNum.Ht
+	Hr = materialNum.Hr
+	Pc0 = materialNum.Pco
+	Qg = materialNum.Qg
+	Qw = materialNum.Qw
+	Twh = materialNum.Twh + 273
+	Tr = materialNum.Tr + 273
 
 	Pc = pc
 	Pt = pt
@@ -516,9 +569,7 @@ func Set_OK(pt, pc float32) {
 		Calculate_temp2 = Tav * Z
 		pwf_1 = Pc * (expf(Calculate_temp1 / Calculate_temp2))
 		if pwf_1 > Pwf {
-			//TODO:打印消息
-			fmt.Println("请检查积液前后的套压数据是否正确")
-			return
+			return 0, 0, 0, 0, errors.New("请检查积液前后的套压数据是否正确")
 		} else {
 			Hcl_0 = (Pwf - pwf_1) * 1000000
 			Hcl_0 /= (1050 * g)
@@ -562,11 +613,10 @@ func Set_OK(pt, pc float32) {
 				Calculate_temp3 = expf(Calculate_temp1 / Calculate_temp2)
 				pwf_1 = Pt * Calculate_temp3
 				if pwf_1 > Pwf {
-					//TODO:打印消息
-					fmt.Println("请核对基础参数，油套压不匹配，或该井没有积液")
+					return 0, 0, 0, 0, errors.New("请核对基础参数，油套压不匹配，或该井没有积液")
 				} else {
 					htl_0 = (Pwf - pwf_1) * 1000000
-					htl_0 /= (1050 * g) //
+					htl_0 /= (1050 * g)
 					for {
 						htl = htl_0
 						//pwf_1 = Pt * (exp(0.03418 * Yg * (Hr - htl) / (Tav * Z))) + 1050 * g * htl / 1000000;//
@@ -598,9 +648,7 @@ func Set_OK(pt, pc float32) {
 				Calculate_temp1 = 1050 * g * (Hr - Ht)
 				pwf1 = Pti + Calculate_temp1/1000000 //
 				if pwf1 > Pwf {
-					//TODO:
-					fmt.Println("输入数据有误，请检查错误")
-					return
+					return 0, 0, 0, 0, errors.New("输入数据有误，请检查错误")
 				} else {
 					htl_0 = (Pwf - pwf1) * 1000000
 					htl_0 /= (1050 * g) //
@@ -636,43 +684,6 @@ func Set_OK(pt, pc float32) {
 		D_JYL = 0
 		D_JiaYL = 0
 	}
-	//TODO:每次计算都需要将D_JYL。D_JiaYL。D_TGJYGD。D_YGJYGD上传到服务器
-	fmt.Println("D_YGJYGD = ", D_YGJYGD)
-	fmt.Println("D_TGJYGD = ", D_TGJYGD)
-	fmt.Println("D_JYL = ", D_JYL)
-	fmt.Println("D_JiaYL = ", D_JiaYL)
-}
 
-//输入参数
-var (
-	//定义井身结构
-	Dti float32 = 64   //油管内径，m
-	Dto float32 = 73   //油管外径，m
-	Dci float32 = 112  //套管内径，m
-	Ht  float32 = 2000 //油管下入深度，m
-	Hr  float32 = 2100 //储层中深，m
-	//定义生产数据
-	Pt  float32 = 0        //油压，MPa
-	Pc  float32 = 0        //套压，MPa
-	Qg  float32 = 1.0      //日产气，万方/天
-	Qw  float32 = 1.0      //日产水，方
-	Twh float32 = 22 + 273 //井口温度，K
-	//定义测试数据
-	Pcg float32 = 0
-	Tr  float32 = 120 + 273 //地层温度，K
-	//
-	Yg  float32 = 0.56
-	Tav float32 = 0
-	Pav float32 = 0
-	DT  float32 = 0
-	Z   float32 = 0
-	//
-	Pc0 float32 = 15 //积液前套压,MPa
-	Pwf float32 = 0
-	Pti float32 = 0
-	Ht1 float32 = 0
-	//基础数据3
-	g float32 = 9.81
-	//
-	I_Select_JY uint8 = 0
-)
+	return D_YGJYGD, D_TGJYGD, D_JYL, D_JiaYL, nil
+}

@@ -28,6 +28,7 @@ type GatewayParmResp struct {
 	GwIP          string `json:"gwIP"`
 	ServerIP      string `json:"serverIP"`
 	ServerPort    string `json:"serverPort"`
+	Hardware      string `json:"hardware"`
 	RfID          string `json:"rfId"`
 	RfChannel     string `json:"rfChannel"`
 	RfNetID       string `json:"rfNetId"`
@@ -219,6 +220,9 @@ type MaterialNum struct {
 	Tr      float32 `json:"tr"`
 	Hour    float32 `json:"hour"`
 	Minutes float32 `json:"minutes"`
+	OldPt   float32 `json:"oldPt"`
+	OldPc   float32 `json:"oldPc"`
+	Ygjpd   float32 `json:"ygjpd"`
 }
 
 type MaterialNumReq struct {

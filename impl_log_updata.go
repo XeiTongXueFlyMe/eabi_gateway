@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-var AUTO_FEEDING_HISTORY_DATA_FILE_NAME string = "autoFeedingAlgoHistoryData.csv"
+var AUTO_FEEDING_HISTORY_DATA_FILE_NAME string = "autoFeedingAlgoHistoryData.log"
 
 var logParamChannel chan []byte
 var feedingLogParamChannel chan []byte

@@ -854,3 +854,28 @@
 >"logData":"xxxxxxxxxxx",
 >}
 >```
+
+# 16 系统重启
+**websocket example:**
+* req:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162503,
+>"msgParam":"reboot",
+>"cause":"xxxxx"
+>}
+>```
+* resp:
+>```json
+>{
+>"msgType":"PUT",
+>"msgId":"a7356eac-71ae-4862-b66c-a212cd292baf",
+>"msgGwId":"AFAF73BADCF6",
+>"msgTimeStamp":1586162656,
+>"msgParam":"reboot",
+>"msgResp":"ok",
+>}
+>```

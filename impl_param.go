@@ -19,6 +19,7 @@ var sensorInfoCfgChannel chan []byte
 var sensorNameChannel chan []byte
 var alarmInfoCfgChannel chan []byte
 var adapterInfoCfgChannel chan []byte
+var rebootChannel chan []byte
 var adapterSendRfDataChannel chan modle.AdapterInfo
 
 func waitGatewayParamConfig() {
@@ -688,6 +689,33 @@ func waitAdapterInfoCfgInfoConfig() {
 	}
 }
 
+func waitReboot() {
+	buf := <-rebootChannel
+
+	m := make(map[string]interface{})
+	if err := json.Unmarshal(buf, &m); err != nil {
+		log.PrintlnErr(err)
+		respToServer(m["msgId"], err.Error(), "reboot")
+		return
+	}
+	if v, ok := m["msgType"]; ok {
+		if str, ok := v.(string); ok {
+			switch str {
+			case "PUT":
+				respToServer(m["msgId"], "ok", "reboot")
+				log.PrintlnInfo("reboot cause:", m["cause"])
+				time.Sleep(time.Second * 1)
+				panic("reboot")
+			}
+		} else {
+			log.PrintfErr("json msgType no is string")
+		}
+	} else {
+		log.PrintlnErr("no find msgType")
+	}
+
+}
+
 func implInit() {
 	//网关参数的增删改查
 	gatewayParamChannel = make(chan []byte, 1)
@@ -720,4 +748,8 @@ func implInit() {
 	net.CreateMsgField("adapter", adapterInfoCfgChannel)
 	go waitAdapterInfoCfgInfoConfig()
 
+	//系统重启
+	rebootChannel = make(chan []byte, 1)
+	net.CreateMsgField("reboot", rebootChannel)
+	go waitReboot()
 }

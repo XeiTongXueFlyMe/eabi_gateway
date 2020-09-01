@@ -24,7 +24,7 @@ type logResp struct {
 	LogData      string `json:"logData"`
 }
 
-func updataLogFileToServer(msgID interface{}) {
+func updataLogFileToServer(msgID interface{}, year, month string) {
 	param := &logResp{
 		MsgType:      "GET",
 		MsgGwID:      config.SysParamGwId(),
@@ -33,9 +33,7 @@ func updataLogFileToServer(msgID interface{}) {
 		MsgResp:      "ok",
 	}
 
-	year, month, _ := time.Now().Date()
-
-	fn := fmt.Sprintf("%d-%d.log", year, month)
+	fn := fmt.Sprintf("%s-%s.log", year, month)
 	f, err := os.OpenFile(fn, os.O_RDWR|os.O_APPEND|os.O_CREATE, 0777)
 	if err != nil {
 		panic(err)
@@ -75,14 +73,13 @@ _exit:
 
 }
 
-func deleteLofFile() {
-	year, month, _ := time.Now().Date()
-	fn := fmt.Sprintf("%d-%d.log", year, month)
-
+func deleteLofFile(year, month string) {
+	fn := fmt.Sprintf("%s-%s.log", year, month)
 	os.Remove(fn)
 }
 
 func waitLogParamReq() {
+	var year, month string
 
 	for {
 		buf := <-logParamChannel
@@ -93,15 +90,36 @@ func waitLogParamReq() {
 			respToServer(m["msgId"], err.Error(), "eabiLog")
 			continue
 		}
+		if v, ok := m["year"]; ok {
+			if str, ok := v.(string); ok {
+				year = str
+				goto _find_month
+			}
+		}
+		respGetToServer(m["msgId"], "no find year param on jsonByte", "eabiLog")
+		continue
+
+	_find_month:
+		if v, ok := m["month"]; ok {
+			if str, ok := v.(string); ok {
+				month = str
+				goto _next
+			}
+		}
+		respGetToServer(m["msgId"], "no find year month on jsonByte", "eabiLog")
+		continue
+
+	_next:
 		if v, ok := m["msgType"]; ok {
 			if str, ok := v.(string); ok {
 				switch str {
 				case "GET":
-					updataLogFileToServer(m["msgId"])
+					updataLogFileToServer(m["msgId"], year, month)
 				case "DELETE":
-					deleteLofFile()
+					deleteLofFile(year, month)
 					respDeleteToServer(m["msgId"], "ok", "eabiLog")
 				}
+
 			} else {
 				log.PrintfErr("json msgType no is string")
 			}

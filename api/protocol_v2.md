@@ -787,6 +787,8 @@
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162656,
 >"msgParam":"eabiLog",
+>"year":"2020",
+>"month":"7",
 >}
 >```
 
@@ -813,6 +815,8 @@
 >"msgGwId":"AFAF73BADCF6",
 >"msgTimeStamp":1586162656,
 >"msgParam":"eabiLog",
+>"year":"2020",
+>"month":"7",
 >}
 >```
 

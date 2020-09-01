@@ -7,7 +7,9 @@ import (
 	rfNet "eabi_gateway/impl/rf_net"
 	"eabi_gateway/impl/updata"
 	module "eabi_gateway/module"
+	"eabi_gateway/module/lora"
 	myLog "eabi_gateway/module/my_log"
+	rs "eabi_gateway/module/rs_485"
 
 	"time"
 )
@@ -37,9 +39,9 @@ func main() {
 
 	//初始化射频网络
 	rfNet.LoraInit()
-	//defer lora.Close()
+	defer lora.Close()
 	busNet.Init()
-	//defer rs.Close()
+	defer rs.Close()
 	rfNet.RfNetInfoInit()
 
 	rfInit()

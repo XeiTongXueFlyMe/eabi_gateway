@@ -2,7 +2,9 @@ package main
 
 import (
 	modle "eabi_gateway/impl"
+	busNet "eabi_gateway/impl/Industrial_bus"
 	config "eabi_gateway/impl/config"
+	"eabi_gateway/impl/modbus"
 	net "eabi_gateway/impl/net"
 	"encoding/json"
 	"fmt"
@@ -118,9 +120,9 @@ func waitFeedingParamConfig() {
 		case "GET": //后面实时获取，或则系统重启后获取
 			feedingParamToServer(req, feedingParam)
 		case "PUT":
-			//TODO:需要通过４８５下发
 			feedingParam = req.AutoFeeding
 			writeFeedingParamToFile(feedingParam)
+			adapterAutoFeedingChannel <- feedingParam
 			respToServer(req.MsgID, "ok", "autoFeeding")
 		default:
 			log.PrintfErr("json msgType:%s no support ", req.MsgType)
@@ -294,13 +296,22 @@ func autoFeedingAlgo() {
 					writeAlgoLog(err.Error())
 					goto _continue
 				}
-				//TODO:发送相关数据(485)
+
+				jy := int(d_jiayl)
+				buf := make([]byte, 0)
+				buf = append(buf, byte((jy>>8)&0x000000ff))
+				buf = append(buf, byte(jy&0x000000ff))
+				switch config.SysHardware() {
+				case "485":
+					busNet.Send(modbus.WriteDeviceReg(1, 26023, 1, 2, buf[:]))
+				default:
+					return
+				}
 
 				//记录
 				s := fmt.Sprintf("当前套压=%d,当前油压=%d,油管积液高度=%d,套管积液高度=%d,积液量=%d,加液量=%d\n", newPc, newPt, d_ygjygd, d_tgjygd, d_jyl, d_jiayl)
 				writeAlgoLog(s)
 			}
-
 		}
 
 	_continue:

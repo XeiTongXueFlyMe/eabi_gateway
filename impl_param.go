@@ -21,6 +21,7 @@ var alarmInfoCfgChannel chan []byte
 var adapterInfoCfgChannel chan []byte
 var rebootChannel chan []byte
 var adapterSendRfDataChannel chan modle.AdapterInfo
+var adapterAutoFeedingChannel chan modle.AutoFeeding
 
 func waitGatewayParamConfig() {
 	for {
@@ -658,7 +659,8 @@ func writeAdapterCfgToFile() {
 func waitAdapterInfoCfgInfoConfig() {
 	var adapterInfo modle.AdapterInfoReq
 
-	adapterSendRfDataChannel = make(chan modle.AdapterInfo, 50)
+	adapterSendRfDataChannel = make(chan modle.AdapterInfo, 1)
+	adapterAutoFeedingChannel = make(chan modle.AutoFeeding, 1)
 
 	//读取本地设配器配置
 	readAdapterCfgFromFile()
@@ -681,8 +683,8 @@ func waitAdapterInfoCfgInfoConfig() {
 		case "PUT":
 			config.WriteAdapterInfo(adapterInfo.AdapterInfo)
 			writeAdapterCfgToFile()
-			respToServer(adapterInfo.MsgID, "ok", "adapter")
 			adapterSendRfDataChannel <- adapterInfo.AdapterInfo
+			respToServer(adapterInfo.MsgID, "ok", "adapter")
 		default:
 			log.PrintfErr("json msgType:%s no support ", adapterInfo.MsgType)
 		}

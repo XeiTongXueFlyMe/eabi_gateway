@@ -1,0 +1,4 @@
+2020/09/15 17:26:25 eabi_gateway.go:21: [info]eabi_gateway start runing :)
+2020/09/15 17:26:25 net.go:64: [info]Reconnect to the server 0 Second after 
+2020/09/15 17:26:25 lora_net.go:90: [err]open /dev/ttyS7: permission denied
+2020/09/15 17:26:25 api.go:107: [err]msgMap no find field: {"type":"Server","msg":"7f0000010bbc00005af1","msgParam":"systemLogin"}

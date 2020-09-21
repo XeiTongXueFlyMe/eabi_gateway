@@ -492,7 +492,7 @@ var (
 // Pt 油压 Pc  套压
 //return D_YGJYGD, D_TGJYGD, D_JYL, D_JiaYL
 func feedingCalculate(pt, pc float32) (float32, float32, float32, float32, error) {
-	//TODO:需要加上执行超时，避免算法不收敛，导致一直计算
+	//FIXME:需要加上执行超时，避免算法不收敛，导致一直计算，但是以前的这里是没有家超时的，估计不会触发bug
 	var djsvaue float32 = 0
 	var At float32 = 0
 	var Ac float32 = 0

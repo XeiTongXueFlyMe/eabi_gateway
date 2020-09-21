@@ -1,36 +1,40 @@
+//集控器自身配置
 {
-    "msgId": "ADA32F59-9263-5CFF-F6EF-6462C4118748:1",
-    "msgGwId": "FEFEABABABFE",
-    "msgTimeStamp": 1592212253,
-    "msgParam": "gatewayParam",
-    "gwId": "FEFEABABABFE",
-    "gwIP": "192.168.0.102",
-    "serverIP": "47.108.88.41",
-    "serverPort": "8286",
-    "rfId": "ACACACACACAC",
-    "rfChannel": "1",
-    "rfNetId": "BEBEBEBEBEBE",
-    "dataUpCycle": 15,
-    "heartCycle": 30
+    "msgId": "ADA32F59-9263-5CFF-F6EF-6462C4118748:1", //消息身份id，用户可以不用配置
+    "msgGwId": "FEFEABABABFE", //网关唯一身份地址
+    "msgTimeStamp": 1592212253,//消息时间戳，用户可以不用配置
+    "msgParam": "gatewayParam",//通信内容
+    "gwId": "FEFEABABABFE",//设置网关唯一身份地址
+    "gwIP": "192.168.0.102",//设置网关ip地址，仅用于局域网，对4G无效
+    "serverIP": "47.108.88.41",//设置服务器地址
+    "serverPort": "8286",//设置服务器端口
+    hardware": "lora", //通信硬件选择, lora 或 485
+    "rfId": "ACACACACACAC",//设置射频模块唯一id
+    "rfChannel": "1",//设置射频模块信道
+    "rfNetId": "BEBEBEBEBEBE",//设置射频网络id
+    "dataUpCycle": 15,//设置上传周期
+    "heartCycle": 30//设置心跳周期
+    "dataReadCycle": 10 //设置数据轮询周期，轮询所有传感器最小时间周期，
 }
 
+//传感器信息配置
 {
     "msgId": "16892865-5FD0-61B8-2A6D-3D93628295FB:1",
     "msgGwId": "FEFEABABABFE",
     "msgTimeStamp": 1592212312,
     "msgParam": "sensorInfo",
-    "sensorListNum": 2,
-    "sensorList": [
+    "sensorListNum": 2,//传感器个数
+    "sensorList": [//传感器列表
         {
-            "sensorId": "EADDB2EEFBE6",
-            "sensorName": "报警１号",
-            "sensorAdder": 1,
-            "dataAdder": 0,
-            "dataSize": 8,
-            "channelList": [
+            "sensorId": "EADDB2EEFBE6",//传感器唯一id
+            "sensorName": "报警１号",//传感器别名
+            "sensorAdder": 1,//传感器地址
+            "dataAdder": 0,//数据的起始地址
+            "dataSize": 8,//数据的大小
+            "channelList": [//通道列表
                 {
-                    "channel": 0,
-                    "valueType": "温度(℃)"
+                    "channel": 0,//通道号
+                    "valueType": "温度(℃)"//此通道号，数据单位
                 },
                 {
                     "channel": 1,
@@ -49,44 +53,44 @@
     ]
 }
 
-
+//报警配置
 {
     "msgId": "8527AC62-05BA-3E5F-416C-F8D12B92DF98:1",
     "msgGwId": "FEFEABABABFE",
     "msgTimeStamp": 1592212355,
     "msgParam": "alarmConfig",
-    "alarmListNum": 1,
+    "alarmListNum": 1,//报警配置列表
     "alarmList": [
         {
-            "sensorId": "EADDB2EEFBE6",
-            "channel": 0,
-            "alarmValue_l": 10,
-            "alarmValue_h": 20
+            "sensorId": "EADDB2EEFBE6",//传感器唯一id
+            "channel": 0,//当前传感器的通道号
+            "alarmValue_l": 10,//底阀值
+            "alarmValue_h": 20//高阀值
         }
     ]
 }
 
-
+//适配器配置，适配器等价于上述所说的传感器
 {
     "msgId": "0EF6435C-5BB4-B041-8B98-B7FFDB291B0E:1",
     "msgGwId": "FEFEABABABFE",
     "msgTimeStamp": 1592272837,
     "msgParam": "adapter",
     "adapterInfo": {
-        "sensorId": "EADDB2EEFBE6",
-        "sensorAdder":1,
-        "channelSetList": [
+        "sensorId": "EADDB2EEFBE6",//适配器id
+        "sensorAdder":1,//适配器地址
+        "channelSetList": [//适配器通道设置列表
             {
-                "channel":1,
-                "ubgAdder":1,
-                "rangeLow":1.2,
-                "rangeHigh":1.5,
-                "k":1.1,
-                "b":0.0,
-                "period":1,
-                "channelEn":1,
-                "modbusAdder":2,
-                "bufse":1
+                "channel":1,//通道号
+                "ubgAdder":1,//UBG地址设定
+                "rangeLow":1.2,//零量程
+                "rangeHigh":1.5,//满量程
+                "k":1.1,//计算系数k , y = k*x+b
+                "b":0.0,//计算系数b,y = k*x+b
+                "period":1,//适配器旗下的传感器周期
+                "channelEn":1,//通道使能
+                "modbusAdder":2,//modbus地址
+                "bufse":1//通道对应数据长度
             }
         ]
     }

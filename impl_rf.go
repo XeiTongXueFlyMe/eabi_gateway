@@ -173,6 +173,308 @@ func waitBusData() {
 	}
 }
 
+func sendAutoFeedingData(v modle.AutoFeeding) {
+	if v.TimerOneFlag == true {
+		buf := make([]byte, 0)
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(v.TimerOneHour))
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(v.TimerOneMinutes))
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(uint8(1), 26001, 2, 4, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(uint8(1), 26001, 2, 4, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+	}
+
+	if v.TimerTwoFlag == true {
+		buf := make([]byte, 0)
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(v.TimerTwoHour))
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(v.TimerTwoMinutes))
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(uint8(1), 26003, 2, 4, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(uint8(1), 26003, 2, 4, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+	}
+
+	if v.TimeFlag == true {
+		tm := time.Unix(v.TimeStamp, 0)
+		buf := make([]byte, 0)
+		buf = append(buf, byte((tm.Year()>>8)&0x000000ff))
+		buf = append(buf, byte((tm.Year() & 0x000000ff)))
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(tm.Month()))
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(tm.Day()))
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(tm.Hour()))
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(tm.Minute()))
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(tm.Minute()))
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(1, 26011, 6, 12, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26011, 6, 12, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+	}
+
+	if v.IncrementFlag == true {
+		buf := make([]byte, 0)
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(v.Increment))
+
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(uint8(1), 26023, 1, 2, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26023, 1, 2, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+	}
+
+	if v.IntervalTimeFlag == true {
+		buf := make([]byte, 0)
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(v.ITimerDay))
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(v.ITimerHour))
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(v.ITimerMinutes))
+
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(1, 26030, 3, 6, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26030, 3, 6, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+	}
+
+	if v.IntervalExitFlag == true {
+		buf := make([]byte, 0)
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(1))
+
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(1, 26040, 1, 2, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26040, 1, 2, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+	}
+
+	if v.TimeModuleExitFlag == true {
+		buf := make([]byte, 0)
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(1))
+
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(1, 26039, 1, 2, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26039, 1, 2, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+	}
+	if v.IntervalMoudleFlag == true {
+		buf := make([]byte, 0)
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(1))
+
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(1, 26036, 1, 2, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26036, 1, 2, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+	}
+
+	if v.TimeModuleFlag == true {
+		buf := make([]byte, 0)
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(1))
+
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(1, 26035, 1, 2, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26035, 1, 2, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+	}
+	if v.TimeModuleFlag == true {
+		buf := make([]byte, 0)
+		buf = append(buf, byte(0))
+		buf = append(buf, byte(1))
+
+		//判断 lora通信，485通信
+		switch config.SysHardware() {
+		case "485":
+			busNet.Send(modbus.WriteDeviceReg(1, 26035, 1, 2, buf[:]))
+		default:
+			return
+		}
+		//等待数据返回，或超时
+		select {
+		case <-time.After(time.Second * 1):
+			log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26035, 1, 2, buf[:]))
+			return
+		case id := <-deviceIDTransmitChan:
+			if id != 1 {
+				log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+			}
+		}
+		if v.TimerOneModuleFlag == true {
+			buf := make([]byte, 0)
+			buf = append(buf, byte(0))
+			buf = append(buf, byte(1))
+
+			//判断 lora通信，485通信
+			switch config.SysHardware() {
+			case "485":
+				busNet.Send(modbus.WriteDeviceReg(1, 26037, 1, 2, buf[:]))
+			default:
+				return
+			}
+			//等待数据返回，或超时
+			select {
+			case <-time.After(time.Second * 1):
+				log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26037, 1, 2, buf[:]))
+				return
+			case id := <-deviceIDTransmitChan:
+				if id != 1 {
+					log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+				}
+			}
+		}
+		if v.TimerTwoModuleFlag == true {
+			buf := make([]byte, 0)
+			buf = append(buf, byte(0))
+			buf = append(buf, byte(1))
+
+			//判断 lora通信，485通信
+			switch config.SysHardware() {
+			case "485":
+				busNet.Send(modbus.WriteDeviceReg(1, 26038, 1, 2, buf[:]))
+			default:
+				return
+			}
+			//等待数据返回，或超时
+			select {
+			case <-time.After(time.Second * 1):
+				log.PrintlnErr("send adapter data timeout(1s):", modbus.WriteDeviceReg(1, 26038, 1, 2, buf[:]))
+				return
+			case id := <-deviceIDTransmitChan:
+				if id != 1 {
+					log.PrintfErr(" sendAutoFeedingData fail return id = %d  != 1", id)
+				}
+			}
+		}
+	}
+}
+
 func sendAdapterData(v modle.AdapterInfo) {
 
 	for _, chanV := range v.ChannelSetList {
@@ -256,6 +558,8 @@ func modbusDataTransmit() {
 			select { //适配器配置数据
 			case v := <-adapterSendRfDataChannel:
 				sendAdapterData(v)
+			case v := <-adapterAutoFeedingChannel:
+				sendAutoFeedingData(v)
 			default:
 			}
 		}
